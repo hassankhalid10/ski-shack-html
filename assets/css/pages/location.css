@@ -1,0 +1,74 @@
+/* ==========================================================================
+   LOCATION PAGES  (location-springfield / -indian-point / -mill-creek .html)
+   --------------------------------------------------------------------------
+   One template for all three locations — the pages differ only in content.
+   Loaded after style.css and showcase.css.
+
+     Hero · Info bar · Offerings (offerTile) · About · Visit (hours, map,
+     contact form) · FAQ columns · Other locations (otherLocTile)
+   ========================================================================== */
+
+/* ---- Hero ------------------------------------------------------------------------- */
+.locationHero {
+    --hero-side: linear-gradient(90deg, rgba(5, 5, 5, .92) 0%, rgba(5, 5, 5, .6) 50%, rgba(5, 5, 5, .2) 100%);
+    --hero-fade: linear-gradient(180deg, rgba(5, 5, 5, 0) 55%, #050505 100%);
+}
+.locationHero .pageHeroContent { padding-bottom: 80px; }
+
+/* Directions (paper plane) icon — same mask technique as the icons in style.css */
+.icoDirections { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.2'%3E%3Cpath d='M3 11l18-8-8 18-2-8z'/%3E%3C/svg%3E"); }
+
+/* ---- Info bar (address · phone · hours) ------------------------------------------------ */
+.infoBar { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.infoBarItem { display: flex; gap: 16px; padding: 40px; border-right: 1px solid rgba(255, 255, 255, .12); }
+.infoBarItem:first-child { padding-left: 0; }
+.infoBarItem:last-child { border-right: 0; }
+.infoBarItem > .ico { color: var(--blue); }
+.infoBarValue { font-size: 18px; font-weight: 600; }
+a.infoBarValue:hover { color: var(--blue); }
+
+/* ---- Offerings ----------------------------------------------------------------------------- */
+.offerTile .textLink { padding-top: 6px; }
+
+/* ---- About -------------------------------------------------------------------------------- */
+.servingNote { padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, .14); }
+
+/* ---- Visit: hours, directions & contact form ------------------------------------------------- */
+.visitInfo { flex: 1 1 560px; max-width: 680px; }
+.visitForm { flex: 999 1 620px; min-width: 0; }
+.mapPlaceholder { display: flex; align-items: center; justify-content: center; height: 340px; padding: 0 20px; text-align: center; border: 1px solid var(--line-light); }
+.mapPlaceholder .smallLabel { color: var(--gray-2); }
+.hoursRow { display: flex; justify-content: space-between; gap: 16px; padding: 16px 0; font-size: 16px; color: var(--black); border-top: 1px solid var(--line-light); }
+.hoursRow dt { font-weight: 400; }
+.hoursRow dd { margin: 0; text-align: right; color: var(--gray); }
+.hoursNote { padding-top: 14px; border-top: 1px solid var(--line-light); }
+textarea.fieldInputTall { height: 150px; }
+
+/* ---- FAQ ------------------------------------------------------------------------------------- */
+.faqIntro { flex: 1 1 360px; max-width: 480px; }
+.faqBody { flex: 999 1 640px; min-width: 0; }
+
+/* ---- Other locations --------------------------------------------------------------------------- */
+.otherLocTile {
+    --tile-h: 380px;
+    --tile-gap: 14px;
+    --tile-pad: 44px;
+    --tile-shade: linear-gradient(180deg, rgba(5, 5, 5, .1) 20%, rgba(5, 5, 5, .92) 100%);
+}
+
+/* ---- Responsive -------------------------------------------------------------------------------- */
+@media (max-width: 1399.98px) {
+    /* once the form wraps below, let the info column use the full width */
+    .visitInfo { max-width: none; }
+}
+@media (max-width: 991.98px) {
+    .infoBarItem { padding: 32px 24px; }
+}
+@media (max-width: 767.98px) {
+    .locationHero .pageHeroContent { padding-bottom: 48px; }
+    .infoBar { grid-template-columns: minmax(0, 1fr); }
+    .infoBarItem, .infoBarItem:first-child { padding: 22px 0; border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, .12); }
+    .infoBarItem:last-child { border-bottom: 0; }
+    .infoBarValue { font-size: 17px; }
+    .mapPlaceholder { height: 240px; }
+}

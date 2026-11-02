@@ -1,0 +1,125 @@
+/* ==========================================================================
+   SHOWCASE FAMILY  (location-*.html · about-us.html · pro-shop.html)
+   --------------------------------------------------------------------------
+   Patterns shared by the three location pages, About Us and the Pro Shop.
+   Loaded after style.css; page rules live in location.css / about-us.css /
+   pro-shop.css. Variants set custom properties (--tile-*, --mosaic-rows,
+   --band-*) so the responsive rules at the bottom can override every variant.
+
+     splitHeadMain / splitHeadAside   "title left, lead right" section heads
+     tagList + outlineTag             outlined service tags (Sm / Lg sizes)
+     imageTile + imageTileBody        photo tiles with bottom shade and text
+     mosaicGrid                       2-column photo mosaics (tall / wide cells)
+     basis640 / basis720              wider splitCol bases
+     rowList + rowItem                bordered link rows and numbered rows
+     statementBand                    full-width photo band with a big statement
+     ctaBand                          centred closing call-to-action band
+     locationCard                     location summary cards
+   ========================================================================== */
+
+/* ---- Section heads (used with .splitHead.gap48) ------------------------------ */
+.splitHeadMain { flex: 1 1 640px; min-width: 0; }
+.splitHeadAside { flex: 0 1 560px; }
+
+/* ---- Split columns with wider bases (used with .splitRow / .splitCol) -------- */
+.basis640 { flex-basis: 640px; }
+.basis720 { flex-basis: 720px; }
+
+/* ---- Outlined service tags --------------------------------------------------- */
+.tagList { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.outlineTag {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 0 14px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, .22);
+}
+.outlineTagLg { min-height: 36px; padding: 0 16px; letter-spacing: .14em; border-color: rgba(255, 255, 255, .3); }
+.outlineTagSm { min-height: 30px; padding: 0 12px; font-size: 11px; letter-spacing: .14em; border-color: rgba(255, 255, 255, .35); }
+
+/* ---- Image tiles: <a|div class="mediaFrame imageTile"> + .coverImg + .imageTileBody */
+.imageTile { display: flex; align-items: flex-end; min-height: var(--tile-h, 420px); color: var(--white); }
+.imageTile::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: var(--tile-shade, linear-gradient(180deg, rgba(5, 5, 5, 0) 30%, rgba(5, 5, 5, .92) 100%));
+    pointer-events: none;
+}
+.imageTile .coverImg { transition: transform .6s; }
+a.imageTile:hover { color: var(--white); }
+a.imageTile:hover .coverImg { transform: scale(var(--tile-zoom, 1.05)); }
+a.imageTile:hover .textLink { color: var(--blue); }
+.imageTileBody {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: var(--tile-gap, 12px);
+    width: 100%;
+    padding: var(--tile-pad, 40px);
+}
+.imageTileBody .whitePara { color: rgba(255, 255, 255, .82); }
+
+/* ---- Photo mosaics ----------------------------------------------------------- */
+.mosaicGrid { display: grid; grid-template-columns: 1.2fr 1fr; grid-template-rows: var(--mosaic-rows, 300px 300px); gap: 12px; }
+.mosaicEven { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.mosaicTall { grid-row: span 2; }
+.mosaicWide { grid-column: span 2; }
+
+/* ---- Row lists (bordered rows: links with an arrow, or numbered points) ------ */
+.rowList { margin: 0; padding: 0; list-style: none; border-bottom: 1px solid rgba(255, 255, 255, .14); }
+.rowItem { display: flex; align-items: center; gap: 28px; padding: 30px 0; color: var(--white); border-top: 1px solid rgba(255, 255, 255, .14); }
+.rowItemTop { align-items: flex-start; }
+a.rowItem:hover { color: var(--blue); }
+.rowItemArrow { width: 28px; height: 28px; color: var(--blue); transition: transform .2s; }
+a.rowItem:hover .rowItemArrow { transform: translateX(6px); }
+.rowItemNum { flex: none; width: 40px; padding-top: 4px; }
+
+/* ---- Statement band ------------------------------------------------------------ */
+.statementBand { display: flex; align-items: center; min-height: var(--band-h, 620px); }
+.statementBand::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: var(--band-shade, linear-gradient(90deg, rgba(5, 5, 5, .85) 0%, rgba(5, 5, 5, .35) 60%, rgba(5, 5, 5, .1) 100%));
+    pointer-events: none;
+}
+.statementBand > .siteContainer { position: relative; z-index: 2; }
+
+/* ---- Closing CTA band ------------------------------------------------------------ */
+
+/* ---- Location cards ---------------------------------------------------------------- */
+.locationCard { display: flex; flex-direction: column; gap: 22px; }
+.locationCardFooter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: auto;
+    padding-top: var(--card-footer-pad, 18px);
+    border-top: 1px solid rgba(255, 255, 255, .14);
+}
+
+/* ---- Responsive ------------------------------------------------------------------------ */
+@media (max-width: 1199.98px) {
+    .imageTile { min-height: 380px; }
+}
+@media (max-width: 767.98px) {
+    .basis640, .basis720 { flex-basis: 100%; }
+    .imageTile { min-height: 320px; }
+    .imageTileBody { gap: 10px; padding: 24px; }
+    .mosaicGrid { grid-template-rows: 180px 180px; gap: 8px; }
+    .rowItem { gap: 18px; padding: 24px 0; }
+    .rowItemArrow { width: 22px; height: 22px; }
+    .rowItemNum { width: 32px; }
+    .statementBand { min-height: 380px; }
+}

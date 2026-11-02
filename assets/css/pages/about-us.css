@@ -1,0 +1,48 @@
+/* ==========================================================================
+   ABOUT US  (body.aboutUsPage) — loaded after style.css and showcase.css
+   ========================================================================== */
+
+/* ---- Story -------------------------------------------------------------------------- */
+.storyMosaic { --mosaic-rows: 314px 314px; }
+
+/* ---- Why buy from us ------------------------------------------------------------------ */
+.whyCard { --tile-h: 640px; --tile-gap: 16px; --tile-pad: 48px; }
+.whyCard:hover .coverImg { transform: scale(1.04); }
+
+/* ---- Brands we carry (full-width tiles) -------------------------------------------------- */
+.brandTiles { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; margin: 0; padding: 0; list-style: none; }
+.brandTile { display: flex; align-items: flex-end; justify-content: center; height: 440px; }
+.brandTile::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(5, 5, 5, .15) 0%, rgba(5, 5, 5, .85) 100%);
+    pointer-events: none;
+}
+.brandTile .coverImg { transition: transform .6s; }
+.brandTile:hover .coverImg { transform: scale(1.05); }
+.brandTileLogo { position: relative; z-index: 2; width: auto; height: auto; max-width: min(220px, 80%); max-height: 64px; margin-bottom: 48px; }
+
+/* ---- Beyond the sale ------------------------------------------------------------------------ */
+.beyondMosaic { --mosaic-rows: 380px 300px; }
+
+/* ---- Responsive -------------------------------------------------------------------------------- */
+@media (max-width: 1199.98px) {
+    /* 3 + 2 brand tiles instead of an orphaned last row */
+    .brandTiles { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .brandTiles > li { grid-column: span 2; }
+    .brandTiles > li:nth-child(n+4) { grid-column: span 3; }
+    .brandTile { height: 340px; }
+    .whyCard { --tile-pad: 32px; }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .whyGrid > :last-child { grid-column: span 2; }
+}
+@media (max-width: 767.98px) {
+    .brandTiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .brandTiles > li, .brandTiles > li:nth-child(n+4) { grid-column: auto; }
+    .brandTiles > li:last-child { grid-column: span 2; }
+    .brandTile { height: 220px; }
+    .brandTileLogo { max-height: 48px; margin-bottom: 28px; }
+}

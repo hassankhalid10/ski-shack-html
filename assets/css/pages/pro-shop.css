@@ -1,0 +1,65 @@
+/* ==========================================================================
+   PRO SHOP  (body.proShopPage) — loaded after style.css and showcase.css
+   ========================================================================== */
+
+/* ---- Intro ------------------------------------------------------------------------------- */
+.introMosaic { --mosaic-rows: 320px 320px; }
+.statRow { display: flex; flex-wrap: wrap; gap: 48px; padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, .14); }
+.statRow > * { padding-top: 22px; }
+
+/* ---- Shop by category ---------------------------------------------------------------------- */
+.categoryTile { --tile-h: 460px; --tile-shade: linear-gradient(180deg, rgba(5, 5, 5, 0) 35%, rgba(5, 5, 5, .92) 100%); }
+.spanTwo { grid-column: span 2; }
+
+/* ---- Brand logo wall ------------------------------------------------------------------------- */
+.logoWall {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid rgba(255, 255, 255, .12);
+    border-left: 1px solid rgba(255, 255, 255, .12);
+}
+.logoWallItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    padding: 0 20px;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, .12);
+    border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+.logoWallMore { font-family: var(--font-display); font-size: 24px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: rgba(255, 255, 255, .35); }
+.gearLogo { display: block; width: auto; height: auto; max-width: min(200px, 100%); }
+.logoLiquidForce { width: 190px; max-width: 75%; }
+.logoHyperlite, .logoFatSac { max-height: 84px; }
+.logoPhase5, .logoSeipel { max-height: 76px; }
+.logoFollow { max-height: 60px; }
+.logoHo { max-height: 52px; }
+.logoConnelly { max-height: 44px; }
+.logoMission { max-height: 40px; }
+
+/* ---- Expert help ----------------------------------------------------------------------------------- */
+.helpImage { min-height: 720px; height: 800px; }
+
+/* ---- Statement band & locations ---------------------------------------------------------------------- */
+.statementRide { --band-h: 560px; --band-shade: linear-gradient(90deg, rgba(5, 5, 5, .88) 0%, rgba(5, 5, 5, .4) 60%, rgba(5, 5, 5, .1) 100%); }
+.proLocationCard { --card-footer-pad: 20px; }
+
+/* ---- Responsive ----------------------------------------------------------------------------------------- */
+@media (max-width: 1199.98px) {
+    .helpImage { min-height: 0; height: 560px; }
+}
+@media (max-width: 991.98px) {
+    .logoWall { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .logoWallItem { height: 120px; }
+}
+@media (max-width: 767.98px) {
+    .spanTwo { grid-column: auto; }
+    .statRow { gap: 0 32px; }
+    .helpImage { height: 360px; }
+    .logoWallItem { height: 100px; padding: 0 14px; }
+    .logoWallMore { font-size: 18px; }
+}
