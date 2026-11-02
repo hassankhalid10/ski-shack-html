@@ -212,12 +212,19 @@
                     <h2 id="newsletterHeading" class="regularHeading">Get Boating Tips in Your Inbox</h2>
                     <p class="blackLeadPara">New articles, event invites and new arrivals — straight from The Ski Shack.</p>
                 </div>
-                <form class="subscribeForm" aria-labelledby="newsletterHeading" data-success="Thanks for subscribing! Watch your inbox for boating tips from The Ski Shack.">
+                <form class="subscribeForm gtm_form" aria-labelledby="newsletterHeading" data-success="Thanks for subscribing! Watch your inbox for boating tips from The Ski Shack." action="javascript:void(0)" id="blog_subscribe_form" data-form-id="Blog Subscribe Form">
                     <div class="subscribeField">
                         <label for="blogNewsletterEmail" class="visuallyHidden">Email address</label>
-                        <input id="blogNewsletterEmail" type="email" name="email" placeholder="Your email" autocomplete="email" required>
-                        <button class="blueBtn" type="submit">Subscribe</button>
+                        <input id="blogNewsletterEmail" class="require_check" type="email" name="email" placeholder="Your email" autocomplete="email" aria-required="true">
+                        <input type="text" name="honeypot" id="blog_subscribe_form_honeypot" style="display: none;" autocomplete="off" tabindex="-1">
+                        <div style="opacity: 0; position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -1;">
+                            <label for="blog_subscribe_form_business_url">Business Website</label>
+                            <input type="text" name="business_url" id="blog_subscribe_form_business_url" tabindex="-1" autocomplete="off">
+                        </div>
+                        <!-- {{> partials/utm}} -->
+                        <button id="blog-subscribe-btn" class="blueBtn gtm_form_submit g-recaptcha" type="submit" data-form-id="Blog Subscribe Form" data-sitekey="{{config.googleCaptchaSiteKey}}" data-callback='blog_subscribe_form' data-action='submit'>Subscribe</button>
                     </div>
+                    <div class="field-error" id="error_blogNewsletterEmail"></div>
                 </form>
             </div>
         </section>

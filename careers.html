@@ -52,8 +52,8 @@
                 <h1 id="pg-h" class="xlHeading mw1150">Careers at The Ski Shack</h1>
                 <p class="pageHeroText">Are you a boating enthusiast who wants to work in the industry? Join Southwest Missouri’s destination for boats, service and watersports gear.</p>
                 <div class="pageHeroActions">
-                    <a class="blueBtn" href="#jobs">View Open Positions</a>
-                    <a class="outlineBtn" href="#apply">Apply Now</a>
+                    <a id="careers-view-open-positions-btn" class="blueBtn" href="#jobs">View Open Positions</a>
+                    <a id="careers-apply-now-btn" class="outlineBtn" href="#apply">Apply Now</a>
                 </div>
             </div>
         </section>
@@ -129,7 +129,7 @@
                                 </ul>
                             </div>
                             <div class="row2 alignStart justifyEnd">
-                                <a class="blueBtn" href="#apply" data-position="Marine Technician">Apply for This Role</a>
+                                <a id="careers-apply-for-this-role-btn" class="blueBtn" href="#apply" data-position="Marine Technician">Apply for This Role</a>
                             </div>
                         </div>
                     </details>
@@ -159,7 +159,7 @@
                                 </ul>
                             </div>
                             <div class="row2 alignStart justifyEnd">
-                                <a class="blueBtn" href="#apply" data-position="Boat Sales Consultant">Apply for This Role</a>
+                                <a id="careers-apply-for-this-role-2-btn" class="blueBtn" href="#apply" data-position="Boat Sales Consultant">Apply for This Role</a>
                             </div>
                         </div>
                     </details>
@@ -189,7 +189,7 @@
                                 </ul>
                             </div>
                             <div class="row2 alignStart justifyEnd">
-                                <a class="blueBtn" href="#apply" data-position="Pro Shop Associate">Apply for This Role</a>
+                                <a id="careers-apply-for-this-role-3-btn" class="blueBtn" href="#apply" data-position="Pro Shop Associate">Apply for This Role</a>
                             </div>
                         </div>
                     </details>
@@ -219,7 +219,7 @@
                                 </ul>
                             </div>
                             <div class="row2 alignStart justifyEnd">
-                                <a class="blueBtn" href="#apply" data-position="Service Advisor">Apply for This Role</a>
+                                <a id="careers-apply-for-this-role-4-btn" class="blueBtn" href="#apply" data-position="Service Advisor">Apply for This Role</a>
                             </div>
                         </div>
                     </details>
@@ -236,24 +236,24 @@
                     <p class="grayLeadPara">Tell us a little about yourself and the kind of work you’re interested in. Our team will be in touch.</p>
                     <p class="grayPara fs15">Questions? Call <a class="phoneLink phoneStrong" href="tel:+14178828480">417.882.8480</a></p>
                 </div>
-                <form class="formCard formCardShadow formMain" aria-labelledby="req-h" data-success="Thanks for applying! Our team will review your application and be in touch.">
+                <form class="formCard formCardShadow formMain gtm_form" aria-labelledby="req-h" data-success="Thanks for applying! Our team will review your application and be in touch." action="javascript:void(0)" id="careers_form" data-form-id="Careers Application Form">
                     <fieldset class="formGrid2">
                         <legend class="fieldsetTitle">Your Info</legend>
-                        <label class="fieldLabel">First Name *<input class="fieldInput" type="text" name="firstName" autocomplete="given-name" required></label>
-                        <label class="fieldLabel">Last Name *<input class="fieldInput" type="text" name="lastName" autocomplete="family-name" required></label>
-                        <label class="fieldLabel">Email *<input class="fieldInput" type="email" name="email" autocomplete="email" required></label>
-                        <label class="fieldLabel">Phone<input class="fieldInput" type="tel" name="phone" autocomplete="tel"></label>
-                        <label class="fieldLabel spanAll">Address<input class="fieldInput" type="text" name="address" autocomplete="street-address"></label>
-                        <label class="fieldLabel">City<input class="fieldInput" type="text" name="city" autocomplete="address-level2"></label>
+                        <label class="fieldLabel" for="careers_form_firstname">First Name *<div class="field-error" id="error_careers_form_firstname"></div><input id="careers_form_firstname" class="fieldInput require_check" type="text" name="firstName" autocomplete="given-name" aria-required="true"></label>
+                        <label class="fieldLabel" for="careers_form_lastname">Last Name *<div class="field-error" id="error_careers_form_lastname"></div><input id="careers_form_lastname" class="fieldInput require_check" type="text" name="lastName" autocomplete="family-name" aria-required="true"></label>
+                        <label class="fieldLabel" for="careers_form_email">Email *<div class="field-error" id="error_careers_form_email"></div><input id="careers_form_email" class="fieldInput require_check" type="email" name="email" autocomplete="email" aria-required="true"></label>
+                        <label class="fieldLabel" for="careers_form_phone">Phone<div class="field-error" id="error_careers_form_phone"></div><input id="careers_form_phone" class="fieldInput phoneInput" type="tel" name="phone" autocomplete="tel"></label>
+                        <label class="fieldLabel spanAll" for="careers_form_address">Address<div class="field-error" id="error_careers_form_address"></div><input id="careers_form_address" class="fieldInput" type="text" name="address" autocomplete="street-address"></label>
+                        <label class="fieldLabel" for="careers_form_city">City<div class="field-error" id="error_careers_form_city"></div><input id="careers_form_city" class="fieldInput" type="text" name="city" autocomplete="address-level2"></label>
                         <div class="fieldPair">
-                            <label class="fieldLabel">State<input class="fieldInput" type="text" name="state" autocomplete="address-level1"></label>
-                            <label class="fieldLabel">Zip<input class="fieldInput" type="text" name="zip" autocomplete="postal-code" inputmode="numeric"></label>
+                            <label class="fieldLabel" for="careers_form_state">State<div class="field-error" id="error_careers_form_state"></div><input id="careers_form_state" class="fieldInput" type="text" name="state" autocomplete="address-level1"></label>
+                            <label class="fieldLabel" for="careers_form_zip">Zip<div class="field-error" id="error_careers_form_zip"></div><input id="careers_form_zip" class="fieldInput" type="text" name="zip" autocomplete="postal-code" inputmode="numeric"></label>
                         </div>
                     </fieldset>
                     <fieldset class="formGrid2">
                         <legend class="fieldsetTitle">The Role</legend>
-                        <label class="fieldLabel">Position
-                            <select id="applyPosition" class="fieldInput" name="position">
+                        <label class="fieldLabel" for="careers_form_position">Position
+                            <div class="field-error" id="error_careers_form_position"></div><select id="careers_form_position" id="applyPosition" class="fieldInput" name="position">
                                 <option>General Application</option>
                                 <option>Marine Technician</option>
                                 <option>Boat Sales Consultant</option>
@@ -261,8 +261,8 @@
                                 <option>Service Advisor</option>
                             </select>
                         </label>
-                        <label class="fieldLabel">Preferred Location
-                            <select class="fieldInput" name="location">
+                        <label class="fieldLabel" for="careers_form_location">Preferred Location
+                            <div class="field-error" id="error_careers_form_location"></div><select id="careers_form_location" class="fieldInput" name="location">
                                 <option>Springfield</option>
                                 <option>Indian Point</option>
                                 <option>Mill Creek Service Center</option>
@@ -272,25 +272,31 @@
                         <div class="spanAll stack gap12" role="group" aria-labelledby="interestLabel">
                             <span id="interestLabel" class="fieldLabel">Areas of Interest</span>
                             <div class="pillGroup">
-                                <label class="checkPill"><input type="checkbox" name="interests" value="Sales"> Sales</label>
-                                <label class="checkPill"><input type="checkbox" name="interests" value="Service"> Service</label>
-                                <label class="checkPill"><input type="checkbox" name="interests" value="Parts &amp; Accessories"> Parts &amp; Accessories</label>
-                                <label class="checkPill"><input type="checkbox" name="interests" value="Financing"> Financing</label>
-                                <label class="checkPill"><input type="checkbox" name="interests" value="Administration / Office"> Administration / Office</label>
-                                <label class="checkPill"><input type="checkbox" name="interests" value="Pro Shop &amp; Apparel"> Pro Shop &amp; Apparel</label>
-                                <label class="checkPill"><input type="checkbox" name="interests" value="Other"> Other</label>
+                                <label class="checkPill" for="careers_form_interests_sales"><input id="careers_form_interests_sales" type="checkbox" name="interests" value="Sales"> Sales</label>
+                                <label class="checkPill" for="careers_form_interests_service"><input id="careers_form_interests_service" type="checkbox" name="interests" value="Service"> Service</label>
+                                <label class="checkPill" for="careers_form_interests_parts_and_accessories"><input id="careers_form_interests_parts_and_accessories" type="checkbox" name="interests" value="Parts &amp; Accessories"> Parts &amp; Accessories</label>
+                                <label class="checkPill" for="careers_form_interests_financing"><input id="careers_form_interests_financing" type="checkbox" name="interests" value="Financing"> Financing</label>
+                                <label class="checkPill" for="careers_form_interests_administration_office"><input id="careers_form_interests_administration_office" type="checkbox" name="interests" value="Administration / Office"> Administration / Office</label>
+                                <label class="checkPill" for="careers_form_interests_pro_shop_and_apparel"><input id="careers_form_interests_pro_shop_and_apparel" type="checkbox" name="interests" value="Pro Shop &amp; Apparel"> Pro Shop &amp; Apparel</label>
+                                <label class="checkPill" for="careers_form_interests_other"><input id="careers_form_interests_other" type="checkbox" name="interests" value="Other"> Other</label>
                             </div>
                         </div>
-                        <label class="fieldLabel spanAll">Tell Us About Yourself<textarea class="fieldInput textareaMd" name="about" rows="5"></textarea></label>
-                        <label class="uploadBox spanAll">
-                            <input class="visuallyHidden" type="file" name="resume" accept=".pdf,.doc,.docx">
+                        <label class="fieldLabel spanAll" for="careers_form_about">Tell Us About Yourself<div class="field-error" id="error_careers_form_about"></div><textarea id="careers_form_about" class="fieldInput textareaMd" name="about" rows="5"></textarea></label>
+                        <label class="uploadBox spanAll" for="careers_form_resume">
+                            <input id="careers_form_resume" class="visuallyHidden" type="file" name="resume" accept=".pdf,.doc,.docx">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 16V4M6 10l6-6 6 6M4 20h16"></path></svg>
                             <span class="uploadBoxText">Upload Résumé (PDF or Word, optional)</span>
                         </label>
                     </fieldset>
+                    <input type="text" name="honeypot" id="careers_form_honeypot" style="display: none;" autocomplete="off" tabindex="-1">
+                    <div style="opacity: 0; position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -1;">
+                        <label for="careers_form_business_url">Business Website</label>
+                        <input type="text" name="business_url" id="careers_form_business_url" tabindex="-1" autocomplete="off">
+                    </div>
+                    <!-- {{> partials/utm}} -->
                     <div class="formFooter">
                         <p class="formNote">By submitting, you agree to be contacted by The Ski Shack about employment opportunities. <a href="#">[Privacy policy link]</a></p>
-                        <button class="blueBtn" type="submit">Submit Application</button>
+                        <button id="careers-submit-application-btn" class="blueBtn gtm_form_submit g-recaptcha" type="submit" data-form-id="Careers Application Form" data-sitekey="{{config.googleCaptchaSiteKey}}" data-callback='careers_form' data-action='submit'>Submit Application</button>
                     </div>
                 </form>
             </div>

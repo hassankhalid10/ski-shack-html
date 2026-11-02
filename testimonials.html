@@ -52,7 +52,7 @@
                 <h1 id="pg-h" class="xlHeading mw1150">What Our Customers Say</h1>
                 <p class="pageHeroText">From first-time buyers to lifelong riders, here’s what boaters across Missouri and beyond say about The Ski Shack.</p>
                 <div class="pageHeroActions">
-                    <a class="blueBtn" href="#review">Share Your Experience</a>
+                    <a id="testimonials-share-your-experience-btn" class="blueBtn" href="#review">Share Your Experience</a>
                 </div>
             </div>
         </section>
@@ -123,7 +123,7 @@
                         <figcaption class="reviewAuthor"><strong class="fs16">Miriah Fowler</strong></figcaption>
                     </figure>
                 </div>
-                <a class="outlineBtn selfCenter" href="#">Load More Reviews</a>
+                <a id="testimonials-load-more-reviews-btn" class="outlineBtn selfCenter" href="#">Load More Reviews</a>
             </div>
         </section>
 
@@ -134,17 +134,17 @@
                     <p class="eyebrowText eyebrowBlue">Share Your Experience</p>
                     <h2 id="req-h" class="mediumHeading">Leave a Review</h2>
                     <p class="grayLeadPara">Had a great day on the water thanks to our team? We’d love to hear about it. You can also leave us a review on Google.</p>
-                    <a class="blueBtn selfStart" href="#">Review Us on Google</a>
+                    <a id="testimonials-review-us-on-google-btn" class="blueBtn selfStart" href="#">Review Us on Google</a>
                 </div>
-                <form class="formCard formCardShadow formMain" aria-labelledby="req-h" data-success="Thanks for sharing your experience! Your review has been sent to The Ski Shack team.">
+                <form class="formCard formCardShadow formMain gtm_form" aria-labelledby="req-h" data-success="Thanks for sharing your experience! Your review has been sent to The Ski Shack team." action="javascript:void(0)" id="testimonials_form" data-form-id="Testimonial Review Form">
                     <fieldset class="formGrid2">
                         <legend class="fieldsetTitle">Your Review</legend>
-                        <label class="fieldLabel">First Name<input class="fieldInput" type="text" name="firstName" autocomplete="given-name"></label>
-                        <label class="fieldLabel">Last Name<input class="fieldInput" type="text" name="lastName" autocomplete="family-name"></label>
-                        <label class="fieldLabel">City, State<input class="fieldInput" type="text" name="cityState"></label>
-                        <label class="fieldLabel">Email<input class="fieldInput" type="email" name="email" autocomplete="email"></label>
-                        <label class="fieldLabel">What was your experience with?
-                            <select class="fieldInput" name="experience">
+                        <label class="fieldLabel" for="testimonials_form_firstname">First Name<div class="field-error" id="error_testimonials_form_firstname"></div><input id="testimonials_form_firstname" class="fieldInput" type="text" name="firstName" autocomplete="given-name"></label>
+                        <label class="fieldLabel" for="testimonials_form_lastname">Last Name<div class="field-error" id="error_testimonials_form_lastname"></div><input id="testimonials_form_lastname" class="fieldInput" type="text" name="lastName" autocomplete="family-name"></label>
+                        <label class="fieldLabel" for="testimonials_form_citystate">City, State<div class="field-error" id="error_testimonials_form_citystate"></div><input id="testimonials_form_citystate" class="fieldInput" type="text" name="cityState"></label>
+                        <label class="fieldLabel" for="testimonials_form_email">Email<div class="field-error" id="error_testimonials_form_email"></div><input id="testimonials_form_email" class="fieldInput" type="email" name="email" autocomplete="email"></label>
+                        <label class="fieldLabel" for="testimonials_form_experience">What was your experience with?
+                            <div class="field-error" id="error_testimonials_form_experience"></div><select id="testimonials_form_experience" class="fieldInput" name="experience">
                                 <option>Boat Sales</option>
                                 <option>Service</option>
                                 <option>Pro Shop</option>
@@ -152,8 +152,8 @@
                                 <option>Brokerage</option>
                             </select>
                         </label>
-                        <label class="fieldLabel">Rating
-                            <select class="fieldInput" name="rating">
+                        <label class="fieldLabel" for="testimonials_form_rating">Rating
+                            <div class="field-error" id="error_testimonials_form_rating"></div><select id="testimonials_form_rating" class="fieldInput" name="rating">
                                 <option>★★★★★ 5 stars</option>
                                 <option>★★★★ 4 stars</option>
                                 <option>★★★ 3 stars</option>
@@ -161,11 +161,17 @@
                                 <option>★ 1 star</option>
                             </select>
                         </label>
-                        <label class="fieldLabel spanAll">Your Review<textarea class="fieldInput textareaLg" name="review" rows="5"></textarea></label>
+                        <label class="fieldLabel spanAll" for="testimonials_form_review">Your Review<div class="field-error" id="error_testimonials_form_review"></div><textarea id="testimonials_form_review" class="fieldInput textareaLg" name="review" rows="5"></textarea></label>
                     </fieldset>
+                    <input type="text" name="honeypot" id="testimonials_form_honeypot" style="display: none;" autocomplete="off" tabindex="-1">
+                    <div style="opacity: 0; position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -1;">
+                        <label for="testimonials_form_business_url">Business Website</label>
+                        <input type="text" name="business_url" id="testimonials_form_business_url" tabindex="-1" autocomplete="off">
+                    </div>
+                    <!-- {{> partials/utm}} -->
                     <div class="formFooter">
                         <p class="formNote">Reviews may be featured on our website. <a href="#">[Privacy policy link]</a></p>
-                        <button class="blueBtn" type="submit">Submit Review</button>
+                        <button id="testimonials-submit-review-btn" class="blueBtn gtm_form_submit g-recaptcha" type="submit" data-form-id="Testimonial Review Form" data-sitekey="{{config.googleCaptchaSiteKey}}" data-callback='testimonials_form' data-action='submit'>Submit Review</button>
                     </div>
                 </form>
             </div>

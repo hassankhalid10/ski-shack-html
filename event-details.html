@@ -55,8 +55,8 @@
                         <h1 id="eventHeading" class="xlHeading mw1100">[Event] Model Year Showcase</h1>
                         <p class="pageHeroText textDark">Be the first to see the newest Malibu and Axis wake boats at our Springfield showroom — with factory reps, showroom-only offers and lunch on us.</p>
                         <div class="pageHeroActions">
-                            <a class="blueBtn" href="#rsvp">RSVP Now</a>
-                            <a class="outlineDarkBtn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Model+Year+Showcase+at+The+Ski+Shack&amp;dates=20261108T100000/20261108T160000&amp;ctz=America/Chicago&amp;location=5539+S.+Campbell,+Springfield,+MO+65810" target="_blank" rel="noopener">Add to Calendar</a>
+                            <a id="event-details-rsvp-now-btn" class="blueBtn" href="#rsvp">RSVP Now</a>
+                            <a id="event-details-add-to-calendar-btn" class="outlineDarkBtn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Model+Year+Showcase+at+The+Ski+Shack&amp;dates=20261108T100000/20261108T160000&amp;ctz=America/Chicago&amp;location=5539+S.+Campbell,+Springfield,+MO+65810" target="_blank" rel="noopener">Add to Calendar</a>
                         </div>
                     </div>
                     <dl class="eventFacts">
@@ -149,7 +149,7 @@
                         <span class="zoomBadge" aria-hidden="true"><span class="ico icoZoom"></span></span>
                     </a>
                 </div>
-                <button class="darkBtn selfCenter" type="button" data-gallery-open="eventPhotos">View All Photos (24) <span class="ico icoArrow" aria-hidden="true"></span></button>
+                <button id="event-details-view-all-photos-24-btn" class="darkBtn selfCenter" type="button" data-gallery-open="eventPhotos">View All Photos (24) <span class="ico icoArrow" aria-hidden="true"></span></button>
             </div>
         </section>
 
@@ -162,15 +162,15 @@
                     <p class="blackLeadPara">Let us know you’re coming and how many guests to expect. Want one-on-one time with a specific boat? Note it below and we’ll have it ready.</p>
                     <p class="blackPara fs15">Questions? Call <a class="phoneLink phoneLinkBlack phoneStrong" href="tel:+14178828480">417.882.8480</a></p>
                 </div>
-                <form class="formCard formCardShadow formMain" aria-labelledby="rsvpHeading" data-success="Thanks for your RSVP! We’ll see you at the Model Year Showcase.">
+                <form class="formCard formCardShadow formMain gtm_form" aria-labelledby="rsvpHeading" data-success="Thanks for your RSVP! We’ll see you at the Model Year Showcase." action="javascript:void(0)" id="event_details_form" data-form-id="Event RSVP Form">
                     <fieldset class="formGrid2">
                         <legend class="fieldsetTitle">Your Info</legend>
-                        <label class="fieldLabel">First Name<input class="fieldInput" type="text" name="firstName" autocomplete="given-name" required></label>
-                        <label class="fieldLabel">Last Name<input class="fieldInput" type="text" name="lastName" autocomplete="family-name" required></label>
-                        <label class="fieldLabel">Phone<input class="fieldInput" type="tel" name="phone" autocomplete="tel"></label>
-                        <label class="fieldLabel">Email<input class="fieldInput" type="email" name="email" autocomplete="email" required></label>
-                        <label class="fieldLabel">Number of Guests
-                            <select class="fieldInput" name="guests">
+                        <label class="fieldLabel" for="event_details_form_firstname">First Name<div class="field-error" id="error_event_details_form_firstname"></div><input id="event_details_form_firstname" class="fieldInput require_check" type="text" name="firstName" autocomplete="given-name" aria-required="true"></label>
+                        <label class="fieldLabel" for="event_details_form_lastname">Last Name<div class="field-error" id="error_event_details_form_lastname"></div><input id="event_details_form_lastname" class="fieldInput require_check" type="text" name="lastName" autocomplete="family-name" aria-required="true"></label>
+                        <label class="fieldLabel" for="event_details_form_phone">Phone<div class="field-error" id="error_event_details_form_phone"></div><input id="event_details_form_phone" class="fieldInput phoneInput" type="tel" name="phone" autocomplete="tel"></label>
+                        <label class="fieldLabel" for="event_details_form_email">Email<div class="field-error" id="error_event_details_form_email"></div><input id="event_details_form_email" class="fieldInput require_check" type="email" name="email" autocomplete="email" aria-required="true"></label>
+                        <label class="fieldLabel" for="event_details_form_guests">Number of Guests
+                            <div class="field-error" id="error_event_details_form_guests"></div><select id="event_details_form_guests" class="fieldInput" name="guests">
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -178,12 +178,18 @@
                                 <option>5+</option>
                             </select>
                         </label>
-                        <label class="fieldLabel">Boats You’re Interested In<input class="fieldInput" type="text" name="boatsOfInterest" placeholder="e.g. Malibu 23 LSV"></label>
-                        <label class="checkPill spanAll selfStart"><input type="checkbox" name="tradeInAppraisal"> I’d like a trade-in appraisal at the event</label>
+                        <label class="fieldLabel" for="event_details_form_boatsofinterest">Boats You’re Interested In<div class="field-error" id="error_event_details_form_boatsofinterest"></div><input id="event_details_form_boatsofinterest" class="fieldInput" type="text" name="boatsOfInterest" placeholder="e.g. Malibu 23 LSV"></label>
+                        <label class="checkPill spanAll selfStart" for="event_details_form_tradeinappraisal"><input id="event_details_form_tradeinappraisal" type="checkbox" name="tradeInAppraisal"> I’d like a trade-in appraisal at the event</label>
                     </fieldset>
+                    <input type="text" name="honeypot" id="event_details_form_honeypot" style="display: none;" autocomplete="off" tabindex="-1">
+                    <div style="opacity: 0; position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -1;">
+                        <label for="event_details_form_business_url">Business Website</label>
+                        <input type="text" name="business_url" id="event_details_form_business_url" tabindex="-1" autocomplete="off">
+                    </div>
+                    <!-- {{> partials/utm}} -->
                     <div class="formFooter">
                         <p class="formNote">By submitting, you agree to be contacted by The Ski Shack about this event. [Privacy policy link]</p>
-                        <button class="blueBtn" type="submit">RSVP Now</button>
+                        <button id="event-details-rsvp-now-2-btn" class="blueBtn gtm_form_submit g-recaptcha" type="submit" data-form-id="Event RSVP Form" data-sitekey="{{config.googleCaptchaSiteKey}}" data-callback='event_details_form' data-action='submit'>RSVP Now</button>
                     </div>
                 </form>
             </div>

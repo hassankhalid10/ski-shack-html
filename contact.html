@@ -52,8 +52,8 @@
                 <h1 id="pg-h" class="xlHeading mw820">Get in Touch With The Ski Shack</h1>
                 <p class="pageHeroText">Questions about a boat, service, financing or Pro Shop gear? Send us a message or call the location nearest you.</p>
                 <div class="pageHeroActions">
-                    <a class="blueBtn" href="#contact-form">Send a Message</a>
-                    <a class="outlineBtn" href="tel:+14178828480">Call 417.882.8480</a>
+                    <a id="contact-send-a-message-btn" class="blueBtn" href="#contact-form">Send a Message</a>
+                    <a id="contact-call-417-882-8480-btn" class="outlineBtn" href="tel:+14178828480">Call 417.882.8480</a>
                 </div>
             </div>
         </section>
@@ -80,30 +80,30 @@
                         </div>
                     </div>
                 </div>
-                <form class="formCard formCardShadow formMain" aria-labelledby="req-h">
+                <form class="formCard formCardShadow formMain gtm_form" aria-labelledby="req-h" action="javascript:void(0)" id="contact_form" data-form-id="Contact Us Form">
                     <fieldset class="formGrid2">
                         <legend class="fieldsetTitle">Your Info</legend>
-                        <label class="fieldLabel">First Name *<input class="fieldInput" type="text" name="firstName" autocomplete="given-name" required></label>
-                        <label class="fieldLabel">Last Name *<input class="fieldInput" type="text" name="lastName" autocomplete="family-name" required></label>
-                        <label class="fieldLabel">Email *<input class="fieldInput" type="email" name="email" autocomplete="email" required></label>
-                        <label class="fieldLabel">Phone<input class="fieldInput" type="tel" name="phone" autocomplete="tel"></label>
-                        <label class="fieldLabel">City<input class="fieldInput" type="text" name="city" autocomplete="address-level2"></label>
+                        <label class="fieldLabel" for="contact_form_firstname">First Name *<div class="field-error" id="error_contact_form_firstname"></div><input id="contact_form_firstname" class="fieldInput require_check" type="text" name="firstName" autocomplete="given-name" aria-required="true"></label>
+                        <label class="fieldLabel" for="contact_form_lastname">Last Name *<div class="field-error" id="error_contact_form_lastname"></div><input id="contact_form_lastname" class="fieldInput require_check" type="text" name="lastName" autocomplete="family-name" aria-required="true"></label>
+                        <label class="fieldLabel" for="contact_form_email">Email *<div class="field-error" id="error_contact_form_email"></div><input id="contact_form_email" class="fieldInput require_check" type="email" name="email" autocomplete="email" aria-required="true"></label>
+                        <label class="fieldLabel" for="contact_form_phone">Phone<div class="field-error" id="error_contact_form_phone"></div><input id="contact_form_phone" class="fieldInput phoneInput" type="tel" name="phone" autocomplete="tel"></label>
+                        <label class="fieldLabel" for="contact_form_city">City<div class="field-error" id="error_contact_form_city"></div><input id="contact_form_city" class="fieldInput" type="text" name="city" autocomplete="address-level2"></label>
                         <div class="fieldPair">
-                            <label class="fieldLabel">State<input class="fieldInput" type="text" name="state" autocomplete="address-level1"></label>
-                            <label class="fieldLabel">Zip<input class="fieldInput" type="text" name="zip" autocomplete="postal-code" inputmode="numeric"></label>
+                            <label class="fieldLabel" for="contact_form_state">State<div class="field-error" id="error_contact_form_state"></div><input id="contact_form_state" class="fieldInput" type="text" name="state" autocomplete="address-level1"></label>
+                            <label class="fieldLabel" for="contact_form_zip">Zip<div class="field-error" id="error_contact_form_zip"></div><input id="contact_form_zip" class="fieldInput" type="text" name="zip" autocomplete="postal-code" inputmode="numeric"></label>
                         </div>
                     </fieldset>
                     <fieldset class="formGrid2">
                         <legend class="fieldsetTitle">Your Message</legend>
-                        <label class="fieldLabel">Location
-                            <select class="fieldInput" name="location">
+                        <label class="fieldLabel" for="contact_form_location">Location
+                            <div class="field-error" id="error_contact_form_location"></div><select id="contact_form_location" class="fieldInput" name="location">
                                 <option>Springfield</option>
                                 <option>Indian Point</option>
                                 <option>Mill Creek Service Center</option>
                             </select>
                         </label>
-                        <label class="fieldLabel">Department
-                            <select class="fieldInput" name="department">
+                        <label class="fieldLabel" for="contact_form_department">Department
+                            <div class="field-error" id="error_contact_form_department"></div><select id="contact_form_department" class="fieldInput" name="department">
                                 <option>Sales</option>
                                 <option>Service</option>
                                 <option>Parts</option>
@@ -113,11 +113,17 @@
                                 <option>General Question</option>
                             </select>
                         </label>
-                        <label class="fieldLabel spanAll">Comments / Questions<textarea class="fieldInput textareaLg" name="comments" rows="5"></textarea></label>
+                        <label class="fieldLabel spanAll" for="contact_form_comments">Comments / Questions<div class="field-error" id="error_contact_form_comments"></div><textarea id="contact_form_comments" class="fieldInput textareaLg" name="comments" rows="5"></textarea></label>
                     </fieldset>
+                    <input type="text" name="honeypot" id="contact_form_honeypot" style="display: none;" autocomplete="off" tabindex="-1">
+                    <div style="opacity: 0; position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -1;">
+                        <label for="contact_form_business_url">Business Website</label>
+                        <input type="text" name="business_url" id="contact_form_business_url" tabindex="-1" autocomplete="off">
+                    </div>
+                    <!-- {{> partials/utm}} -->
                     <div class="formFooter">
                         <p class="formNote">By submitting, you agree to be contacted by The Ski Shack. <a href="#">[Privacy policy link]</a></p>
-                        <button class="blueBtn" type="submit">Send Message</button>
+                        <button id="contact-send-message-btn" class="blueBtn gtm_form_submit g-recaptcha" type="submit" data-form-id="Contact Us Form" data-sitekey="{{config.googleCaptchaSiteKey}}" data-callback='contact_form' data-action='submit'>Send Message</button>
                     </div>
                 </form>
             </div>
