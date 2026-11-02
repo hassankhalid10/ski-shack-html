@@ -467,7 +467,7 @@ a.navItem { color: var(--white); }
 .navItem:focus { outline: none; }
 .navItem:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
 .navItem .ico, .callBtn .callChevron { transition: transform .2s; }
-.navItem.isOpen .ico, .callBtn.isOpen .callChevron { transform: rotate(180deg); }
+.navItem.isOpen .ico, .navItem.isActive .ico, .callBtn.isOpen .callChevron { transform: rotate(180deg); }
 
 .headerActions { display: flex; align-items: center; justify-self: end; gap: 14px; }
 .callBtn { min-height: 48px; padding: 0 22px; }

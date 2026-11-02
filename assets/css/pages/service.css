@@ -1,0 +1,104 @@
+/* ==========================================================================
+   SERVICE PAGES
+   service-center · mobile-service · winterization · warranty-service ·
+   engine-repair · detailing
+
+   One template shared by all six pages:
+     hero (pageHero) → services grid (serviceTile) → process (stepList) →
+     request form (#request) → FAQ (faqItem) → other services (relatedLink)
+   Service Center adds the factory-certified band and the boat-services list.
+   ========================================================================== */
+
+/* ---- Layout helpers --------------------------------------------------------- */
+/* Wider sibling of the global .splitCol (flex: 1 1 560px) */
+.splitColWide { flex: 1 1 640px; min-width: 0; }
+.mw800 { max-width: 800px; }
+
+/* ---- Services grid intro: title left, lead right ----------------------------- */
+.serviceIntroLead { flex: 0 1 560px; }
+
+/* ---- Factory certified (Service Center) ---------------------------------------- */
+.certList { margin: 0; padding: 0; list-style: none; }
+.certChip {
+    display: inline-flex;
+    align-items: center;
+    min-height: 46px;
+    padding: 0 20px;
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, .22);
+}
+.certImage { align-self: stretch; min-height: 640px; }
+
+/* Teal info blocks: service hours + call-out */
+.serviceInfoBlock { display: flex; flex-direction: column; gap: 10px; padding: 32px; }
+.serviceInfoBlock + .serviceInfoBlock { border-left: 2px solid var(--black); }
+.serviceInfoBlock .smallLabel { color: var(--gray); }
+.serviceInfoCallout .smallLabel { color: rgba(5, 5, 5, .7); }
+.serviceInfoCallout .blackPara { color: rgba(5, 5, 5, .85); }
+.serviceInfoCallout .phoneLink { color: var(--black); text-decoration: underline; }
+.serviceInfoCallout .phoneLink:hover { color: var(--white); }
+
+/* ---- Boat services checklist (Service Center) ------------------------------------ */
+.boatServicesIntro { flex: 0 1 460px; min-width: 0; }
+.boatServiceGrid {
+    display: grid;
+    flex: 1 1 760px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid rgba(255, 255, 255, .18);
+    border-left: 1px solid rgba(255, 255, 255, .18);
+}
+.boatServiceItem {
+    align-items: flex-start;
+    padding: 22px 24px;
+    font-size: 16px;
+    background: var(--black);
+    border-right: 1px solid rgba(255, 255, 255, .18);
+    border-bottom-color: rgba(255, 255, 255, .18);
+}
+.boatServiceItem .ico { margin-top: 3px; }
+
+/* ---- Process ------------------------------------------------------------------------ */
+.processImage { min-height: 560px; }
+
+/* ---- Request form ------------------------------------------------------------------- */
+.requestIntro { flex: 1 1 420px; max-width: 520px; position: sticky; top: 144px; }
+.requestForm { flex: 999 1 680px; min-width: 0; }
+
+/* ---- FAQ ------------------------------------------------------------------------------ */
+.faqIntro { flex: 1 1 360px; max-width: 480px; }
+.faqColumn { flex: 999 1 640px; min-width: 0; }
+
+/* Phone numbers inside running copy (FAQ answers) */
+.inlinePhone { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.inlinePhone:hover { color: var(--blue); text-decoration: underline; }
+
+/* ---- Responsive ------------------------------------------------------------------------- */
+@media (max-width: 1399.98px) {
+    /* keep the sticky intro beside the form down to 1200px */
+    .requestForm { flex-basis: 600px; }
+}
+@media (max-width: 1199.98px) {
+    .requestIntro { position: static; flex-basis: 100%; max-width: 720px; }
+}
+@media (max-width: 991.98px) {
+    .boatServiceGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .certImage { min-height: 460px; }
+    .processImage { min-height: 420px; }
+}
+@media (max-width: 767.98px) {
+    .boatServiceGrid { grid-template-columns: minmax(0, 1fr); }
+    .boatServiceItem { padding: 18px 20px; }
+    .certChip { min-height: 40px; padding: 0 14px; font-size: 13px; }
+    .serviceInfoBlock { padding: 24px; }
+    .serviceInfoBlock + .serviceInfoBlock { border-left: 0; border-top: 2px solid var(--black); }
+    .certImage { min-height: 300px; }
+    .processImage { min-height: 280px; }
+}
