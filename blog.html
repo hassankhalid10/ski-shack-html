@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Buying guides, ownership tips and lake-life stories from The Ski Shack team to help you get more out of every day on the water.">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <!-- owl carousel css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- fancy box css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
+    <!-- fontawesome icons cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap">
+    <!-- style sheet -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/pages/company-light.css">
+    <title>Boating Blog | The Ski Shack</title>
+</head>
+
+<body class="blogPage" data-nav="company">
+
+    <header id="siteHeader" class="siteHeader"></header>
+
+    <main class="bgWhite">
+        <!-- ================= PAGE TITLE ================= -->
+        <section class="borderBottomLight" aria-labelledby="blogHeading">
+            <div class="siteContainer pt24 pb56 stack gap28">
+                <nav aria-label="Breadcrumb">
+                    <ol class="breadcrumbList breadcrumbDark">
+                        <li><a href="home.html">Home</a></li>
+                        <li aria-hidden="true">/</li>
+                        <li><a href="about-us.html">Company</a></li>
+                        <li aria-hidden="true">/</li>
+                        <li aria-current="page">Boating Blog</li>
+                    </ol>
+                </nav>
+                <div class="splitHead gap40">
+                    <div class="stack gap20 headMain pt24">
+                        <p class="eyebrowText eyebrowGray">Tips &amp; Guides</p>
+                        <h1 id="blogHeading" class="largeHeading mw720">The Ski Shack Boating Blog</h1>
+                    </div>
+                    <p class="blackLeadPara pageIntroText">Buying guides, ownership tips and lake-life stories from the Ski Shack team to help you get more out of every day on the water.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CATEGORIES & SEARCH ================= -->
+        <section class="bgWhite borderBottomLight stickyBar" aria-label="Blog categories">
+            <div class="siteContainer pt28 pb28 cluster gap10">
+                <button class="filterChip filterChipLight isActive" type="button" data-filter="all" aria-pressed="true">All</button>
+                <button class="filterChip filterChipLight" type="button" data-filter="buying-guide" aria-pressed="false">Buying Guide</button>
+                <button class="filterChip filterChipLight" type="button" data-filter="lifestyle" aria-pressed="false">Lifestyle</button>
+                <button class="filterChip filterChipLight" type="button" data-filter="ownership-tips" aria-pressed="false">Ownership Tips</button>
+                <button class="filterChip filterChipLight" type="button" data-filter="safety" aria-pressed="false">Safety</button>
+                <button class="filterChip filterChipLight" type="button" data-filter="seasonal" aria-pressed="false">Seasonal</button>
+                <button class="filterChip filterChipLight" type="button" data-filter="geographic" aria-pressed="false">Geographic</button>
+                <label class="searchBox">
+                    <span class="ico ico18 icoSearch" aria-hidden="true"></span>
+                    <input id="articleSearch" type="search" placeholder="Search articles" aria-label="Search articles" aria-controls="articleGrid">
+                </label>
+            </div>
+        </section>
+
+        <!-- ================= LATEST ARTICLE ================= -->
+        <section aria-labelledby="featuredHeading">
+            <div class="siteContainer pt100 pb40">
+                <a class="lightCard featureCard" href="blog-post.html">
+                    <span class="mediaFrame mediaFrameLight featureCardImage"><img class="coverImg" src="./assets/images/common/wakeboarder-behind-axis.jpg" alt="Wakeboarder riding behind a wake boat"></span>
+                    <span class="featureCardBody">
+                        <span class="eyebrowText eyebrowGray">Latest Article</span>
+                        <span class="cardMeta"><span>Lifestyle</span><time class="cardMetaDate" datetime="2023-05-15">May 15, 2023</time></span>
+                        <h2 id="featuredHeading" class="mediumHeading">Wakeboarding FAQs</h2>
+                        <span class="blackLeadPara">Answers to common questions about what wakeboarding involves and the gear you need to get started.</span>
+                        <span class="cluster featureCardActions"><span class="blueBtn">Read Article</span></span>
+                    </span>
+                </a>
+            </div>
+        </section>
+
+        <!-- ================= ALL ARTICLES ================= -->
+        <section aria-labelledby="allArticlesHeading">
+            <div class="siteContainer pt80 pb120 stack gap48">
+                <h2 id="allArticlesHeading" class="xsHeading">All Articles</h2>
+                <div id="articleGrid" class="grid3 gap16">
+                    <a class="lightCard" href="blog-post.html" data-category="buying-guide">
+                        <span class="mediaFrame mediaFrameLight ratio1610"><img class="coverImg" src="./assets/images/common/malibu-wakesetter-23-lsv.jpg" alt="New Malibu wake boat cruising on a sunlit lake"></span>
+                        <span class="cardBody">
+                            <span class="cardMeta"><span>Buying Guide</span><time class="cardMetaDate" datetime="2023-04-18">Apr 18, 2023</time></span>
+                            <h3 class="titleMd lh108">Questions to Ask a Boat Dealership</h3>
+                            <span class="blackPara fs15">What first-time buyers should ask about boat type, budget and the buying process.</span>
+                            <span class="textLink textLinkDark cardFooterLink">Read Article <span class="ico icoArrow" aria-hidden="true"></span></span>
+                        </span>
+                    </a>
+                    <a class="lightCard" href="blog-post.html" data-category="lifestyle">
+                        <span class="mediaFrame mediaFrameLight ratio1610"><img class="coverImg" src="./assets/images/common/wake-boat-pulling-surfers.jpg" alt="Wake boat pulling two surfers on the lake"></span>
+                        <span class="cardBody">
+                            <span class="cardMeta"><span>Lifestyle</span><time class="cardMetaDate" datetime="2023-04-17">Apr 17, 2023</time></span>
+                            <h3 class="titleMd lh108">Wakeboarding vs. Wakesurfing: What Are the Differences?</h3>
+                            <span class="blackPara fs15">Boards, ropes and technique — how these two lake sports compare.</span>
+                            <span class="textLink textLinkDark cardFooterLink">Read Article <span class="ico icoArrow" aria-hidden="true"></span></span>
+                        </span>
+                    </a>
+                    <a class="lightCard" href="blog-post.html" data-category="buying-guide">
+                        <span class="mediaFrame mediaFrameLight ratio1610"><img class="coverImg" src="./assets/images/common/chris-craft-runabout.jpg" alt="Chris-Craft bowrider cruising on open water"></span>
+                        <span class="cardBody">
+                            <span class="cardMeta"><span>Buying Guide</span><time class="cardMetaDate" datetime="2023-03-21">Mar 21, 2023</time></span>
+                            <h3 class="titleMd lh108">Reasons to Buy a Bowrider Boat</h3>
+                            <span class="blackPara fs15">Why a bowrider’s seating layout makes it a great all-around family boat.</span>
+                            <span class="textLink textLinkDark cardFooterLink">Read Article <span class="ico icoArrow" aria-hidden="true"></span></span>
+                        </span>
+                    </a>
+                    <a class="lightCard" href="blog-post.html" data-category="buying-guide">
+                        <span class="mediaFrame mediaFrameLight ratio1610"><img class="coverImg" src="./assets/images/common/revel-pontoon-on-lake.jpg" alt="Revel pontoon boat on the lake"></span>
+                        <span class="cardBody">
+                            <span class="cardMeta"><span>Buying Guide</span><time class="cardMetaDate" datetime="2023-02-01">Feb 1, 2023</time></span>
+                            <h3 class="titleMd lh108">Should You Buy an Aluminum Boat or a Fiberglass Boat?</h3>
+                            <span class="blackPara fs15">Comparing aluminum and fiberglass to help you choose the right hull.</span>
+                            <span class="textLink textLinkDark cardFooterLink">Read Article <span class="ico icoArrow" aria-hidden="true"></span></span>
+                        </span>
+                    </a>
+                    <a class="lightCard" href="blog-post.html" data-category="ownership-tips">
+                        <span class="mediaFrame mediaFrameLight ratio1610"><img class="coverImg" src="./assets/images/common/pontoon-outboard-engine.jpg" alt="Outboard engine on the stern of a boat under way"></span>
+                        <span class="cardBody">
+                            <span class="cardMeta"><span>Ownership Tips</span><time class="cardMetaDate" datetime="2023-01-27">Jan 27, 2023</time></span>
+                            <h3 class="titleMd lh108">Tips to Improve Your Boat’s Fuel Economy</h3>
+                            <span class="blackPara fs15">Simple ways to cut one of boating’s biggest expenses.</span>
+                            <span class="textLink textLinkDark cardFooterLink">Read Article <span class="ico icoArrow" aria-hidden="true"></span></span>
+                        </span>
+                    </a>
+                    <a class="lightCard" href="blog-post.html" data-category="lifestyle">
+                        <span class="mediaFrame mediaFrameLight ratio1610"><img class="coverImg" src="./assets/images/common/friends-aboard-wake-boat.jpg" alt="Friends relaxing aboard a wake boat"></span>
+                        <span class="cardBody">
+                            <span class="cardMeta"><span>Lifestyle</span><time class="cardMetaDate" datetime="2022-12-05">Dec 5, 2022</time></span>
+                            <h3 class="titleMd lh108">Your Guide to Boating with Kids</h3>
+                            <span class="blackPara fs15">How to make a day on the water fun and safe for the whole family.</span>
+                            <span class="textLink textLinkDark cardFooterLink">Read Article <span class="ico icoArrow" aria-hidden="true"></span></span>
+                        </span>
+                    </a>
+                    <a class="lightCard" href="blog-post.html" data-category="lifestyle">
+                        <span class="mediaFrame mediaFrameLight ratio1610"><img class="coverImg" src="./assets/images/common/wake-foil-rider.jpg" alt="Rider on a wake foil board"></span>
+                        <span class="cardBody">
+                            <span class="cardMeta"><span>Lifestyle</span><time class="cardMetaDate" datetime="2022-10-31">Oct 31, 2022</time></span>
+                            <h3 class="titleMd lh108">Tips to Get in Shape Before Wakeboarding Season</h3>
+                            <span class="blackPara fs15">Prep your body now so you’re ready to ride when the water warms up.</span>
+                            <span class="textLink textLinkDark cardFooterLink">Read Article <span class="ico icoArrow" aria-hidden="true"></span></span>
+                        </span>
+                    </a>
+                    <a class="lightCard" href="blog-post.html" data-category="ownership-tips">
+                        <span class="mediaFrame mediaFrameLight ratio1610"><img class="coverImg" src="./assets/images/common/revel-pontoon-at-dock.jpg" alt="Pontoon boat moored at a lakeside dock"></span>
+                        <span class="cardBody">
+                            <span class="cardMeta"><span>Ownership Tips</span><time class="cardMetaDate" datetime="2022-09-21">Sep 21, 2022</time></span>
+                            <h3 class="titleMd lh108">Basic Boat Knots for Beginners</h3>
+                            <span class="blackPara fs15">The essential knots every boater should know.</span>
+                            <span class="textLink textLinkDark cardFooterLink">Read Article <span class="ico icoArrow" aria-hidden="true"></span></span>
+                        </span>
+                    </a>
+                    <a class="lightCard" href="blog-post.html" data-category="ownership-tips">
+                        <span class="mediaFrame mediaFrameLight ratio1610"><img class="coverImg" src="./assets/images/common/swim-platform-tow-gear.jpg" alt="Friends relaxing on the swim platform of a wake boat"></span>
+                        <span class="cardBody">
+                            <span class="cardMeta"><span>Ownership Tips</span><time class="cardMetaDate" datetime="2022-08-26">Aug 26, 2022</time></span>
+                            <h3 class="titleMd lh108">Your Guide to Docking a Boat</h3>
+                            <span class="blackPara fs15">Step-by-step advice for docking smoothly every time.</span>
+                            <span class="textLink textLinkDark cardFooterLink">Read Article <span class="ico icoArrow" aria-hidden="true"></span></span>
+                        </span>
+                    </a>
+                    <a class="lightCard" href="blog-post.html" data-category="geographic">
+                        <span class="mediaFrame mediaFrameLight ratio1610"><img class="coverImg" src="./assets/images/common/malibu-family-aboard.jpg" alt="Family aboard a Malibu wake boat on the lake"></span>
+                        <span class="cardBody">
+                            <span class="cardMeta"><span>Geographic</span><time class="cardMetaDate" datetime="2022-07-25">Jul 25, 2022</time></span>
+                            <h3 class="titleMd lh108">The 3 Best Lakes for Boating in Missouri</h3>
+                            <span class="blackPara fs15">Our favorite Missouri lakes for a day on the water.</span>
+                            <span class="textLink textLinkDark cardFooterLink">Read Article <span class="ico icoArrow" aria-hidden="true"></span></span>
+                        </span>
+                    </a>
+                    <a class="lightCard" href="blog-post.html" data-category="buying-guide">
+                        <span class="mediaFrame mediaFrameLight ratio1610"><img class="coverImg" src="./assets/images/common/nautique-at-sunset.jpg" alt="Nautique wake boat at sunset"></span>
+                        <span class="cardBody">
+                            <span class="cardMeta"><span>Buying Guide</span><time class="cardMetaDate" datetime="2022-05-30">May 30, 2022</time></span>
+                            <h3 class="titleMd lh108">Why You Should Choose a Bowrider Boat</h3>
+                            <span class="blackPara fs15">Why a versatile bowrider can fit your family’s boating needs.</span>
+                            <span class="textLink textLinkDark cardFooterLink">Read Article <span class="ico icoArrow" aria-hidden="true"></span></span>
+                        </span>
+                    </a>
+                </div>
+                <p id="articleEmpty" class="blackLeadPara textCenter" role="status" hidden>No articles match that filter yet — try another category or search term.</p>
+                <nav class="cluster justifyCenter gap8 pt24" aria-label="Blog pagination">
+                    <a class="filterChip filterChipLight isActive" href="blog.html" aria-current="page">1</a>
+                    <a class="filterChip filterChipLight" href="#" aria-label="Page 2">2</a>
+                    <a class="filterChip filterChipLight" href="#" aria-label="Next page">Next <span class="ico icoArrow" aria-hidden="true"></span></a>
+                </nav>
+            </div>
+        </section>
+
+        <!-- ================= NEWSLETTER ================= -->
+        <section class="bgLight borderTopLight borderBottomLight" aria-labelledby="newsletterHeading">
+            <div class="siteContainer pt100 pb100 cluster gap56 justifyBetween">
+                <div class="splitCol stack gap18">
+                    <p class="eyebrowText eyebrowGray">Stay in the Loop</p>
+                    <h2 id="newsletterHeading" class="regularHeading">Get Boating Tips in Your Inbox</h2>
+                    <p class="blackLeadPara">New articles, event invites and new arrivals — straight from The Ski Shack.</p>
+                </div>
+                <form class="subscribeForm" aria-labelledby="newsletterHeading" data-success="Thanks for subscribing! Watch your inbox for boating tips from The Ski Shack.">
+                    <div class="subscribeField">
+                        <label for="blogNewsletterEmail" class="visuallyHidden">Email address</label>
+                        <input id="blogNewsletterEmail" type="email" name="email" placeholder="Your email" autocomplete="email" required>
+                        <button class="blueBtn" type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer id="siteFooter" class="siteFooter"></footer>
+
+    <!-- jquery script -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- bootstrap script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <!-- owl casrousel script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- facnybox scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <!-- shared header & footer -->
+    <script src="./assets/js/components.js"></script>
+    <!-- js file -->
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/pages/blog.js"></script>
+</body>
+
+</html>

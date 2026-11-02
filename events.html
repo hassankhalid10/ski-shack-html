@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Model year showcases, Pro Shop nights, boat show previews and owner get-togethers at The Ski Shack across Springfield and Table Rock Lake.">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <!-- owl carousel css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- fancy box css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
+    <!-- fontawesome icons cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap">
+    <!-- style sheet -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/pages/company-light.css">
+    <title>Events | The Ski Shack</title>
+</head>
+
+<body class="eventsPage" data-nav="company">
+
+    <header id="siteHeader" class="siteHeader"></header>
+
+    <main class="bgWhite">
+        <!-- ================= HERO ================= -->
+        <section class="pageHero heroH400 bandHero" aria-labelledby="eventsHeading">
+            <img class="coverImg" src="./assets/images/common/couple-relaxing-chris-craft.jpg" alt="" aria-hidden="true">
+            <div class="siteContainer pageHeroContent">
+                <nav aria-label="Breadcrumb">
+                    <ol class="breadcrumbList">
+                        <li><a href="home.html">Home</a></li>
+                        <li aria-hidden="true">/</li>
+                        <li><a href="about-us.html">Company</a></li>
+                        <li aria-hidden="true">/</li>
+                        <li aria-current="page">Events</li>
+                    </ol>
+                </nav>
+                <div class="splitHead gap40">
+                    <div class="stack gap20 headMain">
+                        <p class="eyebrowText eyebrowBlue">Experience Ski Shack</p>
+                        <h1 id="eventsHeading" class="largeHeading mw640">Events at The Ski Shack</h1>
+                    </div>
+                    <p class="pageHeroText bandHeroText">Model year showcases, Pro Shop nights, boat show previews and owner get-togethers across Springfield and Table Rock Lake.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= NEXT EVENT ================= -->
+        <section aria-labelledby="nextEventHeading">
+            <div class="siteContainer pt80">
+                <article class="lightCard featureCard positionRelative">
+                    <div class="mediaFrame mediaFrameLight featureCardImage"><img class="coverImg" src="./assets/images/common/malibu-wakesetter-23-lsv.jpg" alt="New Malibu wake boat on the lake"></div>
+                    <div class="featureCardBody">
+                        <p class="eyebrowText eyebrowGray">Next Event</p>
+                        <p class="dateBadge"><span>[NOV]</span><strong>[08]</strong></p>
+                        <h2 id="nextEventHeading" class="smallHeading"><a class="cardLink" href="event-details.html">[Event] Model Year Showcase</a></h2>
+                        <p class="metaRow metaRowDark"><span class="ico ico18 icoPin" aria-hidden="true"></span>Springfield Showroom · 5539 S. Campbell, Springfield</p>
+                        <p class="metaRow metaRowDark"><span class="ico ico18 icoClock" aria-hidden="true"></span>[10:00 AM – 4:00 PM]</p>
+                        <p class="blackPara">Be the first to see the newest Malibu and Axis models, with factory reps on hand and showroom-only offers.</p>
+                        <div class="cluster gap14 featureCardActions">
+                            <a class="blueBtn" href="event-details.html#rsvp">RSVP Now</a>
+                            <a class="outlineDarkBtn" href="event-details.html">Event Details</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================= UPCOMING ================= -->
+        <section id="upcoming" aria-labelledby="upcomingHeading">
+            <div class="siteContainer pt130 pb130 stack gap48">
+                <div class="splitHead gap48">
+                    <div class="stack gap20 headMain">
+                        <p class="eyebrowText eyebrowGray">Calendar</p>
+                        <h2 id="upcomingHeading" class="mediumHeading">Upcoming Events</h2>
+                    </div>
+                    <div class="cluster gap10" role="group" aria-label="Filter events by location">
+                        <button class="filterChip filterChipLight isActive" type="button" data-filter="all" aria-pressed="true">All Locations</button>
+                        <button class="filterChip filterChipLight" type="button" data-filter="springfield" aria-pressed="false">Springfield</button>
+                        <button class="filterChip filterChipLight" type="button" data-filter="indian-point" aria-pressed="false">Indian Point</button>
+                        <button class="filterChip filterChipLight" type="button" data-filter="mill-creek" aria-pressed="false">Mill Creek</button>
+                    </div>
+                </div>
+                <div id="eventGrid" class="autoGrid min640 gap16">
+                    <a class="lightCard eventRow" href="event-details.html" data-category="springfield">
+                        <span class="mediaFrame mediaFrameLight eventRowImage"><img class="coverImg" src="./assets/images/common/malibu-wakesetter-23-lsv.jpg" alt="New Malibu wake boat on the lake"></span>
+                        <span class="eventRowBody">
+                            <span class="dateBadge dateBadgeSm"><span>[NOV]</span><strong>[08]</strong></span>
+                            <h3 class="titleLg">[Event] Model Year Showcase</h3>
+                            <span class="metaRow metaRowDark fs14"><span class="ico ico18 icoPin" aria-hidden="true"></span>Springfield Showroom</span>
+                            <span class="metaRow metaRowDark fs14"><span class="ico ico18 icoClock" aria-hidden="true"></span>[10:00 AM – 4:00 PM]</span>
+                            <span class="blackPara fs15">Be the first to see the newest Malibu and Axis models, with factory reps on hand and showroom-only offers.</span>
+                            <span class="textLink textLinkDark marginTopAuto">Event Details <span class="ico icoArrow" aria-hidden="true"></span></span>
+                        </span>
+                    </a>
+                    <a class="lightCard eventRow" href="event-details.html" data-category="indian-point">
+                        <span class="mediaFrame mediaFrameLight eventRowImage"><img class="coverImg" src="./assets/images/common/wake-foil-rider.jpg" alt="Rider on a wake foil board"></span>
+                        <span class="eventRowBody">
+                            <span class="dateBadge dateBadgeSm"><span>[DEC]</span><strong>[06]</strong></span>
+                            <h3 class="titleLg">[Event] Holiday Pro Shop Night</h3>
+                            <span class="metaRow metaRowDark fs14"><span class="ico ico18 icoPin" aria-hidden="true"></span>Indian Point Pro Shop</span>
+                            <span class="metaRow metaRowDark fs14"><span class="ico ico18 icoClock" aria-hidden="true"></span>[5:00 PM – 8:00 PM]</span>
+                            <span class="blackPara fs15">Shop wake and surf gear, apparel and gifts with exclusive in-store pricing.</span>
+                            <span class="textLink textLinkDark marginTopAuto">Event Details <span class="ico icoArrow" aria-hidden="true"></span></span>
+                        </span>
+                    </a>
+                    <a class="lightCard eventRow" href="event-details.html" data-category="springfield">
+                        <span class="mediaFrame mediaFrameLight eventRowImage"><img class="coverImg" src="./assets/images/common/new-wake-boat-lineup.jpg" alt="Lineup of new wake boats on calm water"></span>
+                        <span class="eventRowBody">
+                            <span class="dateBadge dateBadgeSm"><span>[JAN]</span><strong>[16]</strong></span>
+                            <h3 class="titleLg">[Event] Boat Show Preview Weekend</h3>
+                            <span class="metaRow metaRowDark fs14"><span class="ico ico18 icoPin" aria-hidden="true"></span>Springfield Showroom</span>
+                            <span class="metaRow metaRowDark fs14"><span class="ico ico18 icoClock" aria-hidden="true"></span>[9:00 AM – 5:00 PM]</span>
+                            <span class="blackPara fs15">Get boat show pricing early and take your time touring the full lineup without the crowds.</span>
+                            <span class="textLink textLinkDark marginTopAuto">Event Details <span class="ico icoArrow" aria-hidden="true"></span></span>
+                        </span>
+                    </a>
+                    <a class="lightCard eventRow" href="event-details.html" data-category="mill-creek">
+                        <span class="mediaFrame mediaFrameLight eventRowImage"><img class="coverImg" src="./assets/images/common/technician-engine-bay.jpg" alt="Technician working in a boat's engine bay"></span>
+                        <span class="eventRowBody">
+                            <span class="dateBadge dateBadgeSm"><span>[MAR]</span><strong>[14]</strong></span>
+                            <h3 class="titleLg">[Event] Spring Service Kickoff</h3>
+                            <span class="metaRow metaRowDark fs14"><span class="ico ico18 icoPin" aria-hidden="true"></span>Mill Creek Service Center</span>
+                            <span class="metaRow metaRowDark fs14"><span class="ico ico18 icoClock" aria-hidden="true"></span>[9:00 AM – 2:00 PM]</span>
+                            <span class="blackPara fs15">Book your spring start-up, meet our technicians and get your boat ready for the season.</span>
+                            <span class="textLink textLinkDark marginTopAuto">Event Details <span class="ico icoArrow" aria-hidden="true"></span></span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAST EVENTS ================= -->
+        <section class="bgLight borderTopLight" aria-labelledby="pastHeading">
+            <div class="siteContainer pt120 pb130 stack gap48">
+                <div class="splitHead gap48">
+                    <div class="stack gap20 headMain">
+                        <p class="eyebrowText eyebrowGray">Recap</p>
+                        <h2 id="pastHeading" class="regularHeading">Past Events</h2>
+                    </div>
+                    <p class="blackLeadPara basis560">Missed one? See what went down at recent Ski Shack events.</p>
+                </div>
+                <div class="grid3 gap16">
+                    <a class="lightCard" href="event-details.html">
+                        <span class="mediaFrame mediaFrameLight ratio1610"><img class="coverImg" src="./assets/images/common/swim-platform-tow-gear.jpg" alt="Friends relaxing on the swim platform of a wake boat"></span>
+                        <span class="cardBodySm">
+                            <span class="cardMeta">[Date]</span>
+                            <h3 class="titleMd">[Summer Demo Day Recap]</h3>
+                            <span class="textLink textLinkDark">View Photos <span class="ico icoArrow" aria-hidden="true"></span></span>
+                        </span>
+                    </a>
+                    <a class="lightCard" href="event-details.html">
+                        <span class="mediaFrame mediaFrameLight ratio1610"><img class="coverImg" src="./assets/images/common/wakeboarder-behind-axis.jpg" alt="Wakeboarder riding behind a wake boat"></span>
+                        <span class="cardBodySm">
+                            <span class="cardMeta">[Date]</span>
+                            <h3 class="titleMd">[Pro Shop Wake Clinic]</h3>
+                            <span class="textLink textLinkDark">View Photos <span class="ico icoArrow" aria-hidden="true"></span></span>
+                        </span>
+                    </a>
+                    <a class="lightCard" href="event-details.html">
+                        <span class="mediaFrame mediaFrameLight ratio1610"><img class="coverImg" src="./assets/images/common/friends-aboard-wake-boat.jpg" alt="Friends relaxing aboard a wake boat"></span>
+                        <span class="cardBodySm">
+                            <span class="cardMeta">[Date]</span>
+                            <h3 class="titleMd">[Owner Appreciation Cookout]</h3>
+                            <span class="textLink textLinkDark">View Photos <span class="ico icoArrow" aria-hidden="true"></span></span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="siteFooter" class="siteFooter"></footer>
+
+    <!-- jquery script -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- bootstrap script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <!-- owl casrousel script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- facnybox scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <!-- shared header & footer -->
+    <script src="./assets/js/components.js"></script>
+    <!-- js file -->
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/pages/events.js"></script>
+</body>
+
+</html>

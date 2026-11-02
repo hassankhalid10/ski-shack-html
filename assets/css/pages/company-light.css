@@ -1,0 +1,334 @@
+/* ==========================================================================
+   COMPANY — LIGHT CONTENT PAGES
+   Blog (blogPage) · Blog Post (blogPostPage) · Events (eventsPage)
+   Event Details (eventDetailsPage) · FAQs (faqsPage)
+   --------------------------------------------------------------------------
+   These pages keep the dark header & footer (body stays dark — no
+   .lightTheme) but use a white content area: <main class="bgWhite"> (the
+   design's .lt wrapper; one background avoids sub-pixel seams between
+   sections), grey sections add .bgLight, and components use their light
+   variants (lightCard, filterChipLight, faqItemLight, textLinkDark,
+   breadcrumbDark, eyebrowGray). Events & FAQs open with a 400px dark band
+   (.pageHero.heroH400.bandHero).
+
+   1. Light variants & utilities missing from style.css
+   2. Page heads (title row, dark band hero, sticky filter bar)
+   3. Cards (featured, post, event row, date badge)
+   4. Article (blog post)
+   5. Event details
+   6. FAQs
+   7. Newsletter
+   8. Responsive
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. LIGHT VARIANTS & UTILITIES  (candidates for style.css)
+   ========================================================================== */
+/* Open accordions use the teal toggle on light pages too (design: .acc[open] .pm) */
+.faqItemLight[open] .faqToggle { color: var(--black); background: var(--teal); border-color: var(--teal); }
+
+/* Slate info tile → light grey tile on white pages */
+.infoTileLight { color: var(--black); background: var(--light-2); }
+a.infoTileLight:hover { color: var(--black); }
+
+/* Black phone number on white sections */
+.phoneLinkBlack { color: var(--black); }
+.phoneLinkBlack:hover { color: var(--blue-deep); }
+
+/* Feature (check) rows on white */
+.featureItemOnLight { color: var(--black); border-bottom-color: var(--line-light); }
+.featureItemOnLight .ico { color: var(--blue); }
+
+.lh108 { line-height: 1.08; }
+
+/* Flex bases for "title left / text right" heads */
+.basis520 { flex: 0 1 520px; }
+.basis560 { flex: 0 1 560px; }
+
+/* Whole-card link on <article> cards that also hold their own CTAs */
+.cardLink, .cardLink:hover { color: inherit; }
+.cardLink::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+
+
+/* ==========================================================================
+   2. PAGE HEADS
+   ========================================================================== */
+.pageIntroText { flex: 0 1 560px; padding-bottom: 6px; line-height: 1.6; }
+
+/* 400px dark band hero (Events, FAQs) */
+.bandHero {
+    background-color: var(--black);
+    --hero-side: linear-gradient(90deg, rgba(5, 5, 5, .92) 0%, rgba(5, 5, 5, .62) 50%, rgba(5, 5, 5, .3) 100%);
+    --hero-fade: linear-gradient(180deg, rgba(5, 5, 5, 0) 55%, rgba(5, 5, 5, .75) 100%);
+}
+.bandHero .pageHeroContent { gap: 22px; padding-top: 40px; padding-bottom: 56px; }
+.bandHeroText { flex: 0 1 600px; padding-bottom: 6px; }
+
+/* Category / search bar that sticks under the header */
+.stickyBar { position: sticky; top: var(--header-h); z-index: 5; }
+.searchBox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 340px;
+    height: 48px;
+    margin-left: auto;
+    padding: 0 16px;
+    color: var(--black);
+    border: 1px solid var(--line-input);
+    transition: border-color .2s;
+}
+.searchBox:focus-within { border-color: var(--blue); }
+.searchBox input { flex: 1; min-width: 0; font: 500 15px var(--font-body); color: var(--black); background: transparent; border: 0; outline: none; }
+.searchBox input::placeholder { color: var(--gray-2); }
+
+
+/* ==========================================================================
+   3. CARDS
+   ========================================================================== */
+/* Featured article / next event (image left, copy right) */
+.featureCard { flex-direction: row; min-height: 540px; }
+.featureCardImage { flex: 0 0 58%; }
+.featureCardBody { display: flex; flex: 1; flex-direction: column; justify-content: center; gap: 22px; padding: 64px; }
+.featureCardActions { position: relative; z-index: 2; padding-top: 10px; }
+
+/* Card copy blocks */
+.cardBody { display: flex; flex: 1; flex-direction: column; gap: 14px; padding: 34px; }
+.cardBodySm { display: flex; flex-direction: column; gap: 12px; padding: 32px; }
+.cardFooterLink { margin-top: auto; padding-top: 8px; }
+
+/* Category · date kicker */
+.cardMeta { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 0; font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--blue-dark); }
+.cardMetaDate { color: var(--gray-2); }
+
+/* Upcoming event (horizontal) */
+.eventRow { flex-direction: row; min-height: 300px; }
+.eventRowImage { flex: 0 0 44%; }
+.eventRowBody { display: flex; flex: 1; flex-direction: column; gap: 16px; min-width: 0; padding: 40px; }
+
+/* Blue calendar date block */
+.dateBadge { display: flex; flex: none; flex-direction: column; align-items: center; justify-content: center; width: 96px; height: 104px; color: var(--black); background: var(--blue); }
+.dateBadge span { font-size: 12px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; }
+.dateBadge strong { font-family: var(--font-display); font-size: 44px; font-weight: 700; line-height: 1; }
+.dateBadgeSm { width: 84px; height: 92px; }
+.dateBadgeSm strong { font-size: 38px; }
+
+/* Large lead image under a page title */
+.leadImage { height: 760px; }
+.leadImage720 { height: 720px; }
+
+
+/* ==========================================================================
+   4. ARTICLE (blog post)
+   ========================================================================== */
+.narrowContainer { max-width: 1380px; }
+.blogPostPage .xlHeading, .eventDetailsPage .xlHeading { font-size: clamp(40px, 4.167vw, 80px); }
+.postCategory { letter-spacing: .18em; }
+.postCategory a { color: var(--blue); }
+.postCategory a:hover { color: var(--blue-dark); }
+.authorBadge { display: inline-flex; flex: none; align-items: center; justify-content: center; width: 52px; height: 52px; background: var(--black); border-radius: 50%; }
+.authorBadge img { width: auto; height: 26px; }
+
+/* Sticky table-of-contents column + content (blog post, FAQs) */
+.tocLayout { display: flex; align-items: flex-start; }
+/* z-index: a sticky layer forces every z-indexed box painted after it (e.g. the
+   hero's .pageHeroContent) onto its own layer, which drops LCD text anti-aliasing */
+.tocAside { position: sticky; top: 144px; z-index: 3; display: flex; flex: 0 0 300px; flex-direction: column; gap: 22px; }
+.tocAsideWide { flex-basis: 320px; }
+.tocNav a { display: block; padding: 12px 0 12px 18px; font-size: 15px; color: var(--text-dark); border-left: 2px solid var(--line-light); transition: color .2s, border-color .2s; }
+.tocNav a:hover { color: var(--black); border-left-color: var(--blue); }
+.shareRow { display: flex; gap: 10px; padding-top: 18px; border-top: 1px solid var(--line-light); }
+.shareRow .iconBtn.isCopied { color: var(--black); border-color: var(--blue); }
+.articleMain { flex: 0 1 820px; min-width: 0; }
+
+.quickAnswer { margin-bottom: 48px; padding: 32px 36px; background: var(--light-2); border-left: 3px solid var(--blue); }
+.quickAnswer .smallLabel { margin-bottom: 10px; }
+
+/* Rich text */
+.prose { font-size: 18px; line-height: 1.8; color: var(--text-dark); }
+.prose p, .prose ul { margin: 0 0 26px; }
+.prose ul { padding-left: 22px; }
+.prose li { margin-bottom: 10px; }
+.prose h2 {
+    margin: 64px 0 22px;
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.05;
+    text-transform: uppercase;
+    color: var(--black);
+    scroll-margin-top: 130px;
+}
+
+/* Comparison table */
+.tableWrap { margin: 8px 0 26px; overflow-x: auto; border: 1px solid var(--line-light); }
+.compareTable { width: 100%; border-collapse: collapse; font-size: 16px; color: var(--black); }
+.compareTable caption {
+    caption-side: top;
+    padding: 18px 22px;
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--light-2);
+}
+.compareTable thead tr { background: var(--light-3); }
+.compareTable thead th { padding: 16px 22px; font-size: 12px; letter-spacing: .14em; text-align: left; text-transform: uppercase; color: var(--blue-dark); }
+.compareTable tbody tr { border-top: 1px solid var(--line-light); }
+.compareTable tbody th { padding: 18px 22px; font-weight: 700; text-align: left; }
+.compareTable td { padding: 18px 22px; color: var(--text-dark); }
+
+/* Two CTA tiles closing the article */
+.articleTiles { margin-top: 24px; }
+.ctaTile { min-height: 220px; }
+
+
+/* ==========================================================================
+   5. EVENT DETAILS
+   ========================================================================== */
+.eventIntro { flex: 1 1 860px; min-width: 0; }
+
+/* Date / time / location facts (icon comes from an ico* class on the row) */
+.eventFacts { display: flex; flex: 0 1 480px; flex-direction: column; gap: 22px; margin: 0; padding: 36px; border: 1px solid var(--line-light); border-top: 3px solid var(--blue); }
+.eventFact { display: grid; grid-template-columns: 20px minmax(0, 1fr); column-gap: 14px; }
+.eventFact::before {
+    content: "";
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    width: 20px;
+    height: 20px;
+    background-color: var(--blue-dark);
+    -webkit-mask: var(--ico) center / contain no-repeat;
+    mask: var(--ico) center / contain no-repeat;
+}
+.eventFact dt, .eventFact dd { grid-column: 2; }
+.eventFact dt { margin-bottom: 4px; }
+.eventFact dd { margin: 0; font-size: 18px; font-weight: 600; }
+.eventFactAddress { font-size: 15px; font-weight: 500; color: var(--gray); }
+.eventFactAddress:hover { color: var(--blue-dark); }
+
+/* About + sticky schedule column */
+.eventAbout { flex: 1 1 760px; min-width: 0; }
+.expectList { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; margin: 0; padding: 0; list-style: none; }
+.expectList .featureItem { align-items: flex-start; }
+.expectList .ico { margin-top: 3px; }
+.eventAside { position: sticky; top: 144px; display: flex; flex: 1 1 480px; flex-direction: column; gap: 2px; }
+.scheduleBox { padding: 44px; color: var(--white); background: var(--black); border: 1px solid var(--black); }
+.scheduleRow { display: flex; gap: 22px; padding: 18px 0; border-top: 1px solid rgba(255, 255, 255, .16); }
+.scheduleTime { flex: none; width: 92px; }
+.mapPlaceholder { display: flex; align-items: center; justify-content: center; height: 240px; padding: 24px; text-align: center; background: var(--light-3); border: 1px solid var(--line-light); }
+.mapPlaceholder .smallLabel { color: var(--gray-2); }
+.directionsLink { padding: 18px 0; }
+
+/* Photo gallery (Fancybox) */
+.eventGallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 300px; gap: 12px; }
+.galleryItemFeature { grid-column: span 2; grid-row: span 2; }
+.zoomBadge {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    color: var(--white);
+    background: rgba(5, 5, 5, .6);
+    opacity: 0;
+    transition: opacity .2s;
+}
+.zoomBadge .ico { width: 22px; height: 22px; }
+.galleryItem:hover .zoomBadge, .galleryItem:focus-visible .zoomBadge { opacity: 1; }
+
+/* RSVP */
+.formIntro { flex: 1 1 420px; max-width: 520px; }
+.formMain { flex: 999 1 680px; min-width: 0; }
+
+
+/* ==========================================================================
+   6. FAQS
+   ========================================================================== */
+.faqMain { flex: 1 1 900px; min-width: 0; }
+.faqGroup { scroll-margin-top: 130px; }
+.helpBox { display: flex; flex-direction: column; gap: 14px; margin-top: 12px; padding: 32px; background: var(--light-2); }
+.faqItemLight .faqAnswer a { color: var(--blue-dark); text-decoration: underline; text-underline-offset: 2px; }
+.faqItemLight .faqAnswer a:hover { color: var(--black); }
+
+/* Closing image band — same markup/classes as .ctaBand in company.css & showcase.css */
+
+
+/* ==========================================================================
+   7. NEWSLETTER (blog)
+   ========================================================================== */
+.subscribeForm { display: flex; flex: 0 1 640px; flex-direction: column; gap: 10px; }
+.subscribeField { display: flex; border: 1px solid var(--line-input); transition: border-color .2s; }
+.subscribeField:focus-within { border-color: var(--blue); }
+.subscribeField input { flex: 1; min-width: 0; height: 64px; padding: 0 22px; font: 500 17px var(--font-body); color: var(--black); background: transparent; border: 0; outline: none; }
+.subscribeField input::placeholder { color: var(--gray-2); }
+.subscribeField .blueBtn { min-height: 64px; padding: 0 34px; border-radius: 0; }
+
+
+/* ==========================================================================
+   8. RESPONSIVE
+   ========================================================================== */
+@media (hover: none) {
+    .zoomBadge { opacity: 1; }
+}
+
+@media (max-width: 1399.98px) {
+    .bandHero { height: auto; }
+    .featureCardBody { padding: 48px; }
+    .eventAbout { flex-basis: 520px; }
+    .eventAside { flex-basis: 420px; }
+    .leadImage { height: 640px; }
+    .leadImage720 { height: 600px; }
+}
+
+@media (max-width: 1199.98px) {
+    .eventAside { position: static; flex-basis: 100%; }
+    .leadImage, .leadImage720 { height: 520px; }
+    .eventGallery { grid-auto-rows: 240px; }
+    .tocAside { flex-basis: 260px; }
+    .tocAsideWide { flex-basis: 280px; }
+}
+
+@media (max-width: 991.98px) {
+    .stickyBar { position: static; }
+    .featureCard, .eventRow { flex-direction: column; min-height: 0; }
+    .featureCardImage { flex: none; aspect-ratio: 16 / 10; }
+    .featureCardBody { padding: 40px 36px; }
+    .tocLayout { flex-direction: column; align-items: stretch; }
+    .tocAside { position: static; flex: none; }
+    .articleMain, .faqMain { flex: none; }
+    .leadImage, .leadImage720 { height: 420px; }
+    .eventGallery { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 220px; }
+}
+
+@media (max-width: 767.98px) {
+    .searchBox { min-width: 0; width: 100%; margin-left: 0; }
+    .featureCardBody { gap: 18px; padding: 28px 24px 32px; }
+    .eventRowImage { flex: none; aspect-ratio: 16 / 10; }
+    .eventRowBody, .cardBody, .cardBodySm { padding: 28px 24px; }
+    .dateBadge { width: 84px; height: 92px; }
+    .dateBadge strong { font-size: 38px; }
+    .leadImage, .leadImage720 { height: 260px; }
+    .quickAnswer { padding: 24px 22px; }
+    .prose { font-size: 17px; }
+    .prose h2 { margin-top: 48px; font-size: 28px; }
+    .compareTable { min-width: 520px; font-size: 15px; }
+    .compareTable caption, .compareTable thead th, .compareTable tbody th, .compareTable td { padding-left: 16px; padding-right: 16px; }
+    .ctaTile { min-height: 180px; }
+    .eventFacts { padding: 28px 24px; }
+    .expectList { grid-template-columns: minmax(0, 1fr); }
+    .scheduleBox { padding: 32px 24px; }
+    .scheduleRow { gap: 16px; }
+    .mapPlaceholder { height: 200px; }
+    .eventGallery { grid-auto-rows: 150px; gap: 8px; }
+    .zoomBadge { right: 10px; bottom: 10px; width: 40px; height: 40px; }
+    .helpBox { padding: 28px 24px; }
+    .subscribeField input { height: 56px; padding: 0 16px; font-size: 16px; }
+    .subscribeField .blueBtn { min-height: 56px; padding: 0 20px; }
+}
