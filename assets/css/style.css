@@ -137,8 +137,10 @@ a:hover { color: var(--blue); text-decoration: none; }
 /* Responsive auto-fit grid: set the min column width with a modifier */
 .autoGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--col-min, 300px)), 1fr)); }
 .min240 { --col-min: 240px; }
+.min260 { --col-min: 260px; }
 .min280 { --col-min: 280px; }
 .min300 { --col-min: 300px; }
+.min320 { --col-min: 320px; }
 .min340 { --col-min: 340px; }
 .min360 { --col-min: 360px; }
 .min420 { --col-min: 420px; }
@@ -154,6 +156,18 @@ a:hover { color: var(--blue); text-decoration: none; }
 /* Two-column split sections that wrap below their basis width */
 .splitRow { display: flex; flex-wrap: wrap; }
 .splitCol { flex: 1 1 560px; min-width: 0; }
+
+/* Column roles inside splitHead / splitRow layouts */
+.headMain { flex: 1 1 640px; min-width: 0; }          /* section title column */
+.headAside { flex: 0 1 560px; }                       /* lead paragraph beside the title */
+.headAsideSm { flex: 0 1 520px; }
+.introCol { flex: 1 1 360px; max-width: 480px; }      /* FAQ / sidebar intro column */
+.mainCol { flex: 999 1 640px; min-width: 0; }         /* content column beside introCol */
+.formIntro { flex: 1 1 420px; max-width: 520px; }     /* copy beside a form card */
+.formMain { flex: 999 1 680px; min-width: 0; }        /* the form card column */
+.stickyIntro { position: sticky; top: 144px; }
+.basis640 { flex-basis: 640px; }
+.basis720 { flex-basis: 720px; }
 
 /* Section dividers */
 .borderTop { border-top: 1px solid var(--line-dark-soft); }
@@ -270,7 +284,9 @@ a:hover { color: var(--blue); text-decoration: none; }
 .ico14 { width: 14px; height: 14px; }
 .ico18 { width: 18px; height: 18px; }
 .ico20 { width: 20px; height: 20px; }
+.ico22 { width: 22px; height: 22px; }
 .ico24 { width: 24px; height: 24px; }
+.ico26 { width: 26px; height: 26px; }
 
 .icoArrow     { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.4'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E"); }
 .icoArrowLeft { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.2'%3E%3Cpath d='M19 12H5M11 6l-6 6 6 6'/%3E%3C/svg%3E"); }
@@ -745,6 +761,7 @@ a.navItem { color: var(--white); }
 .chipDark { background: var(--black); color: var(--white); }
 .chipWhite { background: var(--white); color: var(--black); }
 .chipFloat { position: absolute; top: 18px; right: 18px; z-index: 1; }
+.chipCorner { position: absolute; top: 16px; left: 16px; z-index: 1; }
 
 .filterChip {
     display: inline-flex;
@@ -789,6 +806,7 @@ a.navItem { color: var(--white); }
     transition: box-shadow .2s, border-color .2s;
 }
 .lightCard:hover, body.lightTheme .lightCard:hover { color: var(--black); border-color: var(--black); box-shadow: 0 18px 40px rgba(5, 5, 5, .1); }
+body.lightTheme .lightCard:hover { border-color: var(--teal); }   /* light-theme sales pages use the teal hover */
 .lightCard .coverImg { transition: transform .5s; }
 .lightCard:hover .coverImg { transform: scale(1.03); }
 
@@ -889,7 +907,7 @@ a.infoTile:hover { color: var(--white); border-top-color: var(--teal); }
 .faqItemLight { border-top-color: var(--line-light); }
 .faqItemLight summary:hover h3, .faqItemLight summary:hover .faqQuestion { color: var(--blue-dark); }
 .faqItemLight .faqToggle { color: var(--black); border-color: var(--line-input); }
-.faqItemLight[open] .faqToggle { background: var(--blue); border-color: var(--blue); color: var(--black); }
+.faqItemLight[open] .faqToggle { background: var(--teal); border-color: var(--teal); color: var(--black); }
 .faqItemLight .faqAnswer { color: var(--text-dark); }
 
 /* ---- Forms ------------------------------------------------------------------ */
@@ -916,6 +934,8 @@ a.infoTile:hover { color: var(--white); border-top-color: var(--teal); }
 .fieldInput:focus { outline: 2px solid var(--blue); outline-offset: -1px; }
 select.fieldInput { appearance: auto; }
 textarea.fieldInput { height: 120px; padding: 14px; resize: vertical; }
+.fieldInput.textareaMd { height: 140px; }
+.fieldInput.textareaLg { height: 150px; }
 .checkPill {
     display: inline-flex;
     align-items: center;
@@ -943,6 +963,11 @@ textarea.fieldInput { height: 120px; padding: 14px; resize: vertical; }
 .locationBoxLight { background: var(--light-1); }
 .locationBoxLight .whitePara, .locationBoxLight .grayPara { color: var(--gray); }
 .phoneStrong { font-weight: 700; }
+
+/* ---- Image CTA band: full-bleed photo, dark overlay, centred call to action -------- */
+/* <section class="mediaFrame ctaBand borderTop"><img class="coverImg" ...><div class="siteContainer ctaBandContent">…</div></section> */
+.ctaBand::before { content: ""; position: absolute; inset: 0; z-index: 1; background: rgba(5, 5, 5, .72); pointer-events: none; }
+.ctaBandContent { position: relative; z-index: 2; padding-top: calc(150px * var(--space)); padding-bottom: calc(150px * var(--space)); color: var(--white); }
 
 /* ---- Light page variants of shared components --------------------------------- */
 .bgWhite .phoneLink:hover { color: var(--blue-deep); }
@@ -1017,13 +1042,15 @@ textarea.fieldInput { height: 120px; padding: 14px; resize: vertical; }
 .mb72 { margin-bottom: calc(72px * var(--space)); } .mb88 { margin-bottom: calc(88px * var(--space)); }
 .mxAuto { margin-left: auto; margin-right: auto; }
 .mt0 { margin-top: 0 !important; } .mb0 { margin-bottom: 0 !important; }
+.plainList { margin: 0; padding: 0; list-style: none; }
 
 /* Max widths (text measure) */
-.mw300 { max-width: 300px; } .mw360 { max-width: 360px; } .mw400 { max-width: 400px; } .mw460 { max-width: 460px; }
-.mw480 { max-width: 480px; } .mw520 { max-width: 520px; } .mw560 { max-width: 560px; } .mw600 { max-width: 600px; }
-.mw640 { max-width: 640px; } .mw680 { max-width: 680px; } .mw720 { max-width: 720px; } .mw760 { max-width: 760px; }
-.mw820 { max-width: 820px; } .mw900 { max-width: 900px; } .mw1000 { max-width: 1000px; } .mw1100 { max-width: 1100px; }
-.mw1200 { max-width: 1200px; } .mw1400 { max-width: 1400px; }
+.mw300 { max-width: 300px; } .mw360 { max-width: 360px; } .mw400 { max-width: 400px; } .mw420 { max-width: 420px; }
+.mw460 { max-width: 460px; } .mw480 { max-width: 480px; } .mw520 { max-width: 520px; } .mw560 { max-width: 560px; }
+.mw600 { max-width: 600px; } .mw640 { max-width: 640px; } .mw680 { max-width: 680px; } .mw720 { max-width: 720px; }
+.mw760 { max-width: 760px; } .mw800 { max-width: 800px; } .mw820 { max-width: 820px; } .mw900 { max-width: 900px; }
+.mw1000 { max-width: 1000px; } .mw1100 { max-width: 1100px; } .mw1150 { max-width: 1150px; } .mw1200 { max-width: 1200px; }
+.mw1400 { max-width: 1400px; }
 
 /* ==========================================================================
    12. RESPONSIVE
@@ -1036,6 +1063,8 @@ textarea.fieldInput { height: 120px; padding: 14px; resize: vertical; }
 
 @media (max-width: 1399.98px) {
     :root { --space: .85; }
+    .formMain { flex-basis: 600px; }
+    .stickyIntro { position: static; }   /* the intro can stack above the form from here down */
     .mainNav { gap: 24px; }
     .navItem { font-size: 14px; letter-spacing: .12em; }
     .megaInner { gap: 48px; }
@@ -1054,6 +1083,7 @@ textarea.fieldInput { height: 120px; padding: 14px; resize: vertical; }
     .grid5 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .grid4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .footerBrand { max-width: none; flex-basis: 100%; }
+    .formIntro { flex-basis: 100%; max-width: 720px; }
 }
 
 @media (max-width: 991.98px) {
@@ -1077,7 +1107,7 @@ textarea.fieldInput { height: 120px; padding: 14px; resize: vertical; }
     .callBtn .callLabel, .callBtn .callChevron { display: none; }
     .callBtn { width: 48px; padding: 0; }
     .grid2, .grid3, .grid4, .grid5, .formGrid2, .formGrid3 { grid-template-columns: minmax(0, 1fr); }
-    .splitCol { flex-basis: 100%; }
+    .splitCol, .basis640, .basis720 { flex-basis: 100%; }
     .formCard { padding: 28px 20px; gap: 28px; }
     .faqItem summary { padding: 22px 0; }
     .faqItem summary h3, .faqQuestion { font-size: 18px; }

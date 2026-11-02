@@ -12,7 +12,6 @@
 /* ---- Layout helpers --------------------------------------------------------- */
 /* Wider sibling of the global .splitCol (flex: 1 1 560px) */
 .splitColWide { flex: 1 1 640px; min-width: 0; }
-.mw800 { max-width: 800px; }
 
 /* ---- Services grid intro: title left, lead right ----------------------------- */
 .serviceIntroLead { flex: 0 1 560px; }
