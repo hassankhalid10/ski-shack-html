@@ -51,8 +51,8 @@
                 <h1 id="pageHeading" class="xlHeading mw1100">Schedule a Private Showing</h1>
                 <p class="pageHeroText mw680">See your next boat up close with one-on-one time in our Springfield showroom. Walk through the layout, features and options with a sales specialist — on your schedule.</p>
                 <div class="pageHeroActions">
-                    <a class="blueBtn" href="#demo-form">Request a Showing</a>
-                    <a class="whiteOutlineBtn" href="listings.html">Browse Inventory</a>
+                    <a id="schedule-demo-request-a-showing-btn" class="blueBtn" href="#demo-form">Request a Showing</a>
+                    <a id="schedule-demo-browse-inventory-btn" class="whiteOutlineBtn" href="listings.html">Browse Inventory</a>
                 </div>
             </div>
         </section>
@@ -61,7 +61,7 @@
         <section id="demo-form" aria-labelledby="formHeading">
             <div class="siteContainer pt140 pb140 splitRow gap80 alignStart">
 
-                <form class="colMain colMainWide stack gap44" aria-labelledby="formHeading" data-success="Thanks! A sales specialist will reach out shortly to confirm your private showing.">
+                <form class="colMain colMainWide stack gap44 gtm_form" aria-labelledby="formHeading" data-success="Thanks! A sales specialist will reach out shortly to confirm your private showing." action="javascript:void(0)" id="schedule_demo_form" data-form-id="Schedule a Demo Form">
                     <div class="stack gap20">
                         <p class="eyebrowText eyebrowGray">Book Your Showing</p>
                         <h2 id="formHeading" class="sectionHeading">Request a Private Showing</h2>
@@ -70,33 +70,39 @@
 
                     <fieldset class="formGrid2">
                         <legend class="fieldsetTitle salesLegend">1. Choose Your Boat</legend>
-                        <label class="fieldLabel">Brand<select class="fieldInput" name="brand"><option value="">Select a brand</option><option>Malibu</option><option>Axis</option><option>Nautique</option><option>Chris-Craft</option><option>Revel</option><option>Not sure yet</option></select></label>
-                        <label class="fieldLabel">Model<select class="fieldInput" name="model"><option value="">Select a model</option><option>[Models from inventory]</option></select></label>
+                        <label class="fieldLabel" for="schedule_demo_form_brand">Brand<div class="field-error" id="error_schedule_demo_form_brand"></div><select id="schedule_demo_form_brand" class="fieldInput" name="brand"><option value="">Select a brand</option><option>Malibu</option><option>Axis</option><option>Nautique</option><option>Chris-Craft</option><option>Revel</option><option>Not sure yet</option></select></label>
+                        <label class="fieldLabel" for="schedule_demo_form_model">Model<div class="field-error" id="error_schedule_demo_form_model"></div><select id="schedule_demo_form_model" class="fieldInput" name="model"><option value="">Select a model</option><option>[Models from inventory]</option></select></label>
                     </fieldset>
 
                     <fieldset class="formGrid3">
                         <legend class="fieldsetTitle salesLegend">2. Pick a Time</legend>
-                        <label class="fieldLabel">Preferred Date<input class="fieldInput" type="date" name="preferredDate"></label>
-                        <label class="fieldLabel">Preferred Time<select class="fieldInput" name="preferredTime"><option>Morning</option><option>Midday</option><option>Afternoon</option><option>Evening</option></select></label>
-                        <label class="fieldLabel">Alternate Date<input class="fieldInput" type="date" name="alternateDate"></label>
-                        <label class="fieldLabel">Guests Attending<select class="fieldInput" name="guests"><option>Just me</option><option>2</option><option>3–4</option><option>5+</option></select></label>
-                        <label class="fieldLabel">Boating Experience<select class="fieldInput" name="experience"><option>First-time buyer</option><option>Some experience</option><option>Current owner</option></select></label>
-                        <label class="fieldLabel">Planning to Buy<select class="fieldInput" name="timeline"><option>0–3 months</option><option>3–6 months</option><option>6+ months</option><option>Just researching</option></select></label>
+                        <label class="fieldLabel" for="schedule_demo_form_preferreddate">Preferred Date<div class="field-error" id="error_schedule_demo_form_preferreddate"></div><input id="schedule_demo_form_preferreddate" class="fieldInput" type="date" name="preferredDate"></label>
+                        <label class="fieldLabel" for="schedule_demo_form_preferredtime">Preferred Time<div class="field-error" id="error_schedule_demo_form_preferredtime"></div><select id="schedule_demo_form_preferredtime" class="fieldInput" name="preferredTime"><option>Morning</option><option>Midday</option><option>Afternoon</option><option>Evening</option></select></label>
+                        <label class="fieldLabel" for="schedule_demo_form_alternatedate">Alternate Date<div class="field-error" id="error_schedule_demo_form_alternatedate"></div><input id="schedule_demo_form_alternatedate" class="fieldInput" type="date" name="alternateDate"></label>
+                        <label class="fieldLabel" for="schedule_demo_form_guests">Guests Attending<div class="field-error" id="error_schedule_demo_form_guests"></div><select id="schedule_demo_form_guests" class="fieldInput" name="guests"><option>Just me</option><option>2</option><option>3–4</option><option>5+</option></select></label>
+                        <label class="fieldLabel" for="schedule_demo_form_experience">Boating Experience<div class="field-error" id="error_schedule_demo_form_experience"></div><select id="schedule_demo_form_experience" class="fieldInput" name="experience"><option>First-time buyer</option><option>Some experience</option><option>Current owner</option></select></label>
+                        <label class="fieldLabel" for="schedule_demo_form_timeline">Planning to Buy<div class="field-error" id="error_schedule_demo_form_timeline"></div><select id="schedule_demo_form_timeline" class="fieldInput" name="timeline"><option>0–3 months</option><option>3–6 months</option><option>6+ months</option><option>Just researching</option></select></label>
                     </fieldset>
 
                     <fieldset class="formGrid2">
                         <legend class="fieldsetTitle salesLegend">3. Your Contact Info</legend>
-                        <label class="fieldLabel">First Name<input class="fieldInput" type="text" name="firstName" autocomplete="given-name" required></label>
-                        <label class="fieldLabel">Last Name<input class="fieldInput" type="text" name="lastName" autocomplete="family-name" required></label>
-                        <label class="fieldLabel">Phone<input class="fieldInput" type="tel" name="phone" autocomplete="tel"></label>
-                        <label class="fieldLabel">Email<input class="fieldInput" type="email" name="email" autocomplete="email" required></label>
-                        <label class="fieldLabel spanAll">Anything Else We Should Know?<textarea class="fieldInput" name="message" rows="4"></textarea></label>
-                        <label class="checkRow spanAll"><input type="checkbox" name="tradeIn"> I have a boat to trade in</label>
+                        <label class="fieldLabel" for="schedule_demo_form_firstname">First Name<div class="field-error" id="error_schedule_demo_form_firstname"></div><input id="schedule_demo_form_firstname" class="fieldInput require_check" type="text" name="firstName" autocomplete="given-name" aria-required="true"></label>
+                        <label class="fieldLabel" for="schedule_demo_form_lastname">Last Name<div class="field-error" id="error_schedule_demo_form_lastname"></div><input id="schedule_demo_form_lastname" class="fieldInput require_check" type="text" name="lastName" autocomplete="family-name" aria-required="true"></label>
+                        <label class="fieldLabel" for="schedule_demo_form_phone">Phone<div class="field-error" id="error_schedule_demo_form_phone"></div><input id="schedule_demo_form_phone" class="fieldInput phoneInput" type="tel" name="phone" autocomplete="tel"></label>
+                        <label class="fieldLabel" for="schedule_demo_form_email">Email<div class="field-error" id="error_schedule_demo_form_email"></div><input id="schedule_demo_form_email" class="fieldInput require_check" type="email" name="email" autocomplete="email" aria-required="true"></label>
+                        <label class="fieldLabel spanAll" for="schedule_demo_form_message">Anything Else We Should Know?<div class="field-error" id="error_schedule_demo_form_message"></div><textarea id="schedule_demo_form_message" class="fieldInput" name="message" rows="4"></textarea></label>
+                        <label class="checkRow spanAll" for="schedule_demo_form_tradein"><input id="schedule_demo_form_tradein" type="checkbox" name="tradeIn"> I have a boat to trade in</label>
                     </fieldset>
 
+                    <input type="text" name="honeypot" id="schedule_demo_form_honeypot" style="display: none;" autocomplete="off" tabindex="-1">
+                    <div style="opacity: 0; position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -1;">
+                        <label for="schedule_demo_form_business_url">Business Website</label>
+                        <input type="text" name="business_url" id="schedule_demo_form_business_url" tabindex="-1" autocomplete="off">
+                    </div>
+                    <!-- {{> partials/utm}} -->
                     <div class="formFooter">
                         <p class="formNote mw560">Showings are by appointment and subject to boat availability. By submitting, you agree to be contacted by The Ski Shack. [Privacy policy link]</p>
-                        <button class="blueBtn" type="submit">Request My Showing</button>
+                        <button id="schedule-demo-request-my-showing-btn" class="blueBtn gtm_form_submit g-recaptcha" type="submit" data-form-id="Schedule a Demo Form" data-sitekey="{{config.googleCaptchaSiteKey}}" data-callback='schedule_demo_form' data-action='submit'>Request My Showing</button>
                     </div>
                 </form>
 
@@ -195,8 +201,8 @@
                     <p class="blackLeadPara mw720">Get pre-approved and value your trade ahead of your appointment so you can make a decision on the spot.</p>
                 </div>
                 <div class="cluster gap14">
-                    <a class="darkBtn" href="financing.html">Get Pre-Approved</a>
-                    <a class="outlineDarkBtn" href="brokerage.html">Value Your Trade</a>
+                    <a id="schedule-demo-get-pre-approved-btn" class="darkBtn" href="financing.html">Get Pre-Approved</a>
+                    <a id="schedule-demo-value-your-trade-btn" class="outlineDarkBtn" href="brokerage.html">Value Your Trade</a>
                 </div>
             </div>
         </section>

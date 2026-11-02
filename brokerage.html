@@ -53,8 +53,8 @@
                 <h1 id="pageHeading" class="xlHeading mw1100">Sell, Buy or Trade Your Wake Boat in Springfield, MO</h1>
                 <p class="pageHeroText mw720">Wake Brokers is the dedicated brokerage division of The Ski Shack, serving buyers and sellers of wake and surf boats. Sell your boat, find your next one, or trade up — our team handles the details.</p>
                 <div class="pageHeroActions">
-                    <a class="blueBtn" href="#value-form">Start My Appraisal</a>
-                    <a class="whiteOutlineBtn" href="contact.html#contact-form">Help Me Find a Boat</a>
+                    <a id="brokerage-start-my-appraisal-btn" class="blueBtn" href="#value-form">Start My Appraisal</a>
+                    <a id="brokerage-help-me-find-a-boat-btn" class="whiteOutlineBtn" href="contact.html#contact-form">Help Me Find a Boat</a>
                 </div>
             </div>
         </section>
@@ -66,7 +66,7 @@
                     <p class="eyebrowText eyebrowGray">About Wake Brokers</p>
                     <h2 id="introHeading" class="sectionHeading">The Dedicated Brokerage Division of The Ski Shack</h2>
                     <p class="blackLeadPara">Wake Brokers serves buyers and sellers of wake and surf boats. Backed by The Ski Shack's over 25 years in business, our team brings deep industry knowledge, a trusted reputation and a network of serious buyers to every deal — whether you're selling your boat or searching for the next one.</p>
-                    <a class="darkBtn selfStart" href="#value-form">More Information</a>
+                    <a id="brokerage-more-information-btn" class="darkBtn selfStart" href="#value-form">More Information</a>
                 </div>
                 <div class="colStats statBoard">
                     <div class="statBoardCell"><span class="mediumHeading">25+</span><span class="metaLabel">Years in Business</span></div>
@@ -97,7 +97,7 @@
                                 <li class="featureItem featureItemLight"><span class="ico ico18 icoCheck" aria-hidden="true"></span>No listing, showings or private-party negotiating</li>
                                 <li class="featureItem featureItemLight"><span class="ico ico18 icoCheck" aria-hidden="true"></span>We handle the payoff and paperwork</li>
                             </ul>
-                            <a class="blueBtn selfStart marginTopAuto" href="#value-form">Value Your Trade</a>
+                            <a id="brokerage-value-your-trade-btn" class="blueBtn selfStart marginTopAuto" href="#value-form">Value Your Trade</a>
                         </div>
                     </article>
                     <article id="brokerage" class="outlineCard">
@@ -110,7 +110,7 @@
                                 <li class="featureItem featureItemLight"><span class="ico ico18 icoCheck" aria-hidden="true"></span>Buyer communication and showings</li>
                                 <li class="featureItem featureItemLight"><span class="ico ico18 icoCheck" aria-hidden="true"></span>Negotiations handled by our team</li>
                             </ul>
-                            <a class="darkBtn selfStart marginTopAuto" href="#value-form">List With Our Brokerage</a>
+                            <a id="brokerage-list-with-our-brokerage-btn" class="darkBtn selfStart marginTopAuto" href="#value-form">List With Our Brokerage</a>
                         </div>
                     </article>
                 </div>
@@ -124,7 +124,7 @@
                     <p class="eyebrowText">Wake Brokers</p>
                     <h2 id="whyHeading" class="sectionHeading">Why Sell Your Boat With Us?</h2>
                     <p class="whiteLeadPara">Our team pairs industry expertise with an established buyer database and a reputation built on trust. We take care of the marketing, listings, showings and negotiations, and give your boat visibility on major listing platforms, so you get top value without the hassle.</p>
-                    <a class="blueBtn selfStart" href="#value-form">Start My Appraisal</a>
+                    <a id="brokerage-start-my-appraisal-2-btn" class="blueBtn selfStart" href="#value-form">Start My Appraisal</a>
                 </div>
                 <div class="colTiles grid2 gap2">
                     <div class="tealTile"><span class="numLabel">01</span><h3 class="titleSm fs24">Industry Expertise</h3><p class="tealTileText">Wake and surf specialists who know the market, the models and what buyers want.</p></div>
@@ -168,35 +168,35 @@
                     <p class="blackPara">Prefer to talk? Call <a class="phoneLink phoneLinkDark fw700" href="tel:+14178828480">417.882.8480</a>.</p>
                 </div>
 
-                <form class="colMain salesFormCard" aria-labelledby="formHeading" data-success="Thanks! The Wake Brokers team will review your boat and follow up with an estimated value.">
+                <form class="colMain salesFormCard gtm_form" aria-labelledby="formHeading" data-success="Thanks! The Wake Brokers team will review your boat and follow up with an estimated value." action="javascript:void(0)" id="brokerage_form" data-form-id="Boat Valuation Form">
                     <fieldset class="formGrid2">
                         <legend class="fieldsetTitle salesLegend">I'm Interested In</legend>
                         <div class="radioGroup spanAll">
-                            <label class="radioOption"><input type="radio" name="goal" value="Trade-in" checked> Trading in toward another boat</label>
-                            <label class="radioOption"><input type="radio" name="goal" value="Brokerage"> Selling through your brokerage</label>
-                            <label class="radioOption"><input type="radio" name="goal" value="Not sure"> Not sure yet</label>
+                            <label class="radioOption" for="brokerage_form_goal_trade_in"><input id="brokerage_form_goal_trade_in" type="radio" name="goal" value="Trade-in" checked> Trading in toward another boat</label>
+                            <label class="radioOption" for="brokerage_form_goal_brokerage"><input id="brokerage_form_goal_brokerage" type="radio" name="goal" value="Brokerage"> Selling through your brokerage</label>
+                            <label class="radioOption" for="brokerage_form_goal_not_sure"><input id="brokerage_form_goal_not_sure" type="radio" name="goal" value="Not sure"> Not sure yet</label>
                         </div>
                     </fieldset>
 
                     <fieldset class="formGrid3">
                         <legend class="fieldsetTitle salesLegend">Your Boat</legend>
-                        <label class="fieldLabel">Year<input class="fieldInput" type="text" name="year" inputmode="numeric" required></label>
-                        <label class="fieldLabel">Make<input class="fieldInput" type="text" name="make" required></label>
-                        <label class="fieldLabel">Model<input class="fieldInput" type="text" name="model" required></label>
-                        <label class="fieldLabel">Length<input class="fieldInput" type="text" name="length"></label>
-                        <label class="fieldLabel">Engine<input class="fieldInput" type="text" name="engine"></label>
-                        <label class="fieldLabel">Engine Hours<input class="fieldInput" type="text" name="engineHours" inputmode="numeric"></label>
-                        <label class="fieldLabel">Condition<select class="fieldInput" name="condition"><option>Excellent</option><option>Good</option><option>Fair</option><option>Needs work</option></select></label>
-                        <label class="fieldLabel">Trailer Included?<select class="fieldInput" name="trailer"><option>Yes</option><option>No</option></select></label>
-                        <label class="fieldLabel">Loan Payoff?<select class="fieldInput" name="loanPayoff"><option>No</option><option>Yes</option></select></label>
-                        <label class="fieldLabel spanAll">Notes &amp; Upgrades<textarea class="fieldInput" name="notes" rows="4"></textarea></label>
+                        <label class="fieldLabel" for="brokerage_form_year">Year<div class="field-error" id="error_brokerage_form_year"></div><input id="brokerage_form_year" class="fieldInput require_check" type="text" name="year" inputmode="numeric" aria-required="true"></label>
+                        <label class="fieldLabel" for="brokerage_form_make">Make<div class="field-error" id="error_brokerage_form_make"></div><input id="brokerage_form_make" class="fieldInput require_check" type="text" name="make" aria-required="true"></label>
+                        <label class="fieldLabel" for="brokerage_form_model">Model<div class="field-error" id="error_brokerage_form_model"></div><input id="brokerage_form_model" class="fieldInput require_check" type="text" name="model" aria-required="true"></label>
+                        <label class="fieldLabel" for="brokerage_form_length">Length<div class="field-error" id="error_brokerage_form_length"></div><input id="brokerage_form_length" class="fieldInput" type="text" name="length"></label>
+                        <label class="fieldLabel" for="brokerage_form_engine">Engine<div class="field-error" id="error_brokerage_form_engine"></div><input id="brokerage_form_engine" class="fieldInput" type="text" name="engine"></label>
+                        <label class="fieldLabel" for="brokerage_form_enginehours">Engine Hours<div class="field-error" id="error_brokerage_form_enginehours"></div><input id="brokerage_form_enginehours" class="fieldInput" type="text" name="engineHours" inputmode="numeric"></label>
+                        <label class="fieldLabel" for="brokerage_form_condition">Condition<div class="field-error" id="error_brokerage_form_condition"></div><select id="brokerage_form_condition" class="fieldInput" name="condition"><option>Excellent</option><option>Good</option><option>Fair</option><option>Needs work</option></select></label>
+                        <label class="fieldLabel" for="brokerage_form_trailer">Trailer Included?<div class="field-error" id="error_brokerage_form_trailer"></div><select id="brokerage_form_trailer" class="fieldInput" name="trailer"><option>Yes</option><option>No</option></select></label>
+                        <label class="fieldLabel" for="brokerage_form_loanpayoff">Loan Payoff?<div class="field-error" id="error_brokerage_form_loanpayoff"></div><select id="brokerage_form_loanpayoff" class="fieldInput" name="loanPayoff"><option>No</option><option>Yes</option></select></label>
+                        <label class="fieldLabel spanAll" for="brokerage_form_notes">Notes &amp; Upgrades<div class="field-error" id="error_brokerage_form_notes"></div><textarea id="brokerage_form_notes" class="fieldInput" name="notes" rows="4"></textarea></label>
                         <div class="stack gap8 spanAll">
                             <span class="fieldLabel">Photos</span>
-                            <label class="uploadBox" data-upload="photoStatus">
+                            <label class="uploadBox" data-upload="photoStatus" for="brokerage_form_photos">
                                 <svg class="uploadIcon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 16V4M6 10l6-6 6 6M4 20h16"></path></svg>
                                 <strong>Drag photos here or click to upload</strong>
                                 <span>Up to 10 images — exterior, interior, helm and engine</span>
-                                <input type="file" name="photos" multiple accept="image/*" data-max="10">
+                                <input id="brokerage_form_photos" type="file" name="photos" multiple accept="image/*" data-max="10">
                             </label>
                             <p id="photoStatus" class="uploadStatus" role="status"></p>
                         </div>
@@ -204,17 +204,23 @@
 
                     <fieldset class="formGrid2">
                         <legend class="fieldsetTitle salesLegend">Your Contact Info</legend>
-                        <label class="fieldLabel">First Name<input class="fieldInput" type="text" name="firstName" autocomplete="given-name" required></label>
-                        <label class="fieldLabel">Last Name<input class="fieldInput" type="text" name="lastName" autocomplete="family-name" required></label>
-                        <label class="fieldLabel">Phone<input class="fieldInput" type="tel" name="phone" autocomplete="tel"></label>
-                        <label class="fieldLabel">Email<input class="fieldInput" type="email" name="email" autocomplete="email" required></label>
-                        <label class="fieldLabel">ZIP Code<input class="fieldInput" type="text" name="zip" autocomplete="postal-code" inputmode="numeric"></label>
-                        <label class="fieldLabel">Preferred Contact<select class="fieldInput" name="contactMethod"><option>Phone</option><option>Text</option><option>Email</option></select></label>
+                        <label class="fieldLabel" for="brokerage_form_firstname">First Name<div class="field-error" id="error_brokerage_form_firstname"></div><input id="brokerage_form_firstname" class="fieldInput require_check" type="text" name="firstName" autocomplete="given-name" aria-required="true"></label>
+                        <label class="fieldLabel" for="brokerage_form_lastname">Last Name<div class="field-error" id="error_brokerage_form_lastname"></div><input id="brokerage_form_lastname" class="fieldInput require_check" type="text" name="lastName" autocomplete="family-name" aria-required="true"></label>
+                        <label class="fieldLabel" for="brokerage_form_phone">Phone<div class="field-error" id="error_brokerage_form_phone"></div><input id="brokerage_form_phone" class="fieldInput phoneInput" type="tel" name="phone" autocomplete="tel"></label>
+                        <label class="fieldLabel" for="brokerage_form_email">Email<div class="field-error" id="error_brokerage_form_email"></div><input id="brokerage_form_email" class="fieldInput require_check" type="email" name="email" autocomplete="email" aria-required="true"></label>
+                        <label class="fieldLabel" for="brokerage_form_zip">ZIP Code<div class="field-error" id="error_brokerage_form_zip"></div><input id="brokerage_form_zip" class="fieldInput" type="text" name="zip" autocomplete="postal-code" inputmode="numeric"></label>
+                        <label class="fieldLabel" for="brokerage_form_contactmethod">Preferred Contact<div class="field-error" id="error_brokerage_form_contactmethod"></div><select id="brokerage_form_contactmethod" class="fieldInput" name="contactMethod"><option>Phone</option><option>Text</option><option>Email</option></select></label>
                     </fieldset>
 
+                    <input type="text" name="honeypot" id="brokerage_form_honeypot" style="display: none;" autocomplete="off" tabindex="-1">
+                    <div style="opacity: 0; position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -1;">
+                        <label for="brokerage_form_business_url">Business Website</label>
+                        <input type="text" name="business_url" id="brokerage_form_business_url" tabindex="-1" autocomplete="off">
+                    </div>
+                    <!-- {{> partials/utm}} -->
                     <div class="formFooter pt32">
                         <p class="formNote">Values are estimates and subject to an in-person inspection. By submitting, you agree to be contacted by The Ski Shack. [Privacy policy link]</p>
-                        <button class="blueBtn" type="submit">Start My Appraisal</button>
+                        <button id="brokerage-start-my-appraisal-3-btn" class="blueBtn gtm_form_submit g-recaptcha" type="submit" data-form-id="Boat Valuation Form" data-sitekey="{{config.googleCaptchaSiteKey}}" data-callback='brokerage_form' data-action='submit'>Start My Appraisal</button>
                     </div>
                 </form>
             </div>
@@ -268,8 +274,8 @@
                     <p class="blackPara fs17 textBlackMuted">Browse new and pre-owned Malibu, Axis, Nautique, Chris-Craft and Revel boats in stock now.</p>
                 </div>
                 <div class="cluster gap14">
-                    <a class="darkBtn" href="listings.html">Shop Inventory</a>
-                    <a class="outlineDarkBtn" href="financing.html">Get Pre-Approved</a>
+                    <a id="brokerage-shop-inventory-btn" class="darkBtn" href="listings.html">Shop Inventory</a>
+                    <a id="brokerage-get-pre-approved-btn" class="outlineDarkBtn" href="financing.html">Get Pre-Approved</a>
                 </div>
             </div>
         </section>

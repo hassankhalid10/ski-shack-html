@@ -51,8 +51,8 @@
                 <h1 id="pageHeading" class="xlHeading mw1100">Boat Financing in Springfield, MO</h1>
                 <p class="pageHeroText mw680">Competitive rates and flexible terms through our lending partners. Get pre-approved online in minutes and shop with your payment in mind.</p>
                 <div class="pageHeroActions">
-                    <a class="blueBtn" href="#apply">Get Pre-Approved</a>
-                    <a class="whiteOutlineBtn" href="#calc">Payment Calculator</a>
+                    <a id="financing-get-pre-approved-btn" class="blueBtn" href="#apply">Get Pre-Approved</a>
+                    <a id="financing-payment-calculator-btn" class="whiteOutlineBtn" href="#calc">Payment Calculator</a>
                 </div>
             </div>
         </section>
@@ -109,7 +109,7 @@
                         <p class="smallLabel smallLabelTight">Est. Monthly Payment</p>
                         <output class="mediumHeading" aria-live="polite" data-calc-output>[$###]</output>
                         <p class="fs14 textMuted">per month*</p>
-                        <a class="blueBtn mt12" href="#apply">Get Pre-Approved</a>
+                        <a id="financing-get-pre-approved-2-btn" class="blueBtn mt12" href="#apply">Get Pre-Approved</a>
                     </div>
                 </div>
             </div>
@@ -146,30 +146,36 @@
                     <p class="blackPara">Questions? Call our finance team at <a class="phoneLink phoneLinkDark fw700" href="tel:+14178828480">417.882.8480</a>.</p>
                 </div>
 
-                <form class="colMain salesFormCard" aria-labelledby="applyHeading" data-success="Thanks! Our finance team will follow up shortly to complete your secure credit application.">
+                <form class="colMain salesFormCard gtm_form" aria-labelledby="applyHeading" data-success="Thanks! Our finance team will follow up shortly to complete your secure credit application." action="javascript:void(0)" id="financing_form" data-form-id="Financing Application Form">
                     <fieldset class="formGrid2">
                         <legend class="fieldsetTitle salesLegend">About You</legend>
-                        <label class="fieldLabel">First Name<input class="fieldInput" type="text" name="firstName" autocomplete="given-name" required></label>
-                        <label class="fieldLabel">Last Name<input class="fieldInput" type="text" name="lastName" autocomplete="family-name" required></label>
-                        <label class="fieldLabel">Phone<input class="fieldInput" type="tel" name="phone" autocomplete="tel" required></label>
-                        <label class="fieldLabel">Email<input class="fieldInput" type="email" name="email" autocomplete="email" required></label>
-                        <label class="fieldLabel">ZIP Code<input class="fieldInput" type="text" name="zip" autocomplete="postal-code" inputmode="numeric"></label>
-                        <label class="fieldLabel">Estimated Credit<select class="fieldInput" name="credit"><option>Excellent (720+)</option><option>Good (680–719)</option><option>Fair (620–679)</option><option>Not sure</option></select></label>
+                        <label class="fieldLabel" for="financing_form_firstname">First Name<div class="field-error" id="error_financing_form_firstname"></div><input id="financing_form_firstname" class="fieldInput require_check" type="text" name="firstName" autocomplete="given-name" aria-required="true"></label>
+                        <label class="fieldLabel" for="financing_form_lastname">Last Name<div class="field-error" id="error_financing_form_lastname"></div><input id="financing_form_lastname" class="fieldInput require_check" type="text" name="lastName" autocomplete="family-name" aria-required="true"></label>
+                        <label class="fieldLabel" for="financing_form_phone">Phone<div class="field-error" id="error_financing_form_phone"></div><input id="financing_form_phone" class="fieldInput require_check phoneInput" type="tel" name="phone" autocomplete="tel" aria-required="true"></label>
+                        <label class="fieldLabel" for="financing_form_email">Email<div class="field-error" id="error_financing_form_email"></div><input id="financing_form_email" class="fieldInput require_check" type="email" name="email" autocomplete="email" aria-required="true"></label>
+                        <label class="fieldLabel" for="financing_form_zip">ZIP Code<div class="field-error" id="error_financing_form_zip"></div><input id="financing_form_zip" class="fieldInput" type="text" name="zip" autocomplete="postal-code" inputmode="numeric"></label>
+                        <label class="fieldLabel" for="financing_form_credit">Estimated Credit<div class="field-error" id="error_financing_form_credit"></div><select id="financing_form_credit" class="fieldInput" name="credit"><option>Excellent (720+)</option><option>Good (680–719)</option><option>Fair (620–679)</option><option>Not sure</option></select></label>
                     </fieldset>
 
                     <fieldset class="formGrid3">
                         <legend class="fieldsetTitle salesLegend">The Boat You Want</legend>
-                        <label class="fieldLabel">Condition<select class="fieldInput" name="condition"><option>New</option><option>Pre-Owned</option><option>Not sure</option></select></label>
-                        <label class="fieldLabel">Brand<select class="fieldInput" name="brand"><option>Malibu</option><option>Axis</option><option>Nautique</option><option>Chris-Craft</option><option>Revel</option><option>Other / Not sure</option></select></label>
-                        <label class="fieldLabel">Model (Optional)<input class="fieldInput" type="text" name="model"></label>
-                        <label class="fieldLabel">Est. Purchase Price<input class="fieldInput" type="text" name="price" inputmode="decimal" placeholder="$"></label>
-                        <label class="fieldLabel">Down Payment<input class="fieldInput" type="text" name="downPayment" inputmode="decimal" placeholder="$"></label>
-                        <label class="fieldLabel">Trading In?<select class="fieldInput" name="tradeIn"><option>No</option><option>Yes</option></select></label>
+                        <label class="fieldLabel" for="financing_form_condition">Condition<div class="field-error" id="error_financing_form_condition"></div><select id="financing_form_condition" class="fieldInput" name="condition"><option>New</option><option>Pre-Owned</option><option>Not sure</option></select></label>
+                        <label class="fieldLabel" for="financing_form_brand">Brand<div class="field-error" id="error_financing_form_brand"></div><select id="financing_form_brand" class="fieldInput" name="brand"><option>Malibu</option><option>Axis</option><option>Nautique</option><option>Chris-Craft</option><option>Revel</option><option>Other / Not sure</option></select></label>
+                        <label class="fieldLabel" for="financing_form_model">Model (Optional)<div class="field-error" id="error_financing_form_model"></div><input id="financing_form_model" class="fieldInput" type="text" name="model"></label>
+                        <label class="fieldLabel" for="financing_form_price">Est. Purchase Price<div class="field-error" id="error_financing_form_price"></div><input id="financing_form_price" class="fieldInput" type="text" name="price" inputmode="decimal" placeholder="$"></label>
+                        <label class="fieldLabel" for="financing_form_downpayment">Down Payment<div class="field-error" id="error_financing_form_downpayment"></div><input id="financing_form_downpayment" class="fieldInput" type="text" name="downPayment" inputmode="decimal" placeholder="$"></label>
+                        <label class="fieldLabel" for="financing_form_tradein">Trading In?<div class="field-error" id="error_financing_form_tradein"></div><select id="financing_form_tradein" class="fieldInput" name="tradeIn"><option>No</option><option>Yes</option></select></label>
                     </fieldset>
 
+                    <input type="text" name="honeypot" id="financing_form_honeypot" style="display: none;" autocomplete="off" tabindex="-1">
+                    <div style="opacity: 0; position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -1;">
+                        <label for="financing_form_business_url">Business Website</label>
+                        <input type="text" name="business_url" id="financing_form_business_url" tabindex="-1" autocomplete="off">
+                    </div>
+                    <!-- {{> partials/utm}} -->
                     <div class="formFooter">
                         <p class="formNote">By submitting, you agree to be contacted by The Ski Shack about financing. All financing subject to credit approval. [Privacy policy link]</p>
-                        <button class="blueBtn" type="submit">Submit Pre-Approval</button>
+                        <button id="financing-submit-pre-approval-btn" class="blueBtn gtm_form_submit g-recaptcha" type="submit" data-form-id="Financing Application Form" data-sitekey="{{config.googleCaptchaSiteKey}}" data-callback='financing_form' data-action='submit'>Submit Pre-Approval</button>
                     </div>
                 </form>
             </div>
@@ -240,8 +246,8 @@
                     <p class="whitePara fs17">Shop new and pre-owned boats or book an on-water demo.</p>
                 </div>
                 <div class="cluster gap14">
-                    <a class="blueBtn" href="listings.html">Shop Inventory</a>
-                    <a class="whiteOutlineBtn" href="schedule-demo.html">Schedule a Demo</a>
+                    <a id="financing-shop-inventory-btn" class="blueBtn" href="listings.html">Shop Inventory</a>
+                    <a id="financing-schedule-a-demo-btn" class="whiteOutlineBtn" href="schedule-demo.html">Schedule a Demo</a>
                 </div>
             </div>
         </section>
