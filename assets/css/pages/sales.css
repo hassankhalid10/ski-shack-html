@@ -1,0 +1,261 @@
+/* ==========================================================================
+   SALES PAGES — listings · boat-details · brokerage · schedule-demo · financing
+   --------------------------------------------------------------------------
+   Shared light-theme patterns for the sales family (body.lightTheme: white
+   page, dark hero / CTA bands). Loaded after style.css; page-only rules live
+   in listings.css and boat-details.css.
+
+   1. Design accents shared by the light pages
+   2. Hero variants
+   3. Layout columns
+   4. Labels & small type
+   5. Cards, tiles & boxes
+   6. Boat cards (light)
+   7. Forms
+   8. Payment calculator
+   9. Brand tiles & CTA bands
+   10. Responsive
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. DESIGN ACCENTS
+   ========================================================================== */
+/* The design's accent layer turns card hovers and open accordion toggles teal */
+body.lightTheme .lightCard:hover { border-color: var(--teal); }
+.faqItemLight[open] .faqToggle { color: var(--black); background: var(--teal); border-color: var(--teal); }
+
+/* Icon sizes the design uses that style.css does not have */
+
+.textBlueDark { color: var(--blue-dark) !important; }
+
+
+/* ==========================================================================
+   2. HERO VARIANTS  (.pageHero + one of the gradient modifiers below)
+   ========================================================================== */
+.salesHero { background-color: var(--black); --hero-fade: none; }
+.listingsHero {
+    --hero-side: linear-gradient(90deg, rgba(5, 5, 5, .92) 0%, rgba(5, 5, 5, .62) 50%, rgba(5, 5, 5, .3) 100%);
+    --hero-fade: linear-gradient(180deg, rgba(5, 5, 5, 0) 55%, rgba(5, 5, 5, .6) 100%);
+}
+.brokerageHero { --hero-side: linear-gradient(90deg, rgba(5, 5, 5, .88) 0%, rgba(5, 5, 5, .55) 50%, rgba(5, 5, 5, .15) 100%); }
+.demoHero { --hero-side: linear-gradient(90deg, rgba(5, 5, 5, .88) 0%, rgba(5, 5, 5, .55) 50%, rgba(5, 5, 5, .1) 100%); }
+.financingHero { --hero-side: linear-gradient(90deg, rgba(5, 5, 5, .9) 0%, rgba(5, 5, 5, .6) 50%, rgba(5, 5, 5, .15) 100%); }
+
+.heroLogo { display: block; align-self: flex-start; width: auto; height: 88px; margin-bottom: 6px; }
+
+/* Eyebrow with a short solid rule (Wake Brokers hero) */
+.eyebrowSolid::before { width: 32px; background: var(--blue); }
+
+
+/* ==========================================================================
+   3. LAYOUT COLUMNS  (inside .splitRow — they wrap below their basis width)
+   ========================================================================== */
+.colMain { flex: 999 1 640px; min-width: 0; }
+.colMainWide { flex-basis: 720px; }
+.colIntro { flex: 1 1 420px; min-width: 0; max-width: 540px; }
+.colCalc { flex: 1 1 420px; min-width: 0; max-width: 560px; }
+.colAside { flex: 1 1 420px; min-width: 0; max-width: 520px; }
+.colFaq { flex: 1 1 360px; min-width: 0; max-width: 480px; }
+.colStats { flex: 1 1 520px; min-width: 0; }
+.colTiles { flex: 0 1 800px; min-width: 0; }
+.stickyCol { position: sticky; top: 144px; }
+
+/* "Title left / text right" section heads (.splitHead) */
+.headAsideSm { flex: 0 1 520px; }
+
+
+/* ==========================================================================
+   4. LABELS & SMALL TYPE
+   ========================================================================== */
+.metaLabel { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gray); }
+.smallLabelTight { letter-spacing: .18em; }
+.specLabel { font-size: 11px; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; color: var(--gray-2); }
+.finePrint { margin: 0; font-size: 13px; line-height: 1.6; color: var(--gray-2); }
+
+
+/* ==========================================================================
+   5. CARDS, TILES & BOXES
+   ========================================================================== */
+/* White card with a hairline border (steps, benefits, two-path cards) */
+.outlineCard { display: flex; flex-direction: column; color: var(--black); background: var(--white); border: 1px solid var(--line-light); }
+.stepCard { gap: 14px; padding: 36px; }
+.stepCard .numLabel { color: var(--blue); }
+.benefitCard { gap: 16px; padding: 40px; }
+.pathCardMedia { aspect-ratio: 16 / 8; }
+.pathCardBody { display: flex; flex: 1; flex-direction: column; gap: 18px; padding: 44px; }
+
+/* Round icon badge (black disc, blue icon) */
+.iconCircle { display: flex; flex: none; align-items: center; justify-content: center; width: 56px; height: 56px; color: var(--blue); background: var(--black); border-radius: 50%; }
+.iconCircle48 { width: 48px; height: 48px; }
+.iconCircle44 { width: 44px; height: 44px; }
+
+/* Grey call-out row: icon + text */
+.noteBox { display: flex; align-items: center; gap: 14px; padding: 22px; background: var(--light-2); }
+
+/* Stat board (three cells divided by hairlines) */
+.statBoard { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line-light); border: 1px solid var(--line-light); }
+.statBoardCell { display: flex; flex-direction: column; gap: 10px; padding: 36px 28px; background: var(--white); }
+
+/* Teal tiles on dark sections */
+.tealTile { display: flex; flex-direction: column; gap: 12px; padding: 36px; color: var(--black); background: var(--teal); }
+.tealTile .numLabel { color: var(--white); }
+.tealTileText { margin: 0; font-size: 15px; line-height: 1.65; color: rgba(5, 5, 5, .8); }
+
+/* Numbered rows beside the demo form */
+.expectList > h2 { margin-bottom: 18px; }
+.expectList .stepRow { gap: 22px; padding: 28px 0; }
+.expectList .stepRow:last-child { border-bottom: 1px solid var(--line-light); }
+.expectList .numLabel { color: var(--blue); }
+.expectList strong { font-size: 18px; }
+
+/* Lending partner panel */
+.lenderBox { display: flex; flex-wrap: wrap; width: 100%; max-width: 1200px; margin: 0 auto; background: var(--white); border: 1px solid var(--line-light); }
+.lenderLogo { display: flex; flex: 0 0 380px; align-items: center; justify-content: center; min-height: 240px; padding: 24px; border-right: 1px solid var(--line-light); }
+.lenderLogo svg { display: block; max-width: 100%; height: auto; }
+.lenderText { display: flex; flex: 1 1 480px; flex-direction: column; justify-content: center; gap: 14px; padding: 48px 56px; }
+.lenderText .blackPara { line-height: 1.65; }
+.lenderText .finePrint { line-height: 1.5; }
+
+/* Tall image beside the financing steps */
+.howMedia { flex: 1 1 640px; align-self: stretch; min-height: 720px; }
+
+
+/* ==========================================================================
+   6. BOAT CARDS (light) — .lightCard + global .boatCard* classes
+   ========================================================================== */
+.lightCard .boatCardMeta { color: var(--gray); }
+.listingCardBody { gap: 12px; padding: 26px 26px 28px; }
+.similarCardBody { gap: 10px; padding: 24px 24px 26px; }
+.boatCardFooter.alignEnd { align-items: flex-end; }
+.boatCardFooterRule { padding-top: 14px; border-top: 1px solid var(--line-light); }
+
+/* Length / engine / location strip */
+.specGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin: 0;
+    padding: 14px 0;
+    font-size: 13px;
+    color: var(--text-dark);
+    border-top: 1px solid var(--line-light);
+    border-bottom: 1px solid var(--line-light);
+}
+.specGrid > div, .priceStack { display: flex; flex-direction: column; gap: 2px; }
+.specGrid dd { margin: 0; font-weight: 700; color: var(--black); }
+
+
+/* ==========================================================================
+   7. FORMS
+   ========================================================================== */
+.salesFormCard { display: flex; flex-direction: column; gap: 40px; padding: 48px; color: var(--black); background: var(--white); border: 1px solid var(--line-light); }
+.salesLegend { margin-bottom: 22px; line-height: 1.02; }
+
+/* Single checkbox / radio rows */
+.checkRow { display: flex; align-items: center; gap: 12px; font-size: 15px; color: var(--slate); cursor: pointer; }
+.checkRow input { flex: none; width: 18px; height: 18px; margin: 0; accent-color: var(--blue); }
+.checkRowSm { font-size: 14px; }
+.radioGroup { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+.radioOption { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 600; color: var(--slate); cursor: pointer; }
+.radioOption input { flex: none; width: 20px; height: 20px; margin: 0; accent-color: var(--blue); }
+
+/* Drag & drop photo upload (label wrapping a visually hidden file input) */
+.uploadBox {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 140px;
+    padding: 20px;
+    font-size: 14px;
+    text-align: center;
+    color: var(--gray);
+    background: var(--white);
+    border: 1.5px dashed var(--gray-3);
+    cursor: pointer;
+    transition: border-color .2s, background-color .2s;
+}
+.uploadBox strong { color: var(--black); }
+.uploadIcon { flex: none; color: var(--blue); }
+.uploadBox:hover, .uploadBox.isDragOver { background: var(--light-4); border-color: var(--blue); }
+.uploadBox:focus-within { outline: 2px solid var(--blue); outline-offset: 2px; }
+.uploadBox input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.uploadStatus { margin: 0; font-size: 13px; line-height: 1.5; color: var(--text-dark); }
+.uploadStatus:empty { display: none; }
+
+
+/* ==========================================================================
+   8. PAYMENT CALCULATOR  (shared by boat-details and financing)
+   ========================================================================== */
+.calcBox { display: flex; flex-wrap: wrap; border: 1px solid var(--line-light); }
+.calcForm { display: grid; flex: 2 1 420px; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; padding: 40px; }
+.calcResult { display: flex; flex: 1 1 260px; flex-direction: column; justify-content: center; gap: 14px; padding: 40px; color: var(--white); background: var(--black); }
+.calcResult output { display: block; }
+.calcForm .formNote { max-width: none; }
+
+
+/* ==========================================================================
+   9. BRAND TILES & CTA BANDS
+   ========================================================================== */
+.brandTile {
+    display: flex;
+    align-items: flex-end;
+    min-height: 300px;
+    padding: 28px;
+    color: var(--white);
+    border-bottom: 2px solid transparent;
+    transition: border-color .2s;
+}
+.brandTile:hover { color: var(--white); border-bottom-color: var(--blue); }
+.brandTile::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(5, 5, 5, 0) 30%, rgba(5, 5, 5, .92) 100%); }
+.brandTileInfo { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 14px; }
+.brandTileInfo img { align-self: flex-start; max-width: 100%; }
+.brandTileCta { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--blue); }
+.tileLogoMalibu { width: auto; height: 56px; }
+.tileLogoAxis { width: auto; height: 54px; }
+.tileLogoNautique { width: 200px; height: auto; }
+.tileLogoChrisCraft { width: 190px; height: auto; }
+.tileLogoRevel { width: auto; height: 64px; }
+
+/* Closing call-to-action band */
+.ctaRow { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 40px; }
+body.lightTheme .ctaBandBlue a.darkBtn:hover,
+body.lightTheme .ctaBandBlue a.outlineDarkBtn:hover { color: var(--black); background: var(--white); border-color: var(--white); }
+
+
+/* ==========================================================================
+   10. RESPONSIVE
+   ========================================================================== */
+@media (max-width: 1399.98px) {
+    /* Side columns stack before they would stick awkwardly */
+    .stickyCol { position: static; }
+}
+
+@media (max-width: 991.98px) {
+    .salesFormCard { gap: 32px; padding: 36px; }
+    .calcForm, .calcResult { padding: 32px; }
+    .lenderLogo { flex: 1 1 100%; min-height: 180px; border-right: 0; border-bottom: 1px solid var(--line-light); }
+    .lenderText { padding: 36px; }
+    .howMedia { min-height: 420px; }
+    .colTiles { flex-basis: 100%; }
+}
+
+@media (max-width: 767.98px) {
+    .heroLogo { height: 64px; }
+    .salesFormCard { gap: 28px; padding: 28px 20px; }
+    .calcForm { grid-template-columns: minmax(0, 1fr); padding: 28px 20px; }
+    .calcResult { padding: 28px 20px; }
+    .statBoard { grid-template-columns: minmax(0, 1fr); }
+    .statBoardCell { padding: 24px 20px; }
+    .stepCard, .benefitCard, .tealTile { padding: 28px 24px; }
+    .pathCardBody { padding: 28px 24px; }
+    .lenderText { padding: 28px 20px; }
+    .howMedia { min-height: 300px; }
+    .brandTile { min-height: 220px; padding: 24px; }
+    .noteBox { padding: 18px; }
+    .specGrid { gap: 8px 12px; }
+    .ctaRow { gap: 28px; }
+}
