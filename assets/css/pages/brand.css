@@ -1,0 +1,104 @@
+/* ==========================================================================
+   BRAND PAGES  (brand-malibu · brand-axis · brand-nautique · brand-chris-craft · brand-revel)
+   --------------------------------------------------------------------------
+   All five pages share one template; the differences live in the markup only.
+     Hero        pageHero heroH820 brandHero · brandLogo · xlHeading brandTitle
+     Intro       splitRow + stepList techList (numbered technology list)
+     Gallery     galleryMosaic (Fancybox via data-gallery)
+     Lineup      seriesList > seriesRow > modelGrid > modelLink
+     Inventory   grid3 > invCard
+     Why buy     whyBand (photo + dark overlay) > grid4 > whyItem
+     FAQ         faqIntro + faqMain faqList
+   ========================================================================== */
+
+/* ---- Hero ----------------------------------------------------------------- */
+.brandHero {
+    --hero-side: linear-gradient(90deg, rgba(5, 5, 5, .9) 0%, rgba(5, 5, 5, .55) 50%, rgba(5, 5, 5, .15) 100%);
+    --hero-fade: linear-gradient(180deg, rgba(5, 5, 5, 0) 55%, #050505 100%);
+}
+.brandHero .pageHeroContent { gap: 28px; padding-bottom: calc(96px * var(--space)); }
+/* width/height attributes carry each logo's design size; height follows the image ratio */
+.brandLogo { align-self: flex-start; max-width: 100%; height: auto; }
+.brandTitle { max-width: 1150px; font-size: clamp(40px, 4.167vw, 80px); }
+
+/* ---- Section header row: title block left, lead / link right -------------- */
+
+/* ---- Intro: numbered technology list ---------------------------------------- */
+.techList { border-bottom: 1px solid rgba(255, 255, 255, .14); }
+.techList .stepRow { gap: 28px; padding: 32px 0; border-top-color: rgba(255, 255, 255, .14); }
+.techList .numLabel { width: 40px; padding-top: 6px; font-size: 18px; }
+.techList .stepRowText { gap: 10px; }
+
+/* ---- Photo gallery (1 large, 1 wide, 2 small) ------------------------------- */
+.galleryMosaic { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 340px; gap: 12px; }
+.galleryMosaic > :first-child { grid-column: span 2; grid-row: span 2; }
+.galleryMosaic > :nth-child(2) { grid-column: span 2; }
+
+/* ---- Model lineup ------------------------------------------------------------ */
+.seriesList { border-bottom: 1px solid rgba(255, 255, 255, .14); }
+.seriesRow {
+    display: grid;
+    grid-template-columns: 420px minmax(0, 1fr);
+    gap: 48px;
+    padding: 44px 0;
+    border-top: 1px solid rgba(255, 255, 255, .14);
+}
+.modelGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 12px; }
+.modelLink {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 22px 26px;
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, .16);
+    transition: border-color .2s, background-color .2s;
+}
+.modelLink .ico { color: var(--blue); }
+.modelLink:hover { color: var(--white); background-color: rgba(0, 168, 232, .06); border-color: var(--blue); }
+
+/* ---- Inventory cards ------------------------------------------------------------ */
+.invCard { display: flex; flex-direction: column; color: var(--white); border-bottom: 1px solid rgba(255, 255, 255, .14); }
+.invCard:hover { color: var(--white); }
+.invCard h3 { transition: color .2s; }
+.invCard:hover h3 { color: var(--blue); }
+.invCardBody { display: flex; flex-direction: column; gap: 10px; padding: 28px 0 30px; }
+.invCardFooter { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-top: 6px; }
+
+/* ---- Why buy here (photo band) ---------------------------------------------------- */
+.whyBand::before { content: ""; position: absolute; inset: 0; z-index: 1; background: rgba(5, 5, 5, .86); pointer-events: none; }
+.whyItem { display: flex; flex-direction: column; gap: 14px; padding: 40px 36px 40px 0; border-top: 2px solid var(--blue); }
+.whyItem .ico { color: var(--blue); }
+
+/* ---- FAQ ------------------------------------------------------------------------------ */
+.faqIntro { flex: 1 1 360px; max-width: 480px; }
+.faqMain { flex: 999 1 640px; min-width: 0; }
+
+/* ---- Responsive ------------------------------------------------------------------------- */
+@media (max-width: 1399.98px) {
+    .galleryMosaic { grid-auto-rows: 280px; }
+    .seriesRow { grid-template-columns: 340px minmax(0, 1fr); gap: 40px; }
+}
+@media (max-width: 1199.98px) {
+    .galleryMosaic { grid-auto-rows: 240px; }
+    .seriesRow { grid-template-columns: 280px minmax(0, 1fr); gap: 32px; padding: 36px 0; }
+}
+@media (max-width: 991.98px) {
+    .galleryMosaic { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 220px; }
+    .seriesRow { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+}
+@media (max-width: 767.98px) {
+    .brandHero .pageHeroContent { gap: 20px; }
+    .brandLogo { width: auto; max-width: 220px; max-height: 56px; }
+    .techList .stepRow { gap: 16px; padding: 24px 0; }
+    .techList .numLabel { width: 32px; padding-top: 4px; font-size: 16px; }
+    .galleryMosaic { grid-auto-rows: 160px; gap: 8px; }
+    .seriesRow { padding: 28px 0; }
+    .modelLink { padding: 18px 22px; font-size: 20px; }
+    .invCardBody { padding: 22px 0 24px; }
+    .whyItem { padding: 28px 0 32px; }
+}
