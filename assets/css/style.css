@@ -956,6 +956,11 @@ textarea.fieldInput { height: 120px; padding: 14px; resize: vertical; }
 .pillGroup { display: flex; flex-wrap: wrap; gap: 10px; }
 .formFooter { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; padding-top: 28px; border-top: 1px solid var(--line-light); }
 .formNote { margin: 0; max-width: 520px; font-size: 13px; line-height: 1.5; color: var(--gray-2); }
+/* Validation messages (production convention: <div class="field-error" id="error_<inputId>">) */
+.field-error { font-size: 12px; font-weight: 600; letter-spacing: 0; text-transform: none; color: #c62828; }
+.field-error:empty { display: none; }
+.fieldInput.hasError { border-color: #c62828; }
+.siteFooter .field-error { color: #ff8a80; }
 .formSuccess { margin: 0; padding: 14px 18px; font-size: 15px; font-weight: 600; color: var(--black); background: var(--teal); border-radius: 2px; }
 
 /* Location info box (beside request forms) */

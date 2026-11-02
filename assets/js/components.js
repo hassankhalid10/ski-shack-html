@@ -13,6 +13,8 @@
     'use strict';
 
     var IMG = 'assets/images/common/';
+    // Page slug used to build CTA ids: [page]-[button-name]-btn (e.g. home-header-call-us-btn)
+    var PAGE = (location.pathname.split('/').pop() || '').replace(/.html?$/, '') || 'home';
 
     var arrow = '<span class="ico icoArrow" aria-hidden="true"></span>';
     var chevron = '<span class="ico ico14 icoChevron" aria-hidden="true"></span>';
@@ -105,7 +107,7 @@
                 '</nav>' +
                 '<div class="headerActions">' +
                     '<a class="iconBtn" href="listings.html" aria-label="Search inventory and site"><span class="ico ico20 icoSearch" aria-hidden="true"></span></a>' +
-                    '<button class="greenBtn callBtn" type="button" data-menu="call" aria-expanded="false" aria-controls="megaCall">' +
+                    '<button id="' + PAGE + '-header-call-us-btn" class="greenBtn callBtn" type="button" data-menu="call" aria-expanded="false" aria-controls="megaCall">' +
                         '<span class="ico ico18 icoPhone" aria-hidden="true"></span><span class="callLabel">Call Us</span><span class="ico ico14 icoChevron callChevron" aria-hidden="true"></span>' +
                     '</button>' +
                     '<button class="iconBtn navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu"><span class="ico ico20 icoMenu" aria-hidden="true"></span></button>' +
@@ -130,7 +132,7 @@
                     '<div class="megaPromo">' +
                         '<span class="megaPromoTitle">Book Your<br>Service</span>' +
                         '<span class="megaPromoText">Available at <strong>Springfield</strong> and the <strong>Mill Creek Service Center</strong> in Lampe.</span>' +
-                        '<a class="blueBtn btnSm selfStart marginTopAuto" href="service-center.html#request">Schedule Service</a>' +
+                        '<a id="' + PAGE + '-header-schedule-service-btn" class="blueBtn btnSm selfStart marginTopAuto" href="service-center.html#request">Schedule Service</a>' +
                     '</div>' +
                 '</div>' +
             '</div>' +
@@ -166,7 +168,7 @@
                     mobileGroup('Service', serviceLinks) +
                     mobileGroup('Company', companyLinks.concat(communityLinks)) +
                     mobileGroup('Call Us', locations.map(function (l) { return { t: l.name + ' · ' + l.phone, href: l.tel }; })) +
-                    '<div class="mobileNavCta"><a class="blueBtn" href="listings.html">Shop Inventory</a><a class="outlineBtn" href="service-center.html#request">Schedule Service</a></div>' +
+                    '<div class="mobileNavCta"><a id="' + PAGE + '-mobile-shop-inventory-btn" class="blueBtn" href="listings.html">Shop Inventory</a><a id="' + PAGE + '-mobile-schedule-service-btn" class="outlineBtn" href="service-center.html#request">Schedule Service</a></div>' +
                 '</div>' +
             '</nav>';
     }
@@ -201,9 +203,13 @@
                 '<div class="footerBrand">' +
                     '<a href="home.html" aria-label="The Ski Shack home"><img class="footerLogo" src="' + IMG + 'ski-shack-logo.png" alt="The Ski Shack"></a>' +
                     '<p class="footerText">New and pre-owned boats, service and watersports gear in Springfield, Branson and Table Rock Lake, Missouri.</p>' +
-                    '<form class="newsletterForm" aria-label="Newsletter signup" data-newsletter>' +
+                    '<form class="newsletterForm gtm_form" aria-label="Newsletter signup" action="javascript:void(0)" id="newsletter_form" data-form-id="Newsletter Signup Form" data-newsletter>' +
                         '<label for="newsletterEmail" class="footerLabel">Get new arrivals &amp; event news</label>' +
-                        '<div class="newsletterField"><input id="newsletterEmail" type="email" placeholder="Your email" autocomplete="email" required><button class="blueBtn" type="submit">Sign Up</button></div>' +
+                        '<div class="field-error" id="error_newsletterEmail"></div>' +
+                        '<div class="newsletterField"><input id="newsletterEmail" class="require_check" type="email" name="email" placeholder="Your email" autocomplete="email" aria-required="true"><button id="' + PAGE + '-footer-sign-up-btn" class="blueBtn gtm_form_submit g-recaptcha" type="submit" data-form-id="Newsletter Signup Form" data-sitekey="{{config.googleCaptchaSiteKey}}" data-callback="newsletter_form" data-action="submit">Sign Up</button></div>' +
+                        '<input type="text" name="honeypot" id="newsletter_form_honeypot" style="display: none;" autocomplete="off" tabindex="-1">' +
+                        '<div style="opacity: 0; position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -1;"><label for="newsletter_form_business_url">Business Website</label><input type="text" name="business_url" id="newsletter_form_business_url" tabindex="-1" autocomplete="off"></div>' +
+                        '<!-- {{> partials/utm}} -->' +
                     '</form>' +
                     '<div class="socialLinks">' +
                         social('Facebook', '<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>') +
