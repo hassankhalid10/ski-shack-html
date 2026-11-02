@@ -1,0 +1,197 @@
+/* ==========================================================================
+   COMPANY PAGES — staff.html · testimonials.html · contact.html · careers.html
+   (body.staffPage · .testimonialsPage · .contactPage · .careersPage)
+   ========================================================================== */
+
+/* ---- Shared ------------------------------------------------------------------- */
+
+/* Intro column beside a form card (Testimonials, Contact, Careers) */
+.formIntro { display: flex; flex: 1 1 420px; flex-direction: column; gap: 24px; max-width: 520px; }
+.formIntroSticky { position: sticky; top: 144px; }
+.formMain { flex: 999 1 680px; min-width: 0; }
+.formNote a { color: inherit; }
+.formNote a:hover { color: var(--blue-dark); }
+.fieldPair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }   /* two short fields sharing one cell (State + Zip); stays 2-up on phones */
+.fieldInput.textareaLg { height: 150px; }
+.fieldInput.textareaMd { height: 140px; }
+
+/* Full-bleed image band with a centred call to action */
+.ctaBand { border-top: 1px solid var(--line-dark-soft); }
+.ctaBandContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding-top: calc(150px * var(--space));
+    padding-bottom: calc(150px * var(--space));
+    text-align: center;
+}
+
+/* ---- Staff ---------------------------------------------------------------------- */
+.jumpBar .smallLabel { margin-right: 12px; }
+
+.staffCard { display: flex; flex-direction: column; background: var(--panel); }
+.staffAvatar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: linear-gradient(160deg, var(--slate), var(--panel));
+}
+.staffInitials { font-family: var(--font-display); font-size: 64px; font-weight: 700; letter-spacing: .04em; color: rgba(255, 255, 255, .14); }
+.staffPhotoNote { position: absolute; left: 16px; bottom: 14px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: rgba(255, 255, 255, .35); }
+.staffCardBody { display: flex; flex-direction: column; gap: 8px; padding: 26px 26px 30px; }
+.staffLocation { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--teal); }
+
+/* ---- Testimonials ----------------------------------------------------------------- */
+.featuredMedia { flex: 1 1 520px; min-height: 520px; }
+.featuredQuote { display: flex; flex: 1 1 640px; flex-direction: column; gap: 30px; }
+.featuredQuote > svg { color: var(--blue); }
+.featuredQuoteText { line-height: 1.12; }
+
+.reviewMasonry { columns: 3; column-gap: 16px; }
+.reviewCard {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    margin: 0 0 16px;
+    padding: 44px;
+    background: var(--panel);
+    border: 1px solid var(--line-dark-soft);
+    break-inside: avoid;
+}
+.reviewRating { display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 28px; }
+/* <span class="reviewStars icoStar"> — the icoStar mask repeated 5×; a 4-star rating would be width: 83.2px */
+.reviewStars {
+    flex: none;
+    width: 104px;
+    height: 20px;
+    background-color: var(--blue);
+    -webkit-mask: var(--ico) 0 50% / 20.8px 20px repeat-x;
+    mask: var(--ico) 0 50% / 20.8px 20px repeat-x;
+}
+.reviewTopic { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--teal); }
+.reviewText { font-size: 20px; line-height: 1.6; color: var(--white); }
+.reviewAuthor { display: flex; flex-direction: column; gap: 4px; padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, .1); }
+
+/* ---- Contact ------------------------------------------------------------------------ */
+.mapPlaceholder { display: flex; align-items: center; justify-content: center; height: 460px; border: 1px solid var(--line-dark-soft); }
+.mapPlaceholderText { padding: 0 24px; font-size: 13px; font-weight: 700; letter-spacing: .2em; text-align: center; text-transform: uppercase; color: rgba(255, 255, 255, .4); }
+
+.locationCard { gap: 18px; padding: 40px; }
+.locationCardInfo { padding-top: 6px; }
+.locationCard .textLink { margin-top: auto; padding-top: 8px; }
+.tagChip {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 0 14px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, .22);
+}
+
+/* ---- Careers -------------------------------------------------------------------------- */
+.whyGallery { display: grid; grid-template-columns: 1.2fr 1fr; grid-template-rows: 320px 320px; gap: 12px; }
+.whyGallery > :first-child { grid-row: span 2; }
+
+.perkList { border-bottom: 1px solid rgba(255, 255, 255, .14); }
+.perkItem { display: flex; gap: 28px; padding: 30px 0; border-top: 1px solid rgba(255, 255, 255, .14); }
+.perkItem .numLabel { flex: none; width: 40px; padding-top: 4px; font-size: 18px; color: var(--blue); }
+.perkItemText { display: flex; flex-direction: column; gap: 8px; }
+
+/* Open positions accordion (<details class="jobItem">) */
+.jobList { border-bottom: 1px solid rgba(255, 255, 255, .14); }
+.jobItem { border-top: 1px solid rgba(255, 255, 255, .14); }
+.jobItem summary {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 260px 200px 44px;
+    align-items: center;
+    gap: 24px;
+    padding: 32px 0;
+    list-style: none;
+    cursor: pointer;
+}
+.jobItem summary h3 { transition: color .2s; }
+.jobItem summary:hover h3 { color: var(--blue); }
+.jobItem[open] .faqToggle { transform: rotate(45deg); color: var(--black); background: var(--blue); border-color: var(--blue); }
+.jobDetails { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 300px; gap: 56px; padding-bottom: 44px; }
+.jobFeature { align-items: flex-start; padding: 12px 0; font-size: 16px; }
+.jobFeature .ico { margin-top: 3px; color: var(--blue); }
+
+/* Résumé upload */
+.uploadBox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 96px;
+    padding: 0 20px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--gray);
+    background: var(--light-4);
+    border: 1px dashed var(--line-input);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: border-color .2s;
+}
+.uploadBox svg { flex: none; color: var(--blue-dark); }
+.uploadBox:hover { border-color: var(--blue); }
+.uploadBox:focus-within { outline: 2px solid var(--blue); outline-offset: -1px; }
+
+/* Hiring FAQ */
+.faqIntro { display: flex; flex: 1 1 360px; flex-direction: column; gap: 22px; max-width: 480px; }
+.faqMain { flex: 999 1 640px; min-width: 0; }
+.faqAnswer a { color: inherit; }
+.faqAnswer a:hover { color: var(--blue); }
+
+/* ---- Responsive -------------------------------------------------------------------------- */
+@media (max-width: 1399.98px) {
+    .formIntroSticky { position: static; }
+    .featuredMedia { flex-basis: 420px; }
+    .featuredQuote { flex-basis: 520px; }
+}
+
+@media (max-width: 1199.98px) {
+    .reviewMasonry { columns: 2; }
+    .jobDetails { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 240px; gap: 40px; }
+}
+
+@media (max-width: 991.98px) {
+    .staffGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .featuredMedia { min-height: 420px; }
+    .whyGallery { grid-template-rows: 260px 260px; }
+    .jobItem summary { grid-template-columns: minmax(0, 1fr) 44px; gap: 10px 16px; padding: 26px 0; }
+    .jobItem summary > :first-child { grid-column: 1; grid-row: 1; }
+    .jobItem summary > .faqToggle { grid-column: 2; grid-row: 1 / span 3; align-self: start; }
+    .jobDetails { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; padding-bottom: 36px; }
+    .jobDetails > :last-child { grid-column: 1 / -1; justify-content: flex-start; }
+    .locationCard { padding: 32px; }
+    .mapPlaceholder { height: 360px; }
+}
+
+@media (max-width: 767.98px) {
+    .staffGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .staffInitials { font-size: 44px; }
+    .staffPhotoNote { left: 12px; bottom: 10px; font-size: 10px; letter-spacing: .12em; }
+    .staffCardBody { padding: 18px 16px 20px; gap: 6px; }
+    .staffCard .titleSm { font-size: 18px; }
+    .staffCard .whitePara { font-size: 14px; line-height: 1.5; }
+    .featuredMedia { min-height: 300px; }
+    .reviewMasonry { columns: 1; }
+    .reviewCard { padding: 28px 24px; gap: 20px; }
+    .reviewText { font-size: 18px; }
+    .locationCard { padding: 28px 24px; }
+    .mapPlaceholder { height: 280px; }
+    .whyGallery { grid-template-rows: 180px 180px; gap: 8px; }
+    .perkItem { gap: 16px; padding: 24px 0; }
+    .perkItem .numLabel { width: 30px; font-size: 16px; }
+    .jobDetails { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+}
