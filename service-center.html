@@ -52,8 +52,8 @@
                 <h1 id="pageHeading" class="xlHeading mw1100">Boat Service &amp; Repair in Springfield, MO</h1>
                 <p class="pageHeroText">A full-service boat repair shop with onsite service for boats on Table Rock Lake. From tune-ups, oil changes and winterizations to impact body damage and cushion reupholstering — you name it, we can fix it.</p>
                 <div class="pageHeroActions">
-                    <a class="blueBtn" href="#request">Request Service</a>
-                    <a class="outlineBtn" href="tel:+14178828480">Call 417.882.8480</a>
+                    <a id="service-center-request-service-btn" class="blueBtn" href="#request">Request Service</a>
+                    <a id="service-center-call-417-882-8480-btn" class="outlineBtn" href="tel:+14178828480">Call 417.882.8480</a>
                 </div>
             </div>
         </section>
@@ -156,7 +156,7 @@
                     <p class="eyebrowText">What We Do</p>
                     <h2 id="boatServicesHeading" class="regularHeading">The Ski Shack Boat Services</h2>
                     <p class="whiteLeadPara">From routine maintenance to major repairs, our certified technicians handle it all — for every brand, at Springfield and Mill Creek.</p>
-                    <a class="blueBtn selfStart" href="#request">Service Appointments</a>
+                    <a id="service-center-service-appointments-btn" class="blueBtn selfStart" href="#request">Service Appointments</a>
                 </div>
                 <ul class="boatServiceGrid">
                     <li class="featureItem boatServiceItem"><span class="ico ico20 icoTick" aria-hidden="true"></span><span>20/100 Hour Service Check</span></li>
@@ -218,51 +218,57 @@
                     <p class="grayPara fs14">Service hours: Springfield, Mon–Fri 9 AM–5 PM and Sat 10 AM–2 PM · Mill Creek, Mon–Fri 9 AM–5 PM.</p>
                 </div>
 
-                <form class="formCard formCardShadow requestForm" aria-labelledby="requestHeading">
+                <form class="formCard formCardShadow requestForm gtm_form" aria-labelledby="requestHeading" action="javascript:void(0)" id="service_center_form" data-form-id="Service Center Request Form">
                     <fieldset class="formFieldset">
                         <legend class="fieldsetTitle">Services Needed</legend>
                         <div class="pillGroup">
-                            <label class="checkPill"><input type="checkbox" name="services" value="Routine Maintenance" checked> Routine Maintenance</label>
-                            <label class="checkPill"><input type="checkbox" name="services" value="Diagnostics"> Diagnostics</label>
-                            <label class="checkPill"><input type="checkbox" name="services" value="Engine / Outboard Repair"> Engine / Outboard Repair</label>
-                            <label class="checkPill"><input type="checkbox" name="services" value="Winterization"> Winterization</label>
-                            <label class="checkPill"><input type="checkbox" name="services" value="Spring Start-Up"> Spring Start-Up</label>
-                            <label class="checkPill"><input type="checkbox" name="services" value="Warranty Repair"> Warranty Repair</label>
-                            <label class="checkPill"><input type="checkbox" name="services" value="Detailing"> Detailing</label>
-                            <label class="checkPill"><input type="checkbox" name="services" value="Other"> Other</label>
+                            <label class="checkPill" for="service_center_form_services_routine_maintenance"><input id="service_center_form_services_routine_maintenance" type="checkbox" name="services" value="Routine Maintenance" checked> Routine Maintenance</label>
+                            <label class="checkPill" for="service_center_form_services_diagnostics"><input id="service_center_form_services_diagnostics" type="checkbox" name="services" value="Diagnostics"> Diagnostics</label>
+                            <label class="checkPill" for="service_center_form_services_engine_outboard_repair"><input id="service_center_form_services_engine_outboard_repair" type="checkbox" name="services" value="Engine / Outboard Repair"> Engine / Outboard Repair</label>
+                            <label class="checkPill" for="service_center_form_services_winterization"><input id="service_center_form_services_winterization" type="checkbox" name="services" value="Winterization"> Winterization</label>
+                            <label class="checkPill" for="service_center_form_services_spring_start_up"><input id="service_center_form_services_spring_start_up" type="checkbox" name="services" value="Spring Start-Up"> Spring Start-Up</label>
+                            <label class="checkPill" for="service_center_form_services_warranty_repair"><input id="service_center_form_services_warranty_repair" type="checkbox" name="services" value="Warranty Repair"> Warranty Repair</label>
+                            <label class="checkPill" for="service_center_form_services_detailing"><input id="service_center_form_services_detailing" type="checkbox" name="services" value="Detailing"> Detailing</label>
+                            <label class="checkPill" for="service_center_form_services_other"><input id="service_center_form_services_other" type="checkbox" name="services" value="Other"> Other</label>
                         </div>
                     </fieldset>
                     <fieldset class="formGrid3">
                         <legend class="fieldsetTitle">Your Boat</legend>
-                        <label class="fieldLabel">Year<input class="fieldInput" type="text" name="year" inputmode="numeric"></label>
-                        <label class="fieldLabel">Make<input class="fieldInput" type="text" name="make"></label>
-                        <label class="fieldLabel">Model<input class="fieldInput" type="text" name="model"></label>
-                        <label class="fieldLabel">Engine<input class="fieldInput" type="text" name="engine"></label>
-                        <label class="fieldLabel">Engine Hours<input class="fieldInput" type="text" name="engineHours" inputmode="numeric"></label>
-                        <label class="fieldLabel">HIN (Optional)<input class="fieldInput" type="text" name="hin"></label>
+                        <label class="fieldLabel" for="service_center_form_year">Year<div class="field-error" id="error_service_center_form_year"></div><input id="service_center_form_year" class="fieldInput" type="text" name="year" inputmode="numeric"></label>
+                        <label class="fieldLabel" for="service_center_form_make">Make<div class="field-error" id="error_service_center_form_make"></div><input id="service_center_form_make" class="fieldInput" type="text" name="make"></label>
+                        <label class="fieldLabel" for="service_center_form_model">Model<div class="field-error" id="error_service_center_form_model"></div><input id="service_center_form_model" class="fieldInput" type="text" name="model"></label>
+                        <label class="fieldLabel" for="service_center_form_engine">Engine<div class="field-error" id="error_service_center_form_engine"></div><input id="service_center_form_engine" class="fieldInput" type="text" name="engine"></label>
+                        <label class="fieldLabel" for="service_center_form_enginehours">Engine Hours<div class="field-error" id="error_service_center_form_enginehours"></div><input id="service_center_form_enginehours" class="fieldInput" type="text" name="engineHours" inputmode="numeric"></label>
+                        <label class="fieldLabel" for="service_center_form_hin">HIN (Optional)<div class="field-error" id="error_service_center_form_hin"></div><input id="service_center_form_hin" class="fieldInput" type="text" name="hin"></label>
                     </fieldset>
                     <fieldset class="formGrid2">
                         <legend class="fieldsetTitle">Appointment</legend>
-                        <label class="fieldLabel">Service Location
-                            <select class="fieldInput" name="location">
+                        <label class="fieldLabel" for="service_center_form_location">Service Location
+                            <div class="field-error" id="error_service_center_form_location"></div><select id="service_center_form_location" class="fieldInput" name="location">
                                 <option>Springfield</option>
                                 <option>Mill Creek Service Center</option>
                                 <option>Mobile — at my dock</option>
                             </select>
                         </label>
-                        <label class="fieldLabel">Preferred Date<input class="fieldInput" type="date" name="preferredDate"></label>
-                        <label class="fieldLabel spanAll">Describe the Issue or Request<textarea class="fieldInput" name="details" rows="4"></textarea></label>
+                        <label class="fieldLabel" for="service_center_form_preferreddate">Preferred Date<div class="field-error" id="error_service_center_form_preferreddate"></div><input id="service_center_form_preferreddate" class="fieldInput" type="date" name="preferredDate"></label>
+                        <label class="fieldLabel spanAll" for="service_center_form_details">Describe the Issue or Request<div class="field-error" id="error_service_center_form_details"></div><textarea id="service_center_form_details" class="fieldInput" name="details" rows="4"></textarea></label>
                     </fieldset>
                     <fieldset class="formGrid2">
                         <legend class="fieldsetTitle">Your Contact Info</legend>
-                        <label class="fieldLabel">First Name<input class="fieldInput" type="text" name="firstName" autocomplete="given-name" required></label>
-                        <label class="fieldLabel">Last Name<input class="fieldInput" type="text" name="lastName" autocomplete="family-name" required></label>
-                        <label class="fieldLabel">Phone<input class="fieldInput" type="tel" name="phone" autocomplete="tel" required></label>
-                        <label class="fieldLabel">Email<input class="fieldInput" type="email" name="email" autocomplete="email" required></label>
+                        <label class="fieldLabel" for="service_center_form_firstname">First Name<div class="field-error" id="error_service_center_form_firstname"></div><input id="service_center_form_firstname" class="fieldInput require_check" type="text" name="firstName" autocomplete="given-name" aria-required="true"></label>
+                        <label class="fieldLabel" for="service_center_form_lastname">Last Name<div class="field-error" id="error_service_center_form_lastname"></div><input id="service_center_form_lastname" class="fieldInput require_check" type="text" name="lastName" autocomplete="family-name" aria-required="true"></label>
+                        <label class="fieldLabel" for="service_center_form_phone">Phone<div class="field-error" id="error_service_center_form_phone"></div><input id="service_center_form_phone" class="fieldInput require_check phoneInput" type="tel" name="phone" autocomplete="tel" aria-required="true"></label>
+                        <label class="fieldLabel" for="service_center_form_email">Email<div class="field-error" id="error_service_center_form_email"></div><input id="service_center_form_email" class="fieldInput require_check" type="email" name="email" autocomplete="email" aria-required="true"></label>
                     </fieldset>
+                    <input type="text" name="honeypot" id="service_center_form_honeypot" style="display: none;" autocomplete="off" tabindex="-1">
+                    <div style="opacity: 0; position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -1;">
+                        <label for="service_center_form_business_url">Business Website</label>
+                        <input type="text" name="business_url" id="service_center_form_business_url" tabindex="-1" autocomplete="off">
+                    </div>
+                    <!-- {{> partials/utm}} -->
                     <div class="formFooter">
                         <p class="formNote">By submitting, you agree to be contacted by The Ski Shack about your service request. [Privacy policy link]</p>
-                        <button class="blueBtn" type="submit">Request Service</button>
+                        <button id="service-center-request-service-2-btn" class="blueBtn gtm_form_submit g-recaptcha" type="submit" data-form-id="Service Center Request Form" data-sitekey="{{config.googleCaptchaSiteKey}}" data-callback='service_center_form' data-action='submit'>Request Service</button>
                     </div>
                 </form>
             </div>

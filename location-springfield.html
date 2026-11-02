@@ -61,8 +61,8 @@
                     <li class="outlineTag outlineTagLg">Brokerage</li>
                 </ul>
                 <div class="pageHeroActions">
-                    <a class="blueBtn" href="#visit"><span class="ico ico18 icoDirections" aria-hidden="true"></span>Get Directions</a>
-                    <a class="outlineBtn" href="tel:+14178828480">Call 417.882.8480</a>
+                    <a id="location-springfield-get-directions-btn" class="blueBtn" href="#visit"><span class="ico ico18 icoDirections" aria-hidden="true"></span>Get Directions</a>
+                    <a id="location-springfield-call-417-882-8480-btn" class="outlineBtn" href="tel:+14178828480">Call 417.882.8480</a>
                 </div>
             </div>
         </section>
@@ -186,7 +186,7 @@
                     <div class="mediaFrame mediaFrameLight mapPlaceholder"><span class="smallLabel">[Google Map — Springfield Showroom]</span></div>
                     <div class="cluster gap20 justifyBetween">
                         <span class="fs17 fw600">5539 S. Campbell, Springfield, MO 65810</span>
-                        <a class="blueBtn" href="https://maps.google.com/?q=5539+S+Campbell+Ave+Springfield+MO+65810" target="_blank" rel="noopener"><span class="ico ico18 icoDirections" aria-hidden="true"></span>Get Directions</a>
+                        <a id="location-springfield-get-directions-2-btn" class="blueBtn" href="https://maps.google.com/?q=5539+S+Campbell+Ave+Springfield+MO+65810" target="_blank" rel="noopener"><span class="ico ico18 icoDirections" aria-hidden="true"></span>Get Directions</a>
                     </div>
                     <div class="stack">
                         <span class="smallLabel textGray mb8">Hours</span>
@@ -198,16 +198,16 @@
                     </div>
                 </div>
 
-                <form class="formCard formCardShadow visitForm" aria-labelledby="form-h">
+                <form class="formCard formCardShadow visitForm gtm_form" aria-labelledby="form-h" action="javascript:void(0)" id="location_springfield_form" data-form-id="Springfield Visit Form">
                     <h3 id="form-h" class="fieldsetTitle mb0">Contact the Springfield Showroom</h3>
                     <fieldset class="formGrid2">
                         <legend class="visuallyHidden">Your info</legend>
-                        <label class="fieldLabel">First Name<input class="fieldInput" type="text" name="firstName" autocomplete="given-name"></label>
-                        <label class="fieldLabel">Last Name<input class="fieldInput" type="text" name="lastName" autocomplete="family-name"></label>
-                        <label class="fieldLabel">Email<input class="fieldInput" type="email" name="email" autocomplete="email"></label>
-                        <label class="fieldLabel">Phone<input class="fieldInput" type="tel" name="phone" autocomplete="tel"></label>
-                        <label class="fieldLabel spanAll">How Can We Help?
-                            <select class="fieldInput" name="topic">
+                        <label class="fieldLabel" for="location_springfield_form_firstname">First Name<div class="field-error" id="error_location_springfield_form_firstname"></div><input id="location_springfield_form_firstname" class="fieldInput" type="text" name="firstName" autocomplete="given-name"></label>
+                        <label class="fieldLabel" for="location_springfield_form_lastname">Last Name<div class="field-error" id="error_location_springfield_form_lastname"></div><input id="location_springfield_form_lastname" class="fieldInput" type="text" name="lastName" autocomplete="family-name"></label>
+                        <label class="fieldLabel" for="location_springfield_form_email">Email<div class="field-error" id="error_location_springfield_form_email"></div><input id="location_springfield_form_email" class="fieldInput" type="email" name="email" autocomplete="email"></label>
+                        <label class="fieldLabel" for="location_springfield_form_phone">Phone<div class="field-error" id="error_location_springfield_form_phone"></div><input id="location_springfield_form_phone" class="fieldInput phoneInput" type="tel" name="phone" autocomplete="tel"></label>
+                        <label class="fieldLabel spanAll" for="location_springfield_form_topic">How Can We Help?
+                            <div class="field-error" id="error_location_springfield_form_topic"></div><select id="location_springfield_form_topic" class="fieldInput" name="topic">
                                 <option>Sales</option>
                                 <option>Service</option>
                                 <option>Parts</option>
@@ -216,11 +216,17 @@
                                 <option>Brokerage</option>
                             </select>
                         </label>
-                        <label class="fieldLabel spanAll">Message<textarea class="fieldInput fieldInputTall" name="message" rows="5"></textarea></label>
+                        <label class="fieldLabel spanAll" for="location_springfield_form_message">Message<div class="field-error" id="error_location_springfield_form_message"></div><textarea id="location_springfield_form_message" class="fieldInput fieldInputTall" name="message" rows="5"></textarea></label>
                     </fieldset>
+                    <input type="text" name="honeypot" id="location_springfield_form_honeypot" style="display: none;" autocomplete="off" tabindex="-1">
+                    <div style="opacity: 0; position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -1;">
+                        <label for="location_springfield_form_business_url">Business Website</label>
+                        <input type="text" name="business_url" id="location_springfield_form_business_url" tabindex="-1" autocomplete="off">
+                    </div>
+                    <!-- {{> partials/utm}} -->
                     <div class="formFooter">
                         <p class="formNote mw420">By submitting, you agree to be contacted by The Ski Shack. [Privacy policy link]</p>
-                        <button class="blueBtn" type="submit">Send Message</button>
+                        <button id="location-springfield-send-message-btn" class="blueBtn gtm_form_submit g-recaptcha" type="submit" data-form-id="Springfield Visit Form" data-sitekey="{{config.googleCaptchaSiteKey}}" data-callback='location_springfield_form' data-action='submit'>Send Message</button>
                     </div>
                 </form>
             </div>
