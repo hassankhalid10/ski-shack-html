@@ -1,0 +1,155 @@
+/* ==========================================================================
+   LISTINGS  (body.listingsPage) — filters, results toolbar, grid / list view,
+   continuous-scroll loader and the dark "shop with confidence" band.
+   ========================================================================== */
+
+/* ---- Hero ------------------------------------------------------------------ */
+.listingsHero .pageHeroContent { padding-top: 64px; padding-bottom: 80px; }
+.listingsHero .breadcrumbList, .listingsHero .breadcrumbList a { color: rgba(255, 255, 255, .75); }
+.listingsHero .breadcrumbList a:hover { color: var(--white); }
+.listingsHeroTitle { flex: 1 1 640px; min-width: 0; max-width: 1000px; }
+.listingsHeroText { flex: 0 1 560px; }
+
+/* ---- Filter sidebar ---------------------------------------------------------- */
+.filterPanel { flex: 1 1 300px; min-width: 0; max-width: 320px; }
+.filterHead { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-bottom: 20px; }
+.textButton {
+    padding: 0;
+    font: 700 12px var(--font-body);
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--gray);
+    text-decoration: underline;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+.textButton:hover { color: var(--black); }
+.filterToggle { display: none; }
+
+.filterGroup { margin: 0; padding: 24px 0; border: 0; border-top: 1px solid var(--line-light); }
+.filterLegend { display: block; margin-bottom: 16px; padding: 0; font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--black); }
+/* Range groups keep the rule above the label (a floated legend sits inside the box) */
+.filterGroupRule > .filterLegend { float: left; width: 100%; }
+.filterGroupRule > .filterLegend + * { clear: both; }
+
+.filterCheck { display: flex; align-items: center; gap: 12px; min-height: 34px; font-size: 15px; color: var(--slate); cursor: pointer; }
+.filterCheck input { flex: none; width: 18px; height: 18px; margin: 0; accent-color: var(--blue); }
+.filterCount { margin-left: auto; font-size: 13px; color: var(--gray-2); }
+.filterPair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.filterField { display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: var(--gray); }
+.fieldInputSm { height: 46px; }
+
+/* Trade-in promo under the filters */
+.tradePromo { padding-top: 24px; border-top: 1px solid var(--line-light); }
+.tradeCard { display: flex; flex-direction: column; gap: 14px; padding: 28px; color: var(--white); background: var(--black); }
+.tradeCardText { margin: 0; font-size: 14px; line-height: 1.6; color: rgba(255, 255, 255, .75); }
+.tradeCard .blueBtn { align-self: flex-start; min-height: 46px; }
+
+/* ---- Results toolbar ----------------------------------------------------------- */
+.resultsToolbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; }
+.resultsCount { margin: 0; font-size: 15px; color: var(--text-dark); }
+.resultsCount strong { color: var(--black); }
+.resultsControls { display: flex; align-items: center; gap: 12px; }
+.sortLabel { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gray); }
+.sortSelect { width: 230px; }
+.viewToggle { display: flex; gap: 12px; }
+.viewBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    color: var(--gray);
+    background: var(--white);
+    border: 1px solid var(--line-input);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: border-color .2s, color .2s;
+}
+.viewBtn:hover, .viewBtn.isActive { color: var(--black); border-color: var(--black); }
+
+/* Active filter tags */
+.filterTags { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.filterTags[hidden] { display: none; }
+.filterTag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 34px;
+    padding: 0 12px;
+    font: 600 13px var(--font-body);
+    color: var(--black);
+    background: var(--light-1);
+    border: 1px solid var(--line-light);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: border-color .2s;
+}
+.filterTag:hover { border-color: var(--black); }
+.filterClear { padding: 0 6px; font: 600 13px var(--font-body); color: var(--gray); text-decoration: underline; background: none; border: 0; cursor: pointer; }
+.filterClear:hover { color: var(--black); }
+
+.resultsEmpty { margin: 0; padding: 48px 32px; font-size: 16px; text-align: center; color: var(--text-dark); background: var(--light-2); }
+.resultsEmpty[hidden] { display: none; }
+
+/* ---- List view ------------------------------------------------------------------- */
+.listingGrid.isList { grid-template-columns: minmax(0, 1fr); }
+.isList .listingCard, .isList .skeletonCard { flex-direction: row; }
+.isList .listingCard > .mediaFrame, .isList .skeletonMedia { flex: 0 0 min(42%, 440px); aspect-ratio: auto; min-height: 260px; }
+.isList .listingCardBody { justify-content: center; }
+
+/* ---- Continuous-scroll loader (next page of inventory) ------------------------------ */
+/* one row of placeholders at any width (extra cards collapse into zero-height rows) */
+.skeletonGrid { grid-template-rows: auto; grid-auto-rows: 0; row-gap: 0; overflow: hidden; }
+.skeletonCard { display: flex; flex-direction: column; background: linear-gradient(90deg, var(--light-3) 0%, var(--light-4) 50%, var(--light-3) 100%); border: 1px solid var(--line-light); }
+.skeletonMedia { aspect-ratio: 4 / 3; background: #e6eaee; }
+.skeletonBody { display: flex; flex: 1; flex-direction: column; gap: 12px; padding: 26px; }
+.skeletonLine { display: block; width: 40%; height: 12px; background: #e1e6ea; }
+.skeletonTitle { width: 70%; height: 22px; }
+.skeletonBlock { width: 100%; height: 48px; background: #e9edf0; }
+.loadStatus { display: flex; align-items: center; justify-content: center; gap: 14px; padding-top: 24px; font-size: 13px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gray); }
+.loadSpinner { width: 22px; height: 22px; border: 3px solid var(--line-light); border-top-color: var(--blue); border-radius: 50%; animation: listingSpin .9s linear infinite; }
+.loadStatus.isDone .loadSpinner, .skeletonGrid[hidden] { display: none; }
+@keyframes listingSpin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .loadSpinner { animation-duration: 2.4s; } }
+
+/* ---- Shop with confidence (dark band) ------------------------------------------------ */
+.seoBand .blueBtn { min-height: 52px; }
+.brandLinkGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: rgba(255, 255, 255, .12); border: 1px solid rgba(255, 255, 255, .12); }
+.brandLink { display: flex; justify-content: space-between; gap: 12px; padding: 22px 24px; font-weight: 700; color: var(--white); background: var(--panel); transition: background-color .2s; }
+.brandLink:hover { color: var(--white); background: var(--slate); }
+.brandLink span { color: var(--blue); }
+
+/* ---- Responsive -------------------------------------------------------------------------- */
+@media (max-width: 1399.98px) {
+    /* the design's fixed 400px hero grows once the title and intro stack */
+    .listingsHero { height: auto; }
+}
+
+@media (max-width: 1199.98px) {
+    /* Filters collapse behind a toggle once they no longer fit beside the results */
+    .filterPanel { flex-basis: 100%; max-width: none; }
+    .jsFilters .filterToggle { display: inline-flex; }
+    .jsFilters .filterBody { display: none; padding-top: 24px; }
+    .jsFilters .filterBody.isOpen { display: block; }
+    .filterForm { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; }
+}
+
+@media (max-width: 991.98px) {
+    .isList .listingCard > .mediaFrame, .isList .skeletonMedia { flex-basis: 40%; min-height: 220px; }
+}
+
+@media (max-width: 767.98px) {
+    .listingsHero .pageHeroContent { padding-top: 48px; padding-bottom: 48px; }
+    .filterForm { display: block; }
+    .resultsControls { flex: 1 1 100%; }
+    .sortLabel { flex: 1; }
+    .sortSelect { flex: 1; width: auto; min-width: 0; }
+    .viewToggle { display: none; }
+    .isList .listingCard, .isList .skeletonCard { flex-direction: column; }
+    .isList .listingCard > .mediaFrame, .isList .skeletonMedia { flex: none; aspect-ratio: 4 / 3; min-height: 0; }
+    .brandLinkGrid { grid-template-columns: minmax(0, 1fr); }
+    .brandLink { padding: 18px 20px; }
+}
