@@ -1,0 +1,188 @@
+/* ==========================================================================
+   HOMEPAGE  (body.homePage)
+   ========================================================================== */
+
+/* The homepage design uses slightly different base metrics than inner pages */
+.homePage .eyebrowText { font-size: 13px; }
+.homePage .whitePara { line-height: 1.65; color: rgba(255, 255, 255, .7); }
+.homePage .outlineBtn:hover { border-color: var(--blue); color: var(--blue); }
+.homePage .darkCard { background: var(--ink-2); }
+.homePage .darkCard:hover .coverImg { transform: none; }
+.homePage .newsletterForm .footerLabel { color: var(--blue); }
+.homePage .footerLocation .phoneLink { color: var(--teal); }
+.homePage .footerLocation .phoneLink:hover { color: var(--blue); }
+
+/* ---- Hero ----------------------------------------------------------------- */
+.homeHero { position: relative; display: flex; flex-direction: column; min-height: 980px; }
+.homeHero::before, .homeHero::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.homeHero::before { background: linear-gradient(90deg, rgba(5, 5, 5, .85) 0%, rgba(5, 5, 5, .35) 55%, rgba(5, 5, 5, .15) 100%); }
+.homeHero::after { background: linear-gradient(180deg, rgba(5, 5, 5, .75) 0%, rgba(5, 5, 5, 0) 18%, rgba(5, 5, 5, 0) 60%, #050505 100%); }
+.homeHeroContent {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    gap: 36px;
+    padding-top: 184px;
+    padding-bottom: 60px;
+}
+.homeHeroContent .eyebrowText { font-size: 14px; }
+.homeHeroText { max-width: 640px; color: rgba(255, 255, 255, .82); }
+
+.heroSearchWrap { position: relative; z-index: 2; padding-bottom: 64px; }
+.heroSearch { display: flex; flex-wrap: wrap; }
+.heroSearchField { display: flex; flex-direction: column; flex: 1 1 200px; gap: 6px; padding: 14px 22px; background: var(--white); border-right: 1px solid #dfe3e7; }
+.heroSearchField label { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gray); }
+.heroSearchField select { padding: 0; font: 600 17px var(--font-body); color: var(--black); background: transparent; border: 0; outline: none; -webkit-appearance: none; appearance: none; cursor: pointer; }
+.heroSearchBtn { flex: 0 1 auto; min-height: 84px; padding: 0 48px; border: 0; border-radius: 0; }
+
+/* ---- Brands (full width) ---------------------------------------------------- */
+.brandRow { display: flex; flex-wrap: wrap; gap: 2px; }
+.brandPanel { position: relative; display: flex; flex: 1 1 300px; flex-direction: column; justify-content: flex-end; min-height: 860px; padding: 40px; color: var(--white); }
+.brandPanelLink { position: absolute; inset: 0; z-index: 1; }
+.brandPanelInfo { position: relative; display: flex; flex-direction: column; gap: 18px; }
+.brandPanelInfo > img { align-self: flex-start; max-width: 100%; }
+.brandPanelText { max-width: 300px; font-size: 15px; line-height: 1.55; color: rgba(255, 255, 255, .8); }
+.brandLine { display: block; width: 40px; height: 2px; background: var(--blue); transition: width .3s; }
+.brandPanelInfo .textLink { position: relative; z-index: 2; align-self: flex-start; }
+.logoMalibu { height: 78px; width: auto; }
+.logoAxis { height: 72px; width: auto; }
+.logoNautique { width: 280px; height: auto; }
+.logoChrisCraft { width: 250px; height: auto; }
+.logoRevel { height: 88px; width: auto; }
+
+/* ---- New & pre-owned promo panels -------------------------------------------- */
+.promoPanel { position: relative; display: flex; flex-direction: column; justify-content: flex-end; min-height: 620px; padding: 48px; color: var(--white); }
+.promoPanel:hover { color: var(--white); }
+.promoPanel:hover .textLink { color: var(--blue); }
+.promoPanelInfo { position: relative; display: flex; flex-direction: column; gap: 18px; }
+.promoPanelText { max-width: 460px; color: rgba(255, 255, 255, .8) !important; }
+
+/* ---- New arrivals carousel ----------------------------------------------------- */
+.arrivalsCarousel .owl-stage { display: flex; }
+.arrivalsCarousel .owl-item { display: flex; }
+.arrivalsCarousel .owl-item > .darkCard { width: 100%; }
+.arrivalsNav .iconBtn:disabled { opacity: .35; cursor: default; }
+.arrivalsNav .iconBtn:disabled:hover { color: var(--white); border-color: rgba(255, 255, 255, .25); }
+
+/* ---- Pro shop ----------------------------------------------------------------- */
+.proShopImage { min-height: 720px; }
+.gearGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px; background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .08); }
+.gearItem { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 24px 26px; font-size: 13px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--white); background: var(--black); }
+.gearItem .ico { color: var(--blue); }
+
+/* ---- Service center ------------------------------------------------------------- */
+.homeService { position: relative; overflow: hidden; margin-top: calc(200px * var(--space)); padding: calc(180px * var(--space)) 0; background-color: #0B101599; border-top: 1px solid rgba(255, 255, 255, .06); }
+.homeService::before, .homeService::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.homeService::before { background: linear-gradient(90deg, rgba(5, 5, 5, .94) 0%, rgba(5, 5, 5, .78) 38%, rgba(5, 5, 5, .55) 100%); }
+.homeService::after { background: linear-gradient(180deg, #050505 0%, rgba(5, 5, 5, 0) 16%, rgba(5, 5, 5, 0) 84%, #050505 100%); }
+.homeServiceInner { position: relative; z-index: 2; display: flex; flex-wrap: wrap; gap: calc(80px * var(--space)); }
+.homeServiceIntro { display: flex; flex: 1 1 440px; flex-direction: column; gap: 32px; max-width: 560px; }
+.homeServiceAddresses { display: flex; flex-direction: column; gap: 10px; padding-top: 28px; font-size: 15px; color: rgba(255, 255, 255, .75); border-top: 1px solid rgba(255, 255, 255, .12); }
+.homeServiceAddresses strong { color: var(--white); }
+.homeServiceGrid { display: grid; flex: 999 1 720px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 2px; min-width: 0; align-content: start; }
+.svcCard {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-height: 270px;
+    padding: 32px;
+    color: var(--white);
+    background: var(--panel);
+    border-top: 1px solid rgba(255, 255, 255, .16);
+    transition: box-shadow .2s, border-color .2s;
+}
+.svcCard:hover { color: var(--white); border-top-color: var(--blue); box-shadow: inset 0 4px 0 var(--blue); }
+.svcCardNum { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--blue); }
+.svcCardTitle { margin: 0; font-family: var(--font-display); font-size: 24px; font-weight: 700; line-height: 1.2; }
+.svcCard .whitePara { font-size: 15px; color: rgba(255, 255, 255, .72); }
+.svcCard .textLink { margin-top: auto; }
+
+/* ---- Brokerage band --------------------------------------------------------------- */
+.homeBrokerage { display: flex; flex-wrap: wrap; min-height: 760px; }
+.homeBrokeragePanel {
+    display: flex;
+    flex: 1 1 560px;
+    align-items: center;
+    padding: calc(160px * var(--space)) var(--gutter) calc(180px * var(--space)) max(var(--gutter), calc((100% - var(--container)) / 2 + var(--gutter)));
+    color: var(--black);
+    background: var(--teal);
+}
+.homeBrokerageImage { flex: 1 1 560px; min-height: 560px; }
+.homeBrokerage .whiteLargePara { color: rgba(5, 5, 5, .78); }
+.tradeSteps { display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; }
+.tradeSteps li { display: flex; gap: 24px; padding: 22px 0; border-top: 1px solid rgba(5, 5, 5, .22); }
+.tradeSteps li:last-child { border-bottom: 1px solid rgba(5, 5, 5, .22); }
+.tradeStepNum { flex: none; width: 32px; font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--white); }
+.tradeSteps strong { display: block; margin-bottom: 4px; font-size: 18px; }
+.tradeSteps span span { font-size: 15px; color: rgba(5, 5, 5, .78); }
+.homeBrokerage .darkBtn:hover, .homeBrokerage .outlineDarkBtn:hover { color: var(--black); background: var(--white); border-color: var(--white); }
+
+/* ---- About -------------------------------------------------------------------------- */
+.homeAboutTitle { max-width: 1132px; margin: 0 auto; text-align: center; }
+.homeAboutImage { min-height: 660px; height: 800px; }
+.statGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px; margin-top: 8px; background: rgba(255, 255, 255, .1); }
+.statCell { display: flex; flex-direction: column; gap: 8px; padding: 32px 0; background: var(--black); }
+.statCell:nth-child(even) { padding-left: 32px; }
+
+/* ---- Financing strip ------------------------------------------------------------------ */
+.financeStrip { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 32px; padding: 56px 0; border-top: 1px solid rgba(255, 255, 255, .12); border-bottom: 1px solid rgba(255, 255, 255, .12); }
+
+/* ---- Events & blog --------------------------------------------------------------------- */
+.storyCardBody { display: flex; flex-direction: column; gap: 16px; padding: 40px 44px 44px; }
+.storyCard:hover .textLink { color: var(--blue); }
+
+/* ---- Locations --------------------------------------------------------------------------- */
+.homeLocation { display: flex; flex-direction: column; border: 1px solid rgba(255, 255, 255, .12); }
+.homeLocationImage { height: 200px; }
+.homeLocationBody { display: flex; flex: 1; flex-direction: column; gap: 18px; padding: 32px; }
+.homeLocationAddress { font-size: 16px; line-height: 1.6; color: rgba(255, 255, 255, .78); }
+.homeLocationFooter { display: flex; flex-wrap: wrap; gap: 28px; margin-top: auto; padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, .1); }
+.serviceTag { color: var(--blue); background: rgba(0, 168, 232, .12); border: 1px solid rgba(0, 168, 232, .5); }
+
+/* ---- Responsive -------------------------------------------------------------------------------- */
+@media (max-width: 1599.98px) {
+    .brandPanel { flex: 1 1 0; min-width: 0; padding: 32px; }
+}
+@media (max-width: 1399.98px) {
+    .brandPanel { min-height: 720px; }
+}
+@media (max-width: 1199.98px) {
+    .homeHero { min-height: 860px; }
+    .homeHeroContent { padding-top: 150px; }
+    .brandPanel { flex: 1 1 30%; min-height: 560px; }
+    .proShopImage { min-height: 560px; }
+    .homeAboutImage { height: 640px; min-height: 0; }
+}
+@media (max-width: 991.98px) {
+    .homeHero { min-height: 0; }
+    .homeHeroContent { gap: 28px; }
+    .brandPanel { flex-basis: 45%; min-height: 480px; padding: 32px; }
+    .promoPanel { min-height: 480px; padding: 36px; }
+    .proShopImage { min-height: 440px; }
+    .homeAboutImage { height: 520px; }
+    .homeBrokerage { min-height: 0; }
+    .homeBrokerageImage { min-height: 420px; }
+    .heroSearchField { flex-basis: 45%; border-bottom: 1px solid #dfe3e7; }
+    .heroSearchBtn { flex: 1 1 100%; min-height: 64px; }
+}
+@media (max-width: 767.98px) {
+    .homeHeroContent { padding-top: 120px; gap: 24px; }
+    .heroSearchWrap { padding-bottom: 40px; }
+    .heroSearchField { flex-basis: 100%; border-right: 0; }
+    .brandPanel { flex-basis: 100%; min-height: 420px; padding: 24px; }
+    .logoMalibu, .logoAxis, .logoRevel { height: 56px; }
+    .logoNautique, .logoChrisCraft { width: 200px; }
+    .promoPanel { min-height: 420px; padding: 24px; }
+    .proShopImage { min-height: 320px; }
+    .gearItem { padding: 18px 16px; letter-spacing: .1em; }
+    .svcCard { min-height: 0; padding: 28px; }
+    .homeAboutImage { height: 360px; }
+    .statCell { padding: 24px 0; }
+    .statCell:nth-child(even) { padding-left: 20px; }
+    .storyCardBody { padding: 28px 24px 32px; }
+    .homeLocationBody { padding: 24px; }
+    .homeBrokerageImage { min-height: 300px; }
+}

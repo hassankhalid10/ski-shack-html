@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="New &amp; used Malibu, Axis, Nautique, Chris-Craft &amp; Revel boats, full-service repair and a watersports Pro Shop. Springfield, Indian Point (Table Rock Lake) &amp; Mill Creek.">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
@@ -19,12 +20,483 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap">
     <!-- style sheet -->
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Home | Texas Malibu</title>
+    <link rel="stylesheet" href="./assets/css/pages/home.css">
+    <title>Boat Dealer in Springfield &amp; Branson, MO | The Ski Shack</title>
 </head>
 
-<body>
+<body class="homePage">
+
+    <header id="siteHeader" class="siteHeader siteHeaderOverlay"></header>
+
+    <main>
+        <!-- ================= HERO ================= -->
+        <section class="homeHero mediaFrame mediaFrameGradient" aria-label="Hero">
+            <video class="coverImg" src="./assets/videos/common/hero-boat-video.mp4" poster="./assets/images/common/hero-video-poster.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
+
+            <div class="siteContainer homeHeroContent">
+                <h1 class="eyebrowText">Boat Dealer in Springfield &amp; Branson, Missouri</h1>
+                <p class="heroHeading mw1200">Made for<br><span class="textBlue">the lake.</span></p>
+                <p class="whiteLargePara homeHeroText">Southwest Missouri's destination for new and pre-owned boats, full-service repair and the latest watersports gear — in Springfield, on Table Rock Lake at Indian Point, and at our Mill Creek Service Center.</p>
+                <div class="cluster gap16">
+                    <a class="blueBtn btnLg" href="listings.html">Shop New Boats</a>
+                    <a class="outlineBtn btnLg" href="listings.html">Shop Pre-Owned</a>
+                </div>
+            </div>
+
+            <div class="siteContainer heroSearchWrap">
+                <form class="heroSearch" role="search" aria-label="Search boat inventory" action="listings.html">
+                    <div class="heroSearchField">
+                        <label for="searchCondition">Condition</label>
+                        <select id="searchCondition" name="condition">
+                            <option>New &amp; Pre-Owned</option>
+                            <option>New</option>
+                            <option>Pre-Owned</option>
+                        </select>
+                    </div>
+                    <div class="heroSearchField">
+                        <label for="searchBrand">Brand</label>
+                        <select id="searchBrand" name="brand">
+                            <option>All Brands</option>
+                            <option>Malibu</option>
+                            <option>Axis</option>
+                            <option>Nautique</option>
+                            <option>Chris-Craft</option>
+                            <option>Revel</option>
+                        </select>
+                    </div>
+                    <div class="heroSearchField">
+                        <label for="searchType">Boat Type</label>
+                        <select id="searchType" name="type">
+                            <option>Any Type</option>
+                            <option>Wake &amp; Surf</option>
+                            <option>Bowrider</option>
+                            <option>Pontoon</option>
+                        </select>
+                    </div>
+                    <div class="heroSearchField">
+                        <label for="searchPrice">Price</label>
+                        <select id="searchPrice" name="price">
+                            <option>Any Price</option>
+                        </select>
+                    </div>
+                    <button class="blueBtn btnLg heroSearchBtn" type="submit">Search Inventory <span class="ico ico18 icoArrow" aria-hidden="true"></span></button>
+                </form>
+            </div>
+        </section>
+
+        <!-- ================= BRANDS ================= -->
+        <section class="pt96" aria-labelledby="brandsHeading">
+            <div class="siteContainer splitHead mb72">
+                <div class="stack gap22">
+                    <p class="eyebrowText">Authorized Dealer</p>
+                    <h2 id="brandsHeading" class="largeHeading dispTight">Our Brands</h2>
+                </div>
+                <p class="whitePara mw520">Southwest Missouri's lineup of premium wake, surf and luxury runabouts — shop new models in stock or build and price your own.</p>
+            </div>
+
+            <div class="brandRow">
+                <div class="brandPanel mediaFrame mediaFrameGradient">
+                    <a class="brandPanelLink" href="brand-malibu.html" aria-label="Malibu Boats"></a>
+                    <img class="coverImg" src="./assets/images/common/malibu-boat-on-lake.jpg" alt="Malibu wake boat cruising on the lake" style="object-position: 51% 50%">
+                    <span class="shadeBottom"></span>
+                    <span class="brandPanelInfo">
+                        <img class="logoMalibu" src="./assets/images/common/logo-malibu.png" alt="Malibu Boats">
+                        <span class="brandPanelText">Industry-leading wakesurf and wakeboard towboats built for the perfect wave.</span>
+                        <span class="brandLine"></span>
+                        <a class="textLink" href="listings.html">Shop Malibu <span class="ico icoArrow" aria-hidden="true"></span></a>
+                    </span>
+                </div>
+                <div class="brandPanel mediaFrame mediaFrameGradient">
+                    <a class="brandPanelLink" href="brand-axis.html" aria-label="Axis Wake Research"></a>
+                    <img class="coverImg" src="./assets/images/common/axis-wake-boat-cruising.webp" alt="Axis wake boat cruising on the lake" style="object-position: 73% 50%">
+                    <span class="shadeBottom"></span>
+                    <span class="brandPanelInfo">
+                        <img class="logoAxis" src="./assets/images/common/logo-axis.png" alt="Axis Wake Research">
+                        <span class="brandPanelText">Pro-level wake and surf performance at an approachable price.</span>
+                        <span class="brandLine"></span>
+                        <a class="textLink" href="listings.html">Shop Axis <span class="ico icoArrow" aria-hidden="true"></span></a>
+                    </span>
+                </div>
+                <div class="brandPanel mediaFrame mediaFrameGradient">
+                    <a class="brandPanelLink" href="brand-nautique.html" aria-label="Nautique"></a>
+                    <img class="coverImg" src="./assets/images/common/nautique-rider-with-wakeboard.jpg" alt="Rider with wakeboard aboard a Nautique" width="1920" height="1080">
+                    <span class="shadeBottom"></span>
+                    <span class="brandPanelInfo">
+                        <img class="logoNautique" src="./assets/images/common/logo-nautique.png" alt="Nautique">
+                        <span class="brandPanelText">Premium, tournament-proven wake boats with refined craftsmanship.</span>
+                        <span class="brandLine"></span>
+                        <a class="textLink" href="listings.html">Shop Nautique <span class="ico icoArrow" aria-hidden="true"></span></a>
+                    </span>
+                </div>
+                <div class="brandPanel mediaFrame mediaFrameGradient">
+                    <a class="brandPanelLink" href="brand-chris-craft.html" aria-label="Chris-Craft"></a>
+                    <img class="coverImg" src="./assets/images/common/chris-craft-runabout.jpg" alt="Chris-Craft runabout cruising on open water">
+                    <span class="shadeBottom"></span>
+                    <span class="brandPanelInfo">
+                        <img class="logoChrisCraft" src="./assets/images/common/logo-chris-craft.png" alt="Chris-Craft">
+                        <span class="brandPanelText">America's boatbuilder since 1874 — timeless, handcrafted luxury runabouts.</span>
+                        <span class="brandLine"></span>
+                        <a class="textLink" href="listings.html">Shop Chris-Craft <span class="ico icoArrow" aria-hidden="true"></span></a>
+                    </span>
+                </div>
+                <div class="brandPanel mediaFrame mediaFrameGradient">
+                    <a class="brandPanelLink" href="brand-revel.html" aria-label="Revel Boats"></a>
+                    <img class="coverImg" src="./assets/images/common/revel-pontoon-on-lake.jpg" alt="Revel pontoon boat on the lake">
+                    <span class="shadeBottom"></span>
+                    <span class="brandPanelInfo">
+                        <img class="logoRevel" src="./assets/images/common/logo-revel.png" alt="Revel Boats">
+                        <span class="brandPanelText">Modern, performance-driven pontoons designed for life on the lake.</span>
+                        <span class="brandLine"></span>
+                        <a class="textLink" href="listings.html">Shop Revel <span class="ico icoArrow" aria-hidden="true"></span></a>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= NEW & USED ================= -->
+        <section class="pt200" aria-label="New and pre-owned boats">
+            <div class="siteContainer">
+                <div class="autoGrid min560 gap24">
+                    <a class="promoPanel mediaFrame mediaFrameGradient" href="listings.html">
+                        <img class="coverImg" src="./assets/images/common/malibu-family-aboard.jpg" alt="New Malibu wake boat with family aboard">
+                        <span class="shadeBottom"></span>
+                        <span class="promoPanelInfo">
+                            <span class="statusChip chipBlue selfStart">[##] In Stock</span>
+                            <span class="mediumHeading dispTight">New Boats</span>
+                            <span class="whitePara promoPanelText">The latest wake, surf and luxury runabouts from Malibu, Axis, Nautique, Chris-Craft and Revel — ready to demo.</span>
+                            <span class="textLink mt8">Shop New Inventory <span class="ico icoArrow" aria-hidden="true"></span></span>
+                        </span>
+                    </a>
+                    <a class="promoPanel mediaFrame mediaFrameGradient" href="listings.html">
+                        <img class="coverImg" src="./assets/images/common/nautique-at-sunset.jpg" alt="Pre-owned Nautique wake boat at sunset">
+                        <span class="shadeBottom"></span>
+                        <span class="promoPanelInfo">
+                            <span class="statusChip chipTeal selfStart">[##] In Stock</span>
+                            <span class="mediumHeading dispTight">Pre-Owned Boats</span>
+                            <span class="whitePara promoPanelText">Inspected, serviced and priced right. Find a quality used boat in Springfield and on Table Rock Lake.</span>
+                            <span class="textLink mt8">Shop Pre-Owned Inventory <span class="ico icoArrow" aria-hidden="true"></span></span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= NEW ARRIVALS ================= -->
+        <section class="pt200" aria-labelledby="arrivalsHeading">
+            <div class="siteContainer">
+                <div class="splitHead mb72">
+                    <div class="stack gap22">
+                        <p class="eyebrowText">Just Landed</p>
+                        <h2 id="arrivalsHeading" class="largeHeading dispTight">New Arrivals</h2>
+                    </div>
+                    <div class="row2 gap12 arrivalsNav">
+                        <a class="textLink mb0" href="listings.html" style="margin-right: 20px">View All Inventory <span class="ico icoArrow" aria-hidden="true"></span></a>
+                        <button class="iconBtn" type="button" aria-label="Previous listings" data-carousel-prev="#arrivalsCarousel"><span class="ico ico18 icoArrowLeft" aria-hidden="true"></span></button>
+                        <button class="iconBtn" type="button" aria-label="Next listings" data-carousel-next="#arrivalsCarousel"><span class="ico ico18 icoArrow" aria-hidden="true"></span></button>
+                    </div>
+                </div>
+
+                <div id="arrivalsCarousel" class="owl-carousel arrivalsCarousel" data-carousel='{"margin":24,"dots":false,"responsive":{"0":{"items":1},"768":{"items":2},"1200":{"items":3},"1600":{"items":4}}}'>
+                    <a class="darkCard" href="boat-details.html">
+                        <div class="mediaFrame ratio43">
+                            <img class="coverImg" src="./assets/images/common/malibu-wakesetter-23-lsv.jpg" alt="2026 Malibu Wakesetter 23 LSV">
+                            <span class="statusChip chipBlue chipFloat">New</span>
+                        </div>
+                        <div class="boatCardBody">
+                            <span class="boatCardMeta">2026 · Malibu</span>
+                            <h3 class="boatCardTitle">Wakesetter 23 LSV</h3>
+                            <div class="boatCardSpecs"><span>23' LOA</span><span>[ENGINE]</span><span>Springfield</span></div>
+                            <div class="boatCardFooter">
+                                <span class="boatCardPrice">[PRICE]</span>
+                                <span class="textLink textLinkSm">Details <span class="ico ico14 icoArrow" aria-hidden="true"></span></span>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="darkCard" href="boat-details.html">
+                        <div class="mediaFrame ratio43">
+                            <img class="coverImg" src="./assets/images/common/axis-t250.jpg" alt="2026 Axis T250">
+                            <span class="statusChip chipBlue chipFloat">New</span>
+                        </div>
+                        <div class="boatCardBody">
+                            <span class="boatCardMeta">2026 · Axis</span>
+                            <h3 class="boatCardTitle">T250</h3>
+                            <div class="boatCardSpecs"><span>25' LOA</span><span>[ENGINE]</span><span>Springfield</span></div>
+                            <div class="boatCardFooter">
+                                <span class="boatCardPrice">[PRICE]</span>
+                                <span class="textLink textLinkSm">Details <span class="ico ico14 icoArrow" aria-hidden="true"></span></span>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="darkCard" href="boat-details.html">
+                        <div class="mediaFrame ratio43">
+                            <img class="coverImg" src="./assets/images/common/pre-owned-malibu.jpg" alt="2022 Malibu Wakesetter 22 MXZ">
+                            <span class="statusChip chipTeal chipFloat">Pre-Owned</span>
+                        </div>
+                        <div class="boatCardBody">
+                            <span class="boatCardMeta">2022 · Malibu</span>
+                            <h3 class="boatCardTitle">Wakesetter 22 MXZ</h3>
+                            <div class="boatCardSpecs"><span>22' LOA</span><span>[###] hrs</span><span>Springfield</span></div>
+                            <div class="boatCardFooter">
+                                <span class="boatCardPrice">[PRICE]</span>
+                                <span class="textLink textLinkSm">Details <span class="ico ico14 icoArrow" aria-hidden="true"></span></span>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="darkCard" href="boat-details.html">
+                        <div class="mediaFrame ratio43">
+                            <img class="coverImg" src="./assets/images/common/chris-craft-launch-25-gt.jpg" alt="2026 Chris-Craft Launch 25 GT">
+                            <span class="statusChip chipBlue chipFloat">New</span>
+                        </div>
+                        <div class="boatCardBody">
+                            <span class="boatCardMeta">2026 · Chris-Craft</span>
+                            <h3 class="boatCardTitle">Launch 25 GT</h3>
+                            <div class="boatCardSpecs"><span>25' LOA</span><span>[ENGINE]</span><span>Springfield</span></div>
+                            <div class="boatCardFooter">
+                                <span class="boatCardPrice">[PRICE]</span>
+                                <span class="textLink textLinkSm">Details <span class="ico ico14 icoArrow" aria-hidden="true"></span></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PRO SHOP ================= -->
+        <section id="pro-shop" class="pt200" aria-labelledby="proShopHeading">
+            <div class="siteContainer autoGrid min640 gap80 alignCenter">
+                <a class="mediaFrame proShopImage" href="pro-shop.html" aria-label="Visit the Pro Shop"><img class="coverImg" src="./assets/images/common/wake-foil-rider.jpg" alt="Rider on a wake foil board"></a>
+                <div class="stack gap32">
+                    <p class="eyebrowText">Gear Up</p>
+                    <h2 id="proShopHeading" class="largeHeading dispTight"><a href="pro-shop.html">Pro Shop</a></h2>
+                    <p class="whiteLargePara mw600">The latest gear for your next watersports adventure. Wakeboards, wakesurf boards, life jackets, apparel and boat accessories — fitted by people who ride.</p>
+                    <div class="gearGrid">
+                        <span class="gearItem">Wakeboards <span class="ico ico18 icoCheck" aria-hidden="true"></span></span>
+                        <span class="gearItem">Wakesurf <span class="ico ico18 icoCheck" aria-hidden="true"></span></span>
+                        <span class="gearItem">Life Jackets <span class="ico ico18 icoCheck" aria-hidden="true"></span></span>
+                        <span class="gearItem">Apparel <span class="ico ico18 icoCheck" aria-hidden="true"></span></span>
+                        <span class="gearItem">Towables <span class="ico ico18 icoCheck" aria-hidden="true"></span></span>
+                        <span class="gearItem">Boat Accessories <span class="ico ico18 icoCheck" aria-hidden="true"></span></span>
+                    </div>
+                    <div class="cluster gap28">
+                        <a class="blueBtn btnLg" href="pro-shop.html">Visit the Pro Shop</a>
+                        <span class="fs14 textMuted">In store at <strong class="textWhite">Springfield</strong> &amp; <strong class="textWhite">Indian Point</strong></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SERVICE CENTER ================= -->
+        <section class="homeService" aria-labelledby="serviceHeading">
+            <img class="coverImg" src="./assets/images/common/service-shop-engine.jpg" alt="" aria-hidden="true">
+            <div class="siteContainer homeServiceInner">
+                <div class="homeServiceIntro">
+                    <p class="eyebrowText">Factory-Trained Technicians</p>
+                    <h2 id="serviceHeading" class="largeHeading dispTight"><a href="service-center.html">Service<br>Center</a></h2>
+                    <p class="whiteLargePara">Full-service boat repair and maintenance for Southwest Missouri — in our Springfield shop, at the Mill Creek Service Center near Table Rock Lake, or right at your dock.</p>
+                    <div class="cluster gap14">
+                        <a class="blueBtn btnLg" href="service-center.html#request">Schedule Service</a>
+                    </div>
+                    <div class="homeServiceAddresses">
+                        <span><strong>Springfield</strong> — 5539 S. Campbell</span>
+                        <span><strong>Mill Creek Service Center</strong> — 8936 MO-13, Lampe</span>
+                    </div>
+                </div>
+                <div class="homeServiceGrid">
+                    <a class="svcCard" href="service-center.html">
+                        <span class="svcCardNum">01</span>
+                        <h3 class="svcCardTitle">Service Center</h3>
+                        <p class="whitePara">Scheduled maintenance, diagnostics and repairs by factory-trained technicians.</p>
+                        <span class="textLink textLinkSm">Learn More <span class="ico ico14 icoArrow" aria-hidden="true"></span></span>
+                    </a>
+                    <a class="svcCard" href="mobile-service.html">
+                        <span class="svcCardNum">02</span>
+                        <h3 class="svcCardTitle">Mobile Service</h3>
+                        <p class="whitePara">On-the-water and at-the-dock service across Table Rock Lake.</p>
+                        <span class="textLink textLinkSm">Learn More <span class="ico ico14 icoArrow" aria-hidden="true"></span></span>
+                    </a>
+                    <a class="svcCard" href="winterization.html">
+                        <span class="svcCardNum">03</span>
+                        <h3 class="svcCardTitle">Winterization &amp; Spring Start-Up</h3>
+                        <p class="whitePara">Protect your engine through Missouri winters and launch ready in spring.</p>
+                        <span class="textLink textLinkSm">Learn More <span class="ico ico14 icoArrow" aria-hidden="true"></span></span>
+                    </a>
+                    <a class="svcCard" href="warranty-service.html">
+                        <span class="svcCardNum">04</span>
+                        <h3 class="svcCardTitle">Warranty Service</h3>
+                        <p class="whitePara">Authorized warranty work for the brands we sell.</p>
+                        <span class="textLink textLinkSm">Learn More <span class="ico ico14 icoArrow" aria-hidden="true"></span></span>
+                    </a>
+                    <a class="svcCard" href="engine-repair.html">
+                        <span class="svcCardNum">05</span>
+                        <h3 class="svcCardTitle">Engine &amp; Outboard Repair</h3>
+                        <p class="whitePara">Inboard, sterndrive and outboard repair — from tune-ups to rebuilds.</p>
+                        <span class="textLink textLinkSm">Learn More <span class="ico ico14 icoArrow" aria-hidden="true"></span></span>
+                    </a>
+                    <a class="svcCard" href="detailing.html">
+                        <span class="svcCardNum">06</span>
+                        <h3 class="svcCardTitle">Detailing</h3>
+                        <p class="whitePara">Hull, interior and gelcoat detailing to keep your boat show-ready.</p>
+                        <span class="textLink textLinkSm">Learn More <span class="ico ico14 icoArrow" aria-hidden="true"></span></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= BROKERAGE ================= -->
+        <section class="homeBrokerage" aria-labelledby="brokerageHeading">
+            <div class="homeBrokeragePanel">
+                <div class="stack gap32 mw640">
+                    <p class="eyebrowText eyebrowDark">Brokerage &amp; Trade-Ins</p>
+                    <h2 id="brokerageHeading" class="largeHeading dispTight"><a class="textBlack" href="brokerage.html">Sell Smarter.<br><span class="textWhite">Trade Up.</span></a></h2>
+                    <p class="whiteLargePara">Let our brokerage team market your boat to serious buyers across the Ozarks and beyond — or trade it in toward your next one. Either way, we handle the details.</p>
+                    <ol class="tradeSteps">
+                        <li><span class="tradeStepNum">01</span><span><strong>Get your value</strong><span>Submit your boat online for a fast trade or brokerage estimate.</span></span></li>
+                        <li><span class="tradeStepNum">02</span><span><strong>We prep &amp; market it</strong><span>Professional photos, detailing and listings that reach real buyers.</span></span></li>
+                        <li><span class="tradeStepNum">03</span><span><strong>You get on the water</strong><span>We handle paperwork and closing — you shop your next boat.</span></span></li>
+                    </ol>
+                    <div class="cluster gap14">
+                        <a class="darkBtn btnLg" href="brokerage.html#value-form">Value Your Trade</a>
+                        <a class="outlineDarkBtn btnLg" href="brokerage.html">List With Our Brokerage</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mediaFrame homeBrokerageImage"><img class="coverImg" src="./assets/images/common/wake-boat-pulling-surfers.jpg" alt="Wake boat pulling two surfers"></div>
+        </section>
+
+        <!-- ================= ABOUT ================= -->
+        <section class="pt200" aria-labelledby="aboutHeading">
+            <div class="siteContainer">
+                <p class="eyebrowText justifyCenter mb36">About The Ski Shack</p>
+                <h2 id="aboutHeading" class="xxlHeading dispTight homeAboutTitle">Boaters first. <span class="textFaint">Dealers second.</span></h2>
+                <div class="autoGrid min560 gap80 mt88 alignCenter">
+                    <div class="mediaFrame homeAboutImage"><img class="coverImg" src="./assets/images/common/friends-aboard-wake-boat.jpg" alt="Friends relaxing aboard a wake boat on the lake"></div>
+                    <div class="stack gap32 justifyCenter">
+                        <p class="whiteLargePara">The Ski Shack is Southwest Missouri's destination for boats, full-service repair and maintenance. We're building a community of watersports enthusiasts and outdoor adventurers — and we stay with you long after the sale with maintenance, customization and real-world advice.</p>
+                        <p class="whiteLargePara">From Springfield to Table Rock Lake, our team serves boaters across Branson, Shell Knob, Nixa, Rogersville and the greater Ozarks.</p>
+                        <div class="statGrid">
+                            <div class="statCell"><span class="mediumHeading dispTight">1997</span><span class="capsLabel">Serving the Ozarks Since</span></div>
+                            <div class="statCell"><span class="mediumHeading dispTight">3</span><span class="capsLabel">Locations</span></div>
+                            <div class="statCell"><span class="mediumHeading dispTight">5</span><span class="capsLabel">Premium Boat Brands</span></div>
+                            <div class="statCell"><span class="mediumHeading dispTight">[##]</span><span class="capsLabel">Certified Technicians</span></div>
+                        </div>
+                        <div class="cluster gap14">
+                            <a class="blueBtn btnLg" href="about-us.html">About Us</a>
+                            <a class="inverseBtn btnLg" href="staff.html">Meet Our Staff</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= FINANCING STRIP ================= -->
+        <section class="pt180" aria-labelledby="financeHeading">
+            <div class="siteContainer">
+                <div class="financeStrip">
+                    <div class="stack gap14 mw760">
+                        <p class="eyebrowText">Financing</p>
+                        <h2 id="financeHeading" class="titleXl fs32 lhNormal">Boat Financing, Simplified</h2>
+                        <p class="whitePara">Competitive rates and flexible terms through our lending partners. Apply online in minutes and shop with your payment in mind.</p>
+                    </div>
+                    <div class="cluster gap14">
+                        <a class="blueBtn btnLg" href="financing.html#apply">Get Pre-Approved</a>
+                        <a class="outlineBtn btnLg" href="financing.html#calc">Payment Calculator</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= EVENTS + BLOG ================= -->
+        <section class="pt180" aria-label="Events and boating blog">
+            <div class="siteContainer autoGrid min560 gap24">
+                <a class="darkCard storyCard" href="events.html">
+                    <span class="mediaFrame ratio169"><img class="coverImg" src="./assets/images/common/couple-relaxing-chris-craft.jpg" alt="Couple relaxing aboard a boat at a Ski Shack event"></span>
+                    <span class="storyCardBody">
+                        <span class="eyebrowText">Experience Ski Shack</span>
+                        <h2 class="titleXl lh1">Events</h2>
+                        <span class="whitePara mw520">Demo days, boat show season and on-water clinics at Springfield and Table Rock Lake. See what's coming up and save your spot.</span>
+                        <span class="textLink mt8">View Events <span class="ico icoArrow" aria-hidden="true"></span></span>
+                    </span>
+                </a>
+                <a class="darkCard storyCard" href="blog.html">
+                    <span class="mediaFrame ratio169"><img class="coverImg" src="./assets/images/common/wakeboarder-behind-axis.jpg" alt="Wakeboarder riding behind an Axis wake boat"></span>
+                    <span class="storyCardBody">
+                        <span class="eyebrowText">Tips &amp; Guides</span>
+                        <h2 class="titleXl lh1">Boating Blog</h2>
+                        <span class="whitePara mw520">Buying guides, maintenance how-tos and lake-life tips from the Ski Shack team to help you get more out of every day on the water.</span>
+                        <span class="textLink mt8">Read the Blog <span class="ico icoArrow" aria-hidden="true"></span></span>
+                    </span>
+                </a>
+            </div>
+        </section>
+
+        <!-- ================= LOCATIONS ================= -->
+        <section class="pt200 pb160" aria-labelledby="locationsHeading">
+            <div class="siteContainer">
+                <div class="splitHead mb72">
+                    <div class="stack gap22">
+                        <p class="eyebrowText">Find Us</p>
+                        <h2 id="locationsHeading" class="mediumHeading dispTight">Locations</h2>
+                    </div>
+                    <p class="whitePara mw400">Each location offers different services — check what's available before you head out.</p>
+                </div>
+                <div class="autoGrid min420 gap24">
+                    <article class="homeLocation">
+                        <a class="mediaFrame homeLocationImage" href="location-springfield.html"><img class="coverImg" src="./assets/images/common/new-wake-boat-lineup.jpg" alt="The Ski Shack Springfield showroom boat lineup"></a>
+                        <div class="homeLocationBody">
+                            <h3 class="titleSm fs24 lhNormal"><a href="location-springfield.html">Springfield</a></h3>
+                            <div class="cluster gap8">
+                                <span class="statusChip serviceTag">Sales</span><span class="statusChip serviceTag">Pro Shop</span><span class="statusChip serviceTag">Service</span>
+                            </div>
+                            <address class="homeLocationAddress">5539 S. Campbell<br>Springfield, MO 65810</address>
+                            <span class="fs14 textMuted">Hours: Mon–Fri 9 AM–5 PM · Sat 10 AM–2 PM</span>
+                            <div class="homeLocationFooter">
+                                <a class="textLink phoneLinkTeal" href="tel:+14178828480">417.882.8480</a>
+                                <a class="textLink" href="location-springfield.html">Location Details <span class="ico ico14 icoArrow" aria-hidden="true"></span></a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="homeLocation">
+                        <a class="mediaFrame homeLocationImage" href="location-indian-point.html"><img class="coverImg" src="./assets/images/common/revel-pontoon-at-dock.jpg" alt="The Ski Shack Indian Point on Table Rock Lake"></a>
+                        <div class="homeLocationBody">
+                            <h3 class="titleSm fs24 lhNormal"><a href="location-indian-point.html">Indian Point</a></h3>
+                            <div class="cluster gap8">
+                                <span class="statusChip serviceTag">Pro Shop</span><span class="statusChip serviceTag">Demos</span><span class="statusChip serviceTag">Rentals</span>
+                            </div>
+                            <address class="homeLocationAddress">3443 Indian Point Rd<br>Branson, MO 65616</address>
+                            <span class="fs14 textMuted">Hours: Seasonal · Opens late May</span>
+                            <div class="homeLocationFooter">
+                                <a class="textLink phoneLinkTeal" href="tel:+14173388481">417.338.8481</a>
+                                <a class="textLink" href="location-indian-point.html">Location Details <span class="ico ico14 icoArrow" aria-hidden="true"></span></a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="homeLocation">
+                        <a class="mediaFrame homeLocationImage" href="location-mill-creek.html"><img class="coverImg" src="./assets/images/common/technician-engine-bay.jpg" alt="The Ski Shack Mill Creek Service Center technician at work"></a>
+                        <div class="homeLocationBody">
+                            <h3 class="titleSm fs24 lhNormal"><a href="location-mill-creek.html">Mill Creek Service Center</a></h3>
+                            <div class="cluster gap8">
+                                <span class="statusChip serviceTag">Service</span><span class="statusChip serviceTag">Parts</span>
+                            </div>
+                            <address class="homeLocationAddress">8936 MO-13<br>Lampe, MO 65681</address>
+                            <span class="fs14 textMuted">Hours: Mon–Fri 9 AM–5 PM</span>
+                            <div class="homeLocationFooter">
+                                <a class="textLink phoneLinkTeal" href="tel:+14178828480">417.882.8480</a>
+                                <a class="textLink" href="location-mill-creek.html">Location Details <span class="ico ico14 icoArrow" aria-hidden="true"></span></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="siteFooter" class="siteFooter"></footer>
 
     <!-- jquery script -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -37,6 +509,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <!-- facnybox scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <!-- shared header & footer -->
+    <script src="./assets/js/components.js"></script>
     <!-- js file -->
     <script src="./assets/js/script.js"></script>
 </body>
